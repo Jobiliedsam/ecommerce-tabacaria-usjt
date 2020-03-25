@@ -25,13 +25,13 @@ public class TesteAll {
 		cliente.setTipo("Fisica");
 		cliente.setTelefone("1123456798");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		cliente.setIdCliente(clienteService.criar(cliente));
 
-		int idCliente = clienteService.criar(cliente);
-		cliente.setIdCliente(idCliente);
+		Cliente clienteTeste = clienteService.carregar(cliente.getIdCliente());
 		
 		
-		System.out.println("IdCliente: " + cliente.getIdCliente());
-		System.out.println("Nome Cliente: " + cliente.getNomeCompleto());
+		System.out.println("IdCliente: " + clienteTeste.getIdCliente());
+		System.out.println("Nome Cliente: " + clienteTeste.getNomeCompleto());
 		
 		
 		// Criando um endereço
@@ -40,7 +40,7 @@ public class TesteAll {
 		EnderecoService enderecoService = new EnderecoService();
 		Endereco endereco = new Endereco();
 		
-		endereco.setIdCliente(cliente.getIdCliente());
+		endereco.setIdCliente(clienteTeste.getIdCliente());
 		endereco.setEnderecoP("Rua Borboletas Pisicodelicas N° 450");
 		endereco.setEnderecoS("Não Possui");
 		endereco.setCep("98080-21");
@@ -95,8 +95,8 @@ public class TesteAll {
 		PedidoHeaderService pedidoHeaderService = new PedidoHeaderService();
 		PedidoHeader pedidoHeader = new PedidoHeader();
 		
-		pedidoHeader.setIdCliente(cliente.getIdCliente());
-		pedidoHeader.setNomeCliente(cliente.getNomeCompleto());
+		pedidoHeader.setIdCliente(clienteTeste.getIdCliente());
+		pedidoHeader.setNomeCliente(clienteTeste.getNomeCompleto());
 		pedidoHeader.setQtdItens(7);
 		pedidoHeader.setValorTotal(55.86);
 		pedidoHeader.setIdPedido(pedidoHeaderService.criar(pedidoHeader));

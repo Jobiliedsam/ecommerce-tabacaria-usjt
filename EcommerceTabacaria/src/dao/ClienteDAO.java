@@ -13,7 +13,7 @@ public class ClienteDAO {
 	public int inserir(Cliente cliente)
 	{		
 		String sqlInsert = "INSERT INTO cliente " +
-			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimeto)" +
+			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento)" +
 			"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try (Connection connection = new ConnectionFactory().obterConexao();
@@ -120,7 +120,7 @@ public class ClienteDAO {
 					cliente.setCelular(resultSet.getString("Celular"));
 					cliente.setCpfCnpj(resultSet.getString("CPF"));
 					cliente.setGenero(resultSet.getString("Genero"));
-					cliente.setTipo(resultSet.getString("Tiop"));
+					cliente.setTipo(resultSet.getString("Tipo"));
 					cliente.setEmail(resultSet.getString("Email"));
 					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
 				}
