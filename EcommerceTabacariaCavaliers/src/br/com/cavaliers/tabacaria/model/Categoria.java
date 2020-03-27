@@ -3,7 +3,7 @@ package br.com.cavaliers.tabacaria.model;
 public class Categoria {
 	
 	private int idCategoria;
-	private String categoria;
+	private String nomeCategoria;
 	private String status;
 	private String descricao;
 	
@@ -13,7 +13,7 @@ public class Categoria {
 	
 	public Categoria(int idCategoria, String categoria, String status, String descricao ) 
 	{
-		this.categoria = categoria;
+		this.nomeCategoria = categoria;
 		this.descricao = descricao;
 		this.idCategoria = idCategoria;
 		this.status = status;
@@ -25,7 +25,7 @@ public class Categoria {
 	}
 
 	public String getCategoria() {
-		return categoria;
+		return nomeCategoria;
 	}
 
 	public String getStatus() {
@@ -41,7 +41,7 @@ public class Categoria {
 	}
 
 	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+		this.nomeCategoria = categoria;
 	}
 
 	public void setStatus(String status) {
