@@ -84,4 +84,12 @@ public class PedidoLine
 		this.precoUnitario = precoUnitario;
 	}
 
+	@Override
+	public String toString() {
+		return "PedidoLine [idPedioLine=" + idPedioLine + ", idPedidoHeader=" + idPedidoHeader + ", idProduto="
+				+ idProduto + ", quantidaeProduto=" + quantidaeProduto + ", valorProduto=" + valorProduto
+				+ ", precoUnitario=" + precoUnitario + ", nomeDoProduto=" + nomeDoProduto + "]";
+	}
+	
+
 }

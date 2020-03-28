@@ -101,4 +101,12 @@ public class Endereco
 	public void setIdEndereco(int idEndereço) {
 		this.idEndereco = idEndereço;
 	}
+
+	@Override
+	public String toString() {
+		return "Endereco [idEndereco=" + idEndereco + ", idCliente=" + idCliente + ", cep=" + cep + ", enderecoP="
+				+ enderecoP + ", enderecoS=" + enderecoS + ", cidade=" + cidade + ", estado=" + estado
+				+ ", complemento=" + complemento + "]";
+	}
+	
 }

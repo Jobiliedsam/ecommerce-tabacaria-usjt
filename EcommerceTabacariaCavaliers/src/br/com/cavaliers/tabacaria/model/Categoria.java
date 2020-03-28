@@ -52,4 +52,11 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
+	@Override
+	public String toString() {
+		return "Categoria [idCategoria=" + idCategoria + ", nomeCategoria=" + nomeCategoria + ", status=" + status
+				+ ", descricao=" + descricao + "]";
+	}
+	
+
 }

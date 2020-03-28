@@ -75,6 +75,13 @@ public class PedidoHeader
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
+
+	@Override
+	public String toString() {
+		return "PedidoHeader [idPedido=" + idPedido + ", idCliente=" + idCliente + ", qtdItens=" + qtdItens
+				+ ", dataHoraCriacao=" + dataHoraCriacao + ", valorTotal=" + valorTotal + ", nomeCliente=" + nomeCliente
+				+ "]";
+	}
 	
 	
 }
