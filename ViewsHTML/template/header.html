@@ -1,6 +1,6 @@
 <!-- Sessão Header -->
 <header>
-    <div id="header-top">
+    <div id="header-top" class="white">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -22,14 +22,45 @@
     <div id="header-middle">
         <div class="container">
             <div class="row">
-                <!--Aqui entraram as colunas e conteudo -->
+                <div class="col-3 logo">
+                    <img src="template/images/logo.svg" />
+                </div>
+                <div class="col-6 search-bar">
+                    <form>
+                        <!-- Aqui integração-->
+                        <input type="text" name="" id="">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-2 login-display">
+                    <!-- Nome da pessoa logada, também pode ser um link para pagina de gerenciamento de pedidos-->
+                    <span>Faça Login <a href="#">Fuinha</a></span>
+                </div>
+                <div class="col-1 shop-cart">
+                    <!-- Informação de quantos itens tem no carrinho dentro do span -->
+                    <!-- Precisa link copm atela de Carrinho -->
+                    <a href="#" id="cart"><i class="fas fa-shopping-cart"><span id="products-number">00</span></i></a>
+                </div>
             </div>
         </div>
     </div>
     <div id="header-bottom">
         <div class="container">
             <div class="row">
-                <!--Aqui entraram as colunas e conteudo -->
+                <div class="col-9 menu-categories">
+                    <!-- Se possivel isso pode ser dinâmico com banco de dados 
+                    Restricão para quantidade que ira aparecer-->
+                    <ul>
+                        <li><a href="#">Arguiles</a></li>
+                        <li><a href="#">Tabaco</a></li>
+                        <li><a href="#">Pipes</a></li>
+                        <li><a href="#">Esqueiros</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 questions white">
+                    <!-- Abrir pagina de contato ou chat -->
+                    <a href="#">Tire suas duvidas</a>
+                </div>
             </div>
         </div>
     </div>    
