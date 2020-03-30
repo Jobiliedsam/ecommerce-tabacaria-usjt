@@ -23,6 +23,7 @@ public class ConnectionFactory {
 
 		try 
 		{
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 			return DriverManager.getConnection(stringConnection);	
 		}
 		catch (SQLException sqlException)
