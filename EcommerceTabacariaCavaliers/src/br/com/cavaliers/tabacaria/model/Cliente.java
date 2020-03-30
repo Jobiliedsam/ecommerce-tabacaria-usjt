@@ -13,13 +13,14 @@ public class Cliente {
 	private String genero;
 	private String tipo;
 	private String email;
-				
+	private String rg;
+	
 	public Cliente() {
 		
 	}
 	
 	public Cliente(int idCliente, String nomeCompleto, Date dataDeNascimento, String telefone, String celular, String cpfCnpj, 
-			String genero, String tipo,String email) 
+			String genero, String tipo,String email, String rg) 
 	{
 		this.celular = celular;
 		this.cpfCnpj = cpfCnpj;
@@ -30,7 +31,7 @@ public class Cliente {
 		this.nomeCompleto = nomeCompleto;
 		this.telefone = telefone;
 		this.tipo =  tipo;									
-		
+		this.rg = rg;
 	}											
 							
 	public String getNomeCompleto() {
@@ -104,12 +105,21 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
 
 	@Override
 	public String toString() {
 		return "Cliente [idCliente=" + idCliente + ", dataDeNascimento=" + dataDeNascimento + ", nomeCompleto="
 				+ nomeCompleto + ", telefone=" + telefone + ", celular=" + celular + ", cpfCnpj=" + cpfCnpj
-				+ ", genero=" + genero + ", tipo=" + tipo + ", email=" + email + "]";
+				+ ", genero=" + genero + ", tipo=" + tipo + ", email=" + email + ", rg=" + rg + "]";
 	}
-	
+
 }
