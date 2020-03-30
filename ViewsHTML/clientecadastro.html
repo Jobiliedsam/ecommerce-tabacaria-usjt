@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="template/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="template/css/fontawesome.min.css">
+        <link rel="stylesheet" href="template/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Sessão Header -->
+    <header>
+        <div id="header-top" class="white">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span>Bem vindo</span>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-phone"></i>
+                        <!-- Pegar fone no sistema-->
+                        <a href="tel:1199999999">(11) 9999 - 9999</a>
+                    </div>
+                    <div class="col">
+                        <i class="fab fa-whatsapp"></i>
+                        <!-- Pegar Whatsapp no sistema-->
+                        <a href="tel:1199999999">(11) 99999 - 9999</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="header-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 logo">
+                        <img src="template/images/logo.png" />
+                    </div>
+                    <div class="col-6 search-bar">
+                        <form>
+                            <!-- Aqui integração-->
+                            <input type="text" name="" id="">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-2 login-display">
+                        <!-- Nome da pessoa logada, também pode ser um link para pagina de gerenciamento de pedidos-->
+                        <span>Faça Login <a href="#">Fuinha</a></span>
+                    </div>
+                    <div class="col-1 shop-cart">
+                        <!-- Informação de quantos itens tem no carrinho dentro do span -->
+                        <!-- Precisa link copm atela de Carrinho -->
+                        <a href="#" id="cart"><i class="fas fa-shopping-cart"><span
+                                    id="products-number">00</span></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9 menu-categories">
+                        <!-- Se possivel isso pode ser dinâmico com banco de dados 
+                Restricão para quantidade que ira aparecer-->
+                        <ul>
+                            <li><a href="#">Arguiles</a></li>
+                            <li><a href="#">Tabaco</a></li>
+                            <li><a href="#">Pipes</a></li>
+                            <li><a href="#">Isqueiros</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 questions white">
+                        <!-- Abrir pagina de contato ou chat -->
+                        <a href="#">Tire suas duvidas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container" >
+        <h5>Informações pessoais</h5>
+        <form action="ManterCliente.do" method="GET">
+            <div class="row">
+                <label for="nomeCliente">Nome Completo</label>
+                <input type="text" class="form-control" id="nomeCliente" placeholder="Nome Completo">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="telefoneCliente">Telefone Fixo</label>
+                    <input type="tel" class="form-control" name="telefoneCliente" placeholder="(00) XXXX-XXXX">
+                </div>
+                <div class="col">
+                    <label for="celularCliente">Telefone Celular</label>
+                    <input type="tel" class="form-control" name="celularCliente" placeholder="(00) XXXXX-XXXX">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="rgCliente">RG</label>
+                    <input type="text" class="form-control" name="rgCliente" placeholder="RG">
+                </div>
+                <div class="col">
+                    <label for="cpfCliente">CPF</label>
+                    <input type="text" class="form-control" name="cpfCliente" placeholder="CPF">
+                </div>
+                <div class="col">
+                    <label for="dataNascimentoCliente">Data de Nascimento</label>
+                    <input type="date" class="form-control" name="dataNascimentoCliente" placeholder="DD/MM/AAAA">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="generoCliente">Genero</label>
+                    <select name="generoCliente" class="form-control" value="Indefinido">
+                        <option value="Feminimo">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="emailCliente">Email</label>
+                    <input type="email" class="form-control" name="emailCliente" placeholder="email@exemplo.com">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </body>
+</html>

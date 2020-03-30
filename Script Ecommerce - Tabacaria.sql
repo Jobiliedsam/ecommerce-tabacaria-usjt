@@ -11,7 +11,8 @@ DROP TABLE IF EXISTS Pedido_Header;
 DROP TABLE IF EXISTS Cliente;
 DROP TABLE IF EXISTS Produto;
 DROP TABLE IF EXISTS Categoria;
-
+DROP TABLE IF EXISTS Fornecedor;
+DROP TABLE IF EXISTS Usuario;
 
 CREATE TABLE IF NOT EXISTS Cliente (
 
@@ -120,3 +121,24 @@ CREATE TABLE Pedido_Line (
     CONSTRAINT chk_valor_produto CHECK (Valor_Produto = (Quantidade_Produto * Preco_Unitario))
     
 ) DEFAULT CHARSET = UTF8; 
+
+CREATE TABLE IF NOT EXISTS Fornecedor (
+
+    Id_Fornecedor       INT PRIMARY KEY AUTO_INCREMENT,
+    Nome_Fornecedor     VARCHAR (40) NOT NULL,
+    Nome_Categoria      VARCHAR(30) NOT NULL,
+    Cnpj                CHAR(20) NOT NULL,
+    Telefone            CHAR (12),
+    Email               VARCHAR(40) NOT NULL,
+    Descricao           VARCHAR (100)
+
+) Default Charset = UTF8;
+
+CREATE TABLE IF NOT EXISTS Usuario (
+
+    Id_Uuario INT PRIMARY KEY AUTO_INCREMENT,
+    Nome_Usuario VARCHAR (15) NOT NULL,
+    Senha VARCHAR(20) NOT NULL,
+    Tipo_Usuario CHAR(1) NOT NULL
+    
+) Default Charset = UTF8;
