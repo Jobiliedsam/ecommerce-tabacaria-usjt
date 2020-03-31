@@ -22,8 +22,26 @@
 	<body>
 		<jsp:include page="./componentes/header.html"></jsp:include>
         
+        <main>
+
+            <jsp:include page="./componentes/banner_home.html"></jsp:include>
+
+            <section class="product-showcase">
+                <jsp:include page="./componentes/product_slide_gallery.html"></jsp:include>
+            </section>
+            
+            <section class="product-grid">
+                <jsp:include page="./componentes/product_grid.html"></jsp:include>
+            </section>
+
+        </main>
         
+        <jsp:include page="./componentes/footer.html"></jsp:include>
         
-		<jsp:include page="./componentes/footer.html"></jsp:include>
+        <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+        <script src="./js/backtotop.js"></script>
+        <script src="./js/banner_slider.js"></script>
+        <script src="./js/slider_gallery.js"></script>
 	</body>
 </html>
