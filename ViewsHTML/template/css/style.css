@@ -13,25 +13,25 @@ button {
 }
 
 /* Cores */
-body, .shop-cart a, .shop-cart a:hover, .menu-categories ul > li > a:hover {
+body, .shop-cart a, .shop-cart a:hover, .menu-categories ul > li > a:hover, .buy-button > form > a, .buy-button > form > a:hover, .add-to-cart, .add-to-cart:hover {
     color: #080300;
 }
-a, a:hover, #header-top a:hover, .search-bar form > button, #product-price {
+a, a:hover, #header-top a:hover, .search-bar form > button, .product-price {
     color: #fc1500;
 }
-button, .white, .white a, .white span, .white i, .white h1, .white h2, .white h3, .footer-widget, .footer-widget h3, .footer-widget a, .shop-cart i > span, .menu-categories ul > li > a, #back-to-top, #buy-button > form > button{
+button, .white, .white a, .white span, .white i, .white h1, .white h2, .white h3, .footer-widget, .footer-widget h3, .footer-widget a, .shop-cart i > span, .menu-categories ul > li > a, #back-to-top, .buy-button > form > button, .learn-more, .learn-more:hover{
     color: #fff;
 }
-.bg-white, .menu-categories ul > li > a:hover {
+.bg-white, .menu-categories ul > li > a:hover, .add-to-cart {
     background: #fff;
 }
 .bg-dark, #header-top{
     background: #080300;
 }
-.bg-light, .questions a{
+.bg-light, .questions a, .learn-more{
     background: #178C03;
 }
-button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top, #buy-button > form > button{
+button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top, .buy-button > form > button{
     background: #fc1500;
 }
 
@@ -41,12 +41,12 @@ button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top,
     padding: 0;
     margin: 0;
 }
-.menu-categories ul > li > a, .footer-widget ul > li > a{
+.menu-categories ul > li > a, .footer-widget ul > li > a, .add-to-cart, .add-to-cart:hover, .learn-more, .learn-more:hover{
     text-decoration: none;
 }
 
 /* Flex Itens */ 
-.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt {
+.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt, .product-grid .item .buy-button {
     display: flex;
     align-content: center;
     align-items: center;
@@ -130,6 +130,7 @@ a, button, #back-to-top {
     padding: 30px 20px;
     border-radius: 0 0 10px 10px;
     text-decoration: none;
+    z-index: 99;
 }
 
 /* Footer */
@@ -188,42 +189,43 @@ a, button, #back-to-top {
     width: 120px;
     height: 120px;
 }
-h1#product-name {
+h1.product-name {
     font-size: 1.75em;
 }
-#product-price {
+.product-price {
     font-size: 3em;
-    margin: 5px 0;    
+    margin: 5px 0 5px -15px; 
+    position: relative;  
 }
-#product-price, #product-sku, #product-brand, #product-model, #product-reference, #product-quantity, .price-currency, .price-fraction, .price-separator, .price-decimal{
+.product-price, .product-sku, .product-brand, .product-model, .product-reference, .product-quantity, .price-currency, .price-fraction, .price-separator, .price-decimal{
     font-weight: bold;   
 }
-#product-price > .price-decimal, #product-price > .price-separator {
+.product-price > .price-decimal, .product-price > .price-separator {
     font-size: .40em;
     position: absolute;
     font-weight: normal;
 }
-#product-price > .price-decimal {
+.product-price > .price-decimal {
     margin: 8px;
 }
-#product-meta p {
+.product-meta p {
     margin: 2px;
     font-size: .85em;
 }
-#buy-button{
+.buy-button{
     margin: 15px 0;
     font-size: 3em;
 }
-#buy-button form{
+.buy-button form{
     border: 2px solid #080300;
     display: inline-flex;
     border-radius: 5px;
 }
-#buy-button > form > i{
+.buy-button > form > a{
     padding: 10px;
 }
 
-#buy-button > form > button{
+.buy-button > form > button{
     border: none;
     font-size: 1em;
     padding: 5px;
@@ -249,6 +251,80 @@ h1#product-name {
     padding: 20px;
     list-style: none;
     border-radius: 10px;
+}
+
+/* Grid de Produtos */
+.product-grid figure{
+    margin: 0;
+}
+.product-grid img{
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    min-width: 220px;
+    max-height: 220px;
+    min-height: 220px;
+}
+.product-grid .item{
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+}
+.product-grid .item:hover, .product-showcase .sg-item:hover{
+    background: #ddd;
+}
+.buy-button {
+    justify-content: center;
+}
+.add-to-cart, .learn-more{
+    border-radius: 5px;
+    font-size: .5em;
+    padding: 10px;
+    height: 50px;
+}
+.add-to-cart{
+    border: 1px solid #080300;
+}
+.learn-more{
+    text-decoration: none;
+    margin-left: 15px;
+}
+h4.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 45px;
+    margin: 10px 0;  
+    font-weight: normal;
+}
+.product-price{
+    font-size: 2.5em;
+}
+
+/* Galeria Rolante de Produtos */
+.product-showcase img{
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+}
+.product-showcase h4.product-name {
+    height: 40px;
+}
+.product-showcase .product-price {
+    font-size: 2em;
+    position: relative;
+}
+.product-showcase .buy-button, .product-showcase h4.product-name {
+    margin: 5px;
+}
+.product-showcase .add-to-cart, .product-showcase .learn-more{
+    font-size: .4em;
 }
 
 /* Formulários */
@@ -277,6 +353,6 @@ h1#product-name {
     border-radius: 10px;
     opacity: .95;
 }
-button:hover, #back-to-top:hover, .social-bt a:hover, #buy-button > form > button:hover {
+button:hover, #back-to-top:hover, .social-bt a:hover, .buy-button > form > button:hover, .add-to-cart:hover, .learn-more:hover {
     opacity: .75;
 }
