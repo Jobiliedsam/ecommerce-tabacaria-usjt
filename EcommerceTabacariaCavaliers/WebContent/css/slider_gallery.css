@@ -1,0 +1,81 @@
+/**
+ * Plugin criado por:
+ * Paulo Cezario
+ * https://github.com/ByakkoKa
+ **/
+
+.sliderGallery {
+    position: relative;
+    text-align: center;
+}
+.sliderGallery .sg-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;    
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.sliderGallery .sg-container .sg-item {
+    scroll-snap-align: start;
+    display: inline-block;
+}
+.sliderGallery .sg-slider .sg-item {
+    scroll-snap-align: none !important;
+}
+.sliderGallery .sg-slider {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    scroll-behavior: auto !important;
+}
+.sliderGallery .sg-container .sg-item:first-child {
+    margin-left: 0 !important;
+}
+.sliderGallery .sg-container .sg-item:last-child {
+    margin-right: 0 !important;
+}
+.sliderGallery .sg-left, .sliderGallery .sg-right{
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    background: rgba(20, 20, 20, .5);
+    color: #fff;
+    top: 0;
+    font-size: 100px;
+    transition: .2s;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+    opacity: 0;
+}
+.sliderGallery:hover .sg-left, .sliderGallery:hover .sg-right{
+    opacity: 1;
+}
+.sliderGallery .sg-left {
+    padding-right: 3px;
+    left: 0;
+}
+.sliderGallery .sg-right{
+    padding-left: 3px;
+    right: 0;
+}
+.sliderGallery .sg-left:hover, .sliderGallery .sg-right:hover{
+    opacity: .75;
+}
+@media only screen and (max-width: 600px) {
+    .sliderGallery .sg-left, .sliderGallery .sg-right {
+        display: none;
+    }
+    .sliderGallery .sg-container  {
+        overflow-x: auto;
+    }
+}
+
+/* Opicional */
+.container {
+    width: 100%;
+}
