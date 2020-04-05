@@ -12,6 +12,10 @@ button {
     border-radius: 5px;
 }
 
+figure {
+    margin: 0;
+}
+
 /* Cores */
 body, .shop-cart a, .shop-cart a:hover, .menu-categories ul > li > a:hover, .buy-button > form > a, .buy-button > form > a:hover, .add-to-cart, .add-to-cart:hover {
     color: #080300;
@@ -46,7 +50,7 @@ button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top,
 }
 
 /* Flex Itens */ 
-.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt, .product-grid .item .buy-button {
+.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt, .product-grid .item .buy-button, #cart-page > .container > .row > *{
     display: flex;
     align-content: center;
     align-items: center;
@@ -57,6 +61,11 @@ button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top,
 a, button, #back-to-top {
     transition: .2s;
 }
+
+/* Margins */
+#product-page, #singup-form, #cart-page {
+    padding: 30px 0;
+} 
 
 /* Header */
 #header-top {
@@ -174,9 +183,6 @@ a, button, #back-to-top {
 }
 
 /* Pagina de Produtos */
-#product-page, #singup-form {
-    padding: 30px 0;
-}
 #product-img-ative {
     max-width: 635px;
     max-height: 400px;
@@ -254,9 +260,6 @@ h1.product-name {
 }
 
 /* Grid de Produtos */
-.product-grid figure{
-    margin: 0;
-}
 .product-grid img{
     width: 100%;
     height: auto;
@@ -355,4 +358,32 @@ h4.product-name {
 }
 button:hover, #back-to-top:hover, .social-bt a:hover, .buy-button > form > button:hover, .add-to-cart:hover, .learn-more:hover {
     opacity: .75;
+}
+
+/* Cart Page */
+#cart-page a, #cart-page span, #cart-page form, #cart-page figure {
+    display: block;
+    width: 100%;
+}
+#cart-page > .container > .item > * {
+    min-height: 80px;
+    border: 1px solid #080300
+}
+#cart-page img {
+    width: 80px;
+    height: 80px;
+}
+#cart-page > .container > .item > .cart-p-name{
+    text-align: left;
+}
+#cart-page > .container > .item > .sub-total {
+    text-align: right;
+}
+#cart-page .buy-button {
+    margin: 15px;
+    flex: auto;
+}
+#cart-page > .buy-button > .learn-more {
+    text-decoration: none;
+    margin-left: 15px;
 }
