@@ -1,8 +1,6 @@
 package br.com.cavaliers.tabacaria.controller;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -14,25 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.cavaliers.tabacaria.model.Cliente;
 import br.com.cavaliers.tabacaria.service.ClienteService;
 
-/**
- * Servlet implementation class ManterClienteController
- */
+
 @WebServlet("/ManterCliente.do")
-public class ManterClienteController extends HttpServlet {
+public class ManterClienteController extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		doPost(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	@SuppressWarnings("deprecation")
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		Cliente cliente = new Cliente();
 		ClienteService clienteService = new ClienteService();
 		
