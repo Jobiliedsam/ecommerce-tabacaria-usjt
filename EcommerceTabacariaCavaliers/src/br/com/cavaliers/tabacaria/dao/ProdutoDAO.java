@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProdutoDAO 
 {
@@ -131,5 +132,91 @@ public class ProdutoDAO
 
 		return produto;
     }
+    public ArrayList<Produto>buscarProdutoCtg(int IdCategoria){
+    	String sqlSelect ="SELECT * FROM produto WHERE Produto.Id_Categoria = ?";
+    	ArrayList<Produto> lista = new ArrayList<>();
+    	Produto produto = new Produto();
+    	
+    	try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, IdCategoria);
 
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+					
+					produto.setIdProduto(resultSet.getInt("Id_Produto"));
+					produto.setNomeP(resultSet.getString("Nome_Produto"));
+					produto.setCategoria(resultSet.getString("Nome_Categoria"));
+					produto.setPrecoF(resultSet.getDouble("Preco"));
+					//produto.setFornecedor(resultSet.getString("Fornecedor"));
+					produto.setStatus(resultSet.getString("Status_Produto"));
+					produto.setDescricao(resultSet.getString("Descricao"));
+				    lista.add(produto);
+				}
+				else 
+				{
+					produto.setIdProduto(-1);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+	
+    }
+    public ArrayList<Produto>buscarProduto(int IdProduto){
+    	String sqlSelect ="SELECT * FROM produto";
+    	ArrayList<Produto> lista = new ArrayList<>();
+    	Produto produto = new Produto();
+    	
+    	try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, IdProduto);
+
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+					
+					produto.setIdProduto(resultSet.getInt("Id_Produto"));
+					produto.setNomeP(resultSet.getString("Nome_Produto"));
+					produto.setCategoria(resultSet.getString("Nome_Categoria"));
+					produto.setPrecoF(resultSet.getDouble("Preco"));
+					//produto.setFornecedor(resultSet.getString("Fornecedor"));
+					produto.setStatus(resultSet.getString("Status_Produto"));
+					produto.setDescricao(resultSet.getString("Descricao"));
+				    lista.add(produto);
+				}
+				else 
+				{
+					produto.setIdProduto(-1);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+		
+    }
+    
 }

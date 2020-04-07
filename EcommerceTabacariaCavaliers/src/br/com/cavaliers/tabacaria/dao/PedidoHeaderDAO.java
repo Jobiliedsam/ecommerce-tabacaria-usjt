@@ -1,10 +1,13 @@
 package br.com.cavaliers.tabacaria.dao;
 
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class PedidoHeaderDAO 
 {
@@ -120,4 +123,91 @@ public class PedidoHeaderDAO
 
 		return pedidoHeader;
     }
+    public ArrayList<PedidoHeader> buscaPedidoHeaderCliente(int idCliente)
+    {
+    	String sqlSelect ="SELECT * FROM Pedido_Header WHERE Pedido_Header.Id_Cliente = ?";
+    	ArrayList<PedidoHeader> lista = new ArrayList<>();
+        PedidoHeader pedidoHeader = new PedidoHeader();
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, idCliente);
+
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+					pedidoHeader.setIdPedido(resultSet.getInt("Id_Pedido"));
+					pedidoHeader.setIdCliente(resultSet.getInt("Id_Cliente"));
+					pedidoHeader.setDataHoraCriacao(resultSet.getDate("Data_Hora"));
+					pedidoHeader.setNomeCliente(resultSet.getString("Nome_Cliente"));
+					pedidoHeader.setQtdItens(resultSet.getInt("Quantidade_Total"));
+					pedidoHeader.setValorTotal(resultSet.getDouble("Valor_Total"));
+					lista.add(pedidoHeader);
+					
+				}
+				else 
+				{
+					pedidoHeader.setIdPedido(-1);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
+    public ArrayList<PedidoHeader> buscaPedidoHeader(int idCliente)
+    {
+    	String sqlSelect ="SELECT * FROM Pedido_Header WHERE Pedido_Header.Id_Cliente = ?";
+    	ArrayList<PedidoHeader> lista = new ArrayList<>();
+        PedidoHeader pedidoHeader = new PedidoHeader();
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, idCliente);
+
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+					pedidoHeader.setIdPedido(resultSet.getInt("Id_Pedido"));
+					pedidoHeader.setIdCliente(resultSet.getInt("Id_Cliente"));
+					pedidoHeader.setDataHoraCriacao(resultSet.getDate("Data_Hora"));
+					pedidoHeader.setNomeCliente(resultSet.getString("Nome_Cliente"));
+					pedidoHeader.setQtdItens(resultSet.getInt("Quantidade_Total"));
+					pedidoHeader.setValorTotal(resultSet.getDouble("Valor_Total"));
+					lista.add(pedidoHeader);
+					
+				}
+				else 
+				{
+					pedidoHeader.setIdPedido(-1);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
+
 }
