@@ -39,8 +39,13 @@ button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top,
     background: #fc1500;
 }
 
+/* Sem Padding */
+.no-padding {
+    padding: 0;
+}
+
 /* Ajustes de Listas */ 
-.menu-categories ul, .footer-widget ul{
+.menu-categories ul, .footer-widget ul, .client-menu ul{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -50,7 +55,7 @@ button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top,
 }
 
 /* Flex Itens */ 
-.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt, .product-grid .item .buy-button, #cart-page > .container > .row > *{
+.search-bar, .login-display, .shop-cart, .menu-categories ul, .social-bt, .product-grid .item .buy-button, #cart-page > .container > .item > *{
     display: flex;
     align-content: center;
     align-items: center;
@@ -270,7 +275,6 @@ h1.product-name {
 }
 .product-grid .item{
     text-align: center;
-    margin: 10px;
     padding: 20px;
 }
 .product-grid .item:hover, .product-showcase .sg-item:hover{
@@ -379,11 +383,57 @@ button:hover, #back-to-top:hover, .social-bt a:hover, .buy-button > form > butto
 #cart-page > .container > .item > .sub-total {
     text-align: right;
 }
-#cart-page .buy-button {
-    margin: 15px;
-    flex: auto;
+#cart-page .learn-more {
+    margin-left: 0;
+    text-align: center;
 }
-#cart-page > .buy-button > .learn-more {
-    text-decoration: none;
-    margin-left: 15px;
+.total-infos {
+    border: 1px solid #080300;
+    padding: 10px;
+    text-align: right;
+}
+.total-infos p{
+    margin: 5px;
+}
+.total-infos small{
+    margin-top: -5px;
+}
+#cart-page .total-infos span {
+    display: inline;
+    margin-left: 10px;
+}
+
+/* Pagina de Clientes */
+.client-menu, .client-requests {
+    margin: 20px;
+    padding: 20px;
+}
+.client-menu .row{
+    margin-bottom: 30px;
+}
+#client-page h2, #client-page h4, #client-page p{
+    display: block;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+}
+#client-page form {
+    margin: 10px;
+}
+#client-page .title {
+    background: #ddd;
+    border: 1px solid #ddd;
+    padding: 20px 0;
+}
+.client-menu h4{
+    border-bottom: 1px solid #080300;
+    margin-bottom: 10px;
+}
+.client-menu ul > li > a{
+    display: block;
+    padding: 5px;
+}
+#client-page .request {
+    padding: 20px 0;
+    border: 1px solid #080300;
 }
