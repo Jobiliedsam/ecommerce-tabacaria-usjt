@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class PedidoLineDAO 
@@ -123,5 +124,47 @@ public class PedidoLineDAO
 		}
 
 		return pedidoLine;
+    }
+    public ArrayList<PedidoLine> buscaPedidoLine(int idPedidoLine)
+    {
+    	String sqlSelect ="SELECT * FROM Pedido_Line";
+    	ArrayList<PedidoLine> lista = new ArrayList<>();
+    	PedidoLine pedidoLine = new PedidoLine();
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, idPedidoLine);
+
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+					pedidoLine.setIdPedioLine(resultSet.getInt("Id_Pedido_Line"));
+					pedidoLine.setIdPedidoHeader(resultSet.getInt("Id_Pedido_Header"));
+					pedidoLine.setIdProduto(resultSet.getInt("Id_Produto"));
+					pedidoLine.setQuantidaeProduto(resultSet.getInt("Quantidade_Produto"));
+					pedidoLine.setValorProduto(resultSet.getDouble("Valor_Produto"));
+					pedidoLine.setNomeDoProduto(resultSet.getString("Nome_Produto"));
+					pedidoLine.setPrecoUnitario(resultSet.getDouble("Preco_Unitario"));
+					lista.add(pedidoLine);
+				}
+				else 
+				{
+					pedidoLine.setIdPedioLine(-1);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
     }
 }

@@ -1,0 +1,74 @@
+<!-- Pagina do Cliente -->
+<div id="client-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 client-menu">
+                <div class="row">
+                    <h4>Creditos</h4>
+                    <p><strong>Saldo:</strong> R$ 0,00</p> 
+                </div>
+                <div class="row">
+                    <h4>Notificações</h4>
+                    <p>
+                        <span>Newsletter</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </p>
+                    
+                </div>
+                <div class="row">
+                    <h4>Administração</h4>
+                    <ul>
+                        <li><a href="#">Pedidos</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Garantia</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Configuração</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <h4>Atendimento ao cliente</h4>
+                    <p><strong>Central:</strong><br>(11) 9999-9999</p>
+                    <p><strong>E-mail:</strong><br><a href="#">contato@tabacariacavaliers.com.br</a></p> 
+                </div>                            
+            </div>
+            <div class="col-8 client-requests">
+                <div class="row">
+                    <h2>Meus pedidos</h2>
+                    <p>Acompanhe seus pedidos.</p>
+                </div>
+                <div class="row">
+                    <form action="">
+                        <label for="">Todos Pedidos</label>
+                        <select name="" id="" value="todos">
+                            <option value="todos">Todos</option>
+                            <option value="novo">Novo</option>
+                            <option value="enviado">Enviado</option>
+                            <option value="prossessamento">Prossessamento</option>
+                            <option value="concluido">Concluído</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="row title">
+                    <div class="col-4">Numero do Pedido</div>
+                    <div class="col-2">Data</div>
+                    <div class="col-2">Pagamento</div>
+                    <div class="col-2">Nota Fiscal</div>
+                    <div class="col-2">Detalhes</div>
+                </div>
+                <!-- Exemplo de pedido -->
+                <div class="row request">
+                    <div class="col-4">1212415421</div>
+                    <div class="col-2">20/03/2020</div>
+                    <div class="col-2">Cartão</div>
+                    <!-- Deve retornar um PDF-->
+                    <div class="col-2"><a href="#">Imprimir</a></div>
+                    <!-- Abrir um pop-up com as infos totais do pedido -->
+                    <div class="col-2"><a href="#">Visualizar</a></div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
