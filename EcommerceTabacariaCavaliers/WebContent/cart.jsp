@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/fontawesome.min.css">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/admin.css.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
@@ -27,5 +28,11 @@
 		</main>
 
 		<jsp:include page="./componentes/footer.html"></jsp:include>
+
+		<jsp:include page="./componentes/administration.html"></jsp:include>
+
+		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+        <script src="./js/backtotop.js"></script>
 	</body>
 </html>
