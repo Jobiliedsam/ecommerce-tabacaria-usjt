@@ -17,16 +17,7 @@
 	<%=usuario.getId()%><br> Email
 	<%=usuario.getEmail()%><br> Password
 	<%=usuario.getPassword()%><br>
-	<%//verifica usuario
-		boolean status = usuario.verificausuario();
-	%>
+	
 
-	<%//resultado
-		//if (usuario.result == true) {
-		//out.print("login feito com sucesso");
-	} //else {
-		//out.println("email ou senha invalidos ");
-	}
-	%>
 </body>
 </html>

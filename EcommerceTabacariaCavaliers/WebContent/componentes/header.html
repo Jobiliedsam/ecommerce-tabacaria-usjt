@@ -23,7 +23,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-3 logo">
-                    <img src="./images/logo.png" />
+                    <a href="./index.jsp">
+                    	<img src="./imagens/logo.png" onclick="index.jsp" />
+                    </a>
+                    
                 </div>
                 <div class="col-6 search-bar">
                     <form>
@@ -34,12 +37,12 @@
                 </div>
                 <div class="col-2 login-display">
                     <!-- Nome da pessoa logada, também pode ser um link para pagina de gerenciamento de pedidos-->
-                    <span>Faça Login <a href="singup.jsp">Fuinha</a></span>
+                    <span>Login <a href="singup.jsp">Cliente</a></span>
                 </div>
                 <div class="col-1 shop-cart">
                     <!-- Informação de quantos itens tem no carrinho dentro do span -->
                     <!-- Precisa link copm atela de Carrinho -->
-                    <a href="produto_cadastro.jsp" id="cart"><i class="fas fa-shopping-cart"><span id="products-number">00</span></i></a>
+                    <a href="cart.jsp" id="cart"><i class="fas fa-shopping-cart"><span id="products-number">00</span></i></a>
                 </div>
             </div>
         </div>

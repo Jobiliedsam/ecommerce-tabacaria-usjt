@@ -1,7 +1,6 @@
 package br.com.cavaliers.tabacaria.dao;
 
 import br.com.cavaliers.tabacaria.model.Categoria;
-import br.com.cavaliers.tabacaria.model.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -127,32 +126,28 @@ public class CategoriaDAO
 
 		return categoria;
     }
-    public ArrayList<Categoria> buscarCategoria(int idCategoria)
+    
+    
+    public ArrayList<Categoria> buscarCategoria()
     {
     	String sqlSelect ="SELECT * FROM categoria";
     	ArrayList<Categoria> lista = new ArrayList<>();
-    	Categoria categoria = new Categoria();
+    	Categoria categoria;
 
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, idCategoria);
-
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
-				if (resultSet.next())
+				while (resultSet.next())
 				{
+					categoria = new Categoria();
                     categoria.setIdCategoria(resultSet.getInt("Id_Categoria"));
                     categoria.setCategoria(resultSet.getString("Nome_Categoria"));
 					categoria.setStatus(resultSet.getString("Status_Categoria"));
 					categoria.setDescricao(resultSet.getString("Descricao"));
 					lista.add(categoria);
-				}
-				else 
-				{
-                    categoria.setIdCategoria(-1);
-                    
 				}
 			}
 			catch (SQLException sqlException)

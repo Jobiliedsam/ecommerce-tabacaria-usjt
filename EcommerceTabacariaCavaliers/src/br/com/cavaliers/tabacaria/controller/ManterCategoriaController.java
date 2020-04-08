@@ -35,12 +35,12 @@ public class ManterCategoriaController extends HttpServlet {
 		
 		Categoria categoria = new Categoria();
 		CategoriaService cs = new CategoriaService();
-		cs.criar(categoria);
-		categoria = cs.carregar(categoria.getIdCategoria());
+		
 		
 		categoria.setCategoria(pNome);
 		categoria.setStatus(pStatus);
 		categoria.setDescricao(pDescricao);
+		categoria.setIdCategoria(cs.criar(categoria));
 		
 		
 		Categoria categoriaTeste = cs.carregar(categoria.getIdCategoria());

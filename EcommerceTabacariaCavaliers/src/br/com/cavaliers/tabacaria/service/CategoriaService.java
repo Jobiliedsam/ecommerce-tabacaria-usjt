@@ -1,5 +1,7 @@
 package br.com.cavaliers.tabacaria.service;
 
+import java.util.ArrayList;
+
 import br.com.cavaliers.tabacaria.dao.CategoriaDAO;
 import br.com.cavaliers.tabacaria.model.Categoria;
 
@@ -21,6 +23,10 @@ public class CategoriaService {
 
 	public Categoria carregar(int id) {
 		return dao.carregar(id);
+	}
+	
+	public ArrayList<Categoria> carregarAll() {
+		return dao.buscarCategoria();
 	}
 
 }

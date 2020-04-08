@@ -1,5 +1,7 @@
 package br.com.cavaliers.tabacaria.service;
 
+import java.util.ArrayList;
+
 import br.com.cavaliers.tabacaria.dao.ProdutoDAO;
 import br.com.cavaliers.tabacaria.model.Produto;
 
@@ -22,5 +24,9 @@ public class ProdutoService
 	public Produto carregar(int id) {
 		return dao.carregar(id);
 	}
-
+	
+	public ArrayList<Produto> carregarAll() {
+		return dao.buscarProduto();
+	}
+ 
 }

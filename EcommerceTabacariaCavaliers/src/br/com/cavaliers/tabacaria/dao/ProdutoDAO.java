@@ -174,22 +174,23 @@ public class ProdutoDAO
 
 		return lista;
 	
+    
     }
-    public ArrayList<Produto>buscarProduto(int IdProduto){
+    public ArrayList<Produto>buscarProduto()
+    {
     	String sqlSelect ="SELECT * FROM produto";
     	ArrayList<Produto> lista = new ArrayList<>();
-    	Produto produto = new Produto();
+    	Produto produto;
     	
     	try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, IdProduto);
 
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
-				if (resultSet.next())
+				while(resultSet.next())
 				{
-					
+					produto = new Produto();
 					produto.setIdProduto(resultSet.getInt("Id_Produto"));
 					produto.setNomeP(resultSet.getString("Nome_Produto"));
 					produto.setCategoria(resultSet.getString("Nome_Categoria"));
@@ -198,10 +199,6 @@ public class ProdutoDAO
 					produto.setStatus(resultSet.getString("Status_Produto"));
 					produto.setDescricao(resultSet.getString("Descricao"));
 				    lista.add(produto);
-				}
-				else 
-				{
-					produto.setIdProduto(-1);
 				}
 			}
 			catch (SQLException sqlException)
