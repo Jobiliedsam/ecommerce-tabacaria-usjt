@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     
     <link rel="stylesheet" href="./css/banner_slider.css">
     <link rel="stylesheet" href="./css/bootstrap-grid.css">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/fontawesome.min.css">
     <link rel="stylesheet" href="./css/slider_gallery.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin.css.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">  
@@ -37,6 +38,8 @@
         </main>
         
         <jsp:include page="./componentes/footer.html"></jsp:include>
+
+        <jsp:include page="./componentes/administration.html"></jsp:include>
         
         <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
 

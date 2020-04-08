@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabacaria Cavaliers - Administração</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="template/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="template/css/fontawesome.min.css">
+    <link rel="stylesheet" href="template/css/admin.css">
+
+    <link rel="stylesheet" href="template/css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="template/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <header></header>
+
+    <div id="adm-menu"></div>
+    <div class="adm-menu">
+        <ul>
+            <li><a href="#"><i class="fas fa-file-alt"></i>Paginas</a></li>
+            <li><a href="#"><i class="fas fa-box"></i>Produtos</a>
+                <ul>
+                    <li><a href="#"><i class="fas fa-plus"></i>Adicionar</a></li>
+                    <li><a href="#"><i class="fas fa-pause"></i>Pausados</a></li>
+                    <li><a href="#"><i class="fas fa-folder"></i>Categorias</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-check"></i>Pedidos</a>
+                <ul>
+                    <li><a href="#"><i class="fas fa-check"></i>Status 1</a></li>
+                    <li><a href="#"><i class="fas fa-spinner"></i>Status 2</a></li>
+                    <li><a href="#"><i class="fas fa-tasks"></i>Status 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-comment"></i>Comentários</a>
+                <ul>
+                    <li><a href="#"><i class="fas fa-comment-dots"></i>Aprovados</a></li>
+                    <li><a href="#"><i class="fas fa-comment-slash"></i>Pendentes</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-user"></i>Usuários</a>
+                <ul>
+                    <li><a href="#"><i class="fas fa-users"></i>Liberados</a></li>
+                    <li><a href="#"><i class="fas fa-user-slash"></i>Bloqueados</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-tools"></i>Ferramentas</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i>Configurações</a></li>
+        </ul>
+    </div>
+
+
+
+    <div id="admin-center" class="col">
+        <section id="cadastro-produto">
+            <div class="container">
+                <h4> Cadastro de Produtos</h4>
+                <form action="ManterProduto.do" method="GET" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col">
+                            <label for="nomeProduto">Nome do Produto</label>
+                            <input type="text" name="nomeProduto" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="precoProduto">Preço Produto</label>
+                            <input type="text" name="precoProduto" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="categoria">Categoria</label>
+                            <input type="text" name="categoria" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="descricao">Descrição</label>
+                            <input type="text" name="descricao" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="foto">Foto do Produto</label>
+                            <input type="file" name="foto" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    
+    <footer></footer>
+   
+</body>
+</html>

@@ -1,9 +1,3 @@
-/**
- * Plugin criado por:
- * Paulo Cezario
- * https://github.com/ByakkoKa
- **/
-
 let sgGalleries = document.querySelectorAll('.sliderGallery').forEach( gallery => {
     // Adiciona controladores
     gallery.innerHTML += `<div class="sg-left">‹</div>\n<div class="sg-right">›</div>`

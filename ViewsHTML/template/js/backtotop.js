@@ -17,3 +17,20 @@ function topFunction() {
 } 
 
 scrollFunction();
+
+// Barra da Administração
+
+admMenu = document.querySelector('#adm-menu');
+
+admMenu.addEventListener('click', showAdmMenu);
+
+function showAdmMenu() {
+    element = document.querySelector('.adm-menu');
+    
+    if(element.style.left == '0px'){
+        element.style.left = '-260px';
+    }
+    else {
+        element.style.left = '0px';
+    }
+}

@@ -1,9 +1,3 @@
-/**
- * Plugin criado por:
- * Paulo Cezario
- * https://github.com/ByakkoKa
- **/
-
 // Globais
 
 // Verifica se é mobile 

@@ -1,10 +1,13 @@
 package br.com.cavaliers.tabacaria.dao;
 
 import br.com.cavaliers.tabacaria.model.Categoria;
+import br.com.cavaliers.tabacaria.model.Cliente;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CategoriaDAO 
 {
@@ -123,6 +126,47 @@ public class CategoriaDAO
 		}
 
 		return categoria;
+    }
+    public ArrayList<Categoria> buscarCategoria(int idCategoria)
+    {
+    	String sqlSelect ="SELECT * FROM categoria";
+    	ArrayList<Categoria> lista = new ArrayList<>();
+    	Categoria categoria = new Categoria();
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			stm.setInt(1, idCategoria);
+
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				if (resultSet.next())
+				{
+                    categoria.setIdCategoria(resultSet.getInt("Id_Categoria"));
+                    categoria.setCategoria(resultSet.getString("Nome_Categoria"));
+					categoria.setStatus(resultSet.getString("Status_Categoria"));
+					categoria.setDescricao(resultSet.getString("Descricao"));
+					lista.add(categoria);
+				}
+				else 
+				{
+                    categoria.setIdCategoria(-1);
+                    
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
     }
 
 }

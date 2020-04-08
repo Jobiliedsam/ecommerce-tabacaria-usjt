@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 
-	<meta charset="UTF-8">
+	<meta charset="ISO-8859-1">
 	<title>Cadastro Cliente</title>
 </head>
 	<body>
@@ -23,10 +23,17 @@
 
 		<main>
 
-			<jsp:include page="./componentes/singup.html"></jsp:include>
+			<jsp:include page="./componentes/product.html"></jsp:include>
 
 		</main>
 
 		<jsp:include page="./componentes/footer.html"></jsp:include>
+
+		<jsp:include page="./componentes/administration.html"></jsp:include>
+
+		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+        <script src="./js/backtotop.js"></script>
+
 	</body>
 </html>
