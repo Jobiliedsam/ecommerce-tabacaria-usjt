@@ -1,7 +1,6 @@
 package br.com.cavaliers.tabacaria.controller;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cavaliers.tabacaria.model.Cliente;
 import br.com.cavaliers.tabacaria.model.Fornecedor;
-import br.com.cavaliers.tabacaria.service.ClienteService;
 import br.com.cavaliers.tabacaria.service.FornecedorService;
 
 /**
@@ -31,7 +28,7 @@ public class ManterFornecedorController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	@SuppressWarnings("deprecation")
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Fornecedor fornecedor = new Fornecedor();
 		FornecedorService fornecedorService = new FornecedorService();

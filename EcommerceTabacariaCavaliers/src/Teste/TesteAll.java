@@ -18,6 +18,7 @@ import br.com.cavaliers.tabacaria.service.PedidoHeaderService;
 import br.com.cavaliers.tabacaria.service.PedidoLineService;
 import br.com.cavaliers.tabacaria.service.ProdutoService;
 
+@SuppressWarnings("unused")
 public class TesteAll {
 
 	@SuppressWarnings("deprecation")
