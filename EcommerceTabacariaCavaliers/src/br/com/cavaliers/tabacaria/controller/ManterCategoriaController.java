@@ -21,6 +21,8 @@ public class ManterCategoriaController extends HttpServlet {
 	/**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
+	
+	public ManterCategoriaController() {}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
