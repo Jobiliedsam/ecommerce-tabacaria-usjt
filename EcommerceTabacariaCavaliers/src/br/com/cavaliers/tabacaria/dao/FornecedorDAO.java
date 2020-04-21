@@ -9,9 +9,7 @@ import java.sql.SQLException;
 
 public class FornecedorDAO {
 	public int inserir (Fornecedor fornecedor) {
-		String sqlInsert = "INSERT INTO fornecedor" + 
-				"(Nome_Fornecedor, Cnpj, Telefone, Email, Descricao"
-				+ "VALUES (?, ?, ?, ?, ?)";
+		String sqlInsert = "INSERT INTO fornecedor (Nome_Fornecedor, Cnpj, Telefone, Email, Descricao)	VALUES (?, ?, ?, ?, ?)";
 		
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlInsert);) {
@@ -88,7 +86,7 @@ public class FornecedorDAO {
 	{
 		Fornecedor fornecedor = new Fornecedor();
 
-		String sqlSelect = "SELECT * FROM cliente WHERE Id_Fornecedor = ?";
+		String sqlSelect = "SELECT * FROM fornecedor WHERE Id_Fornecedor = ?";
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
@@ -99,7 +97,7 @@ public class FornecedorDAO {
 			{
 				if (resultSet.next())
 				{
-					fornecedor.setIdFornecedor(resultSet.getInt("Id_Cliente"));
+					fornecedor.setIdFornecedor(resultSet.getInt("Id_Fornecedor"));
 					fornecedor.setNomeFornecedor(resultSet.getString("Nome_Fornecedor"));
 					fornecedor.setCnpj(resultSet.getString("Cnpj"));
 					fornecedor.setContatoTelefone(resultSet.getString("Telefone"));

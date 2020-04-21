@@ -52,7 +52,7 @@ public class ManterCategoriaController extends HttpServlet {
 		response.getStatus();
 		
         //enviar para o jsp
-        request.setAttribute("categoria", categoria);
+        request.setAttribute("categoria", categoriaTeste);
         
         RequestDispatcher view = 
         request.getRequestDispatcher("Categoria.jsp");

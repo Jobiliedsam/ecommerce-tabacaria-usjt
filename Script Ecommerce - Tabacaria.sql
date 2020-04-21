@@ -122,11 +122,11 @@ CREATE TABLE Pedido_Line (
     
 ) DEFAULT CHARSET = UTF8; 
 
+
 CREATE TABLE IF NOT EXISTS Fornecedor (
 
     Id_Fornecedor       INT PRIMARY KEY AUTO_INCREMENT,
     Nome_Fornecedor     VARCHAR (40) NOT NULL,
-    Nome_Categoria      VARCHAR(30) NOT NULL,
     Cnpj                CHAR(20) NOT NULL,
     Telefone            CHAR (12),
     Email               VARCHAR(40) NOT NULL,
@@ -142,3 +142,6 @@ CREATE TABLE IF NOT EXISTS Usuario (
     Tipo_Usuario CHAR(1) NOT NULL
     
 ) Default Charset = UTF8;
+
+CREATE USER 'aluno2'@'localhost' IDENTIFIED BY 'aluno2';
+GRANT ALL PRIVILEGES ON *.* TO 'aluno2'@'localhost';
