@@ -20,41 +20,46 @@
 </head>
 <body>
 
-<div id="main" class="container">
-		<h3 class="page header">Cadastro de Categoria</h3>
-		<form action="ManterCategoria.do" method="post">
+<!-- Container Principal -->
+	<div id="main" class="container">
+		<h3 class="page-header">Incluir Categoria</h3>
+		<!-- Formulario para inclusao de pais -->
+		<form action="controller.do" method="post">
+			<!-- area de campos do form -->
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label for="nomeCategoria"> Nome: </label> <input type="text"
+					<p><label for="nomeCategoria">Nome</label></p> <input type="text"
 						class="form-control" name="nomeCategoria" id="nomeCategoria" required
-						maxlength="100" placeholder="nomeCategoria" />
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="form-group col-md-12">
-					<label for="status"> Status: </label> <input type="text"
-						class="form-control" name="status" id="status" required
-						maxlength="100" placeholder="status" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-md-12">
-					<label for="descricao"> Descrição: </label> <input type="text"
-						class="form-control" name="descricao" id="descricao" required
-						maxlength="100" placeholder="Descricao" />
-				</div>
-			</div>
-		<hr/>
-		<div id="action" class="row">
-			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary" name="acao" value="Criar">Salvar</button>
-			</div>
-		</div>
-		</form>
-</div>
+						maxlength="100" placeholder="nome completo">
 
-<script src= "js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="status">Status</label> <input type="text"
+						class="form-control" name="status" id="status" maxlength="15"
+						placeholder="status">
+
+				</div>
+				<div class="form-group col-md-12">
+					<label for="descricao">Descricao</label> <input type="text"
+						class="form-control" name="descricao" id="descricao" required
+						maxlength="60" placeholder="descricao">
+
+				</div>
+			</div>
+			<hr />
+			<div id="actions" class="row">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-primary" name="command"
+						value="CriarCategoria">Salvar</button>
+
+					<a href="CategoriaLista.jsp" class="btn btn-default">Voltar</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 
 	<div id="main" class="container">
 		<h3 class="page header">Cadastre seu Usuario</h3>
-		<form action="ManterUsuario.do" method="post">
+		<form action="controller.do" method="post">
 			<div class="row">
 				<div class="form-group col-md-8">
 					<label for="email"> Email: </label> <input type="email"
@@ -45,8 +45,8 @@
 			<hr />
 			<div id="action" class="row">
 				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary" name="acao"
-						value="criar">Salvar</button>
+					<button type="submit" class="btn btn-primary" name="command"
+						value="CriarUsuario">Salvar</button>
 				</div>
 			</div>
 		</form>

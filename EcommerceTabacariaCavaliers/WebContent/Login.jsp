@@ -11,12 +11,12 @@
 </head>
 <body>
 	<%
-		Usuario usuario = (Usuario) request.getAttribute("usuario");
+	Usuario usuario = (Usuario) request.getAttribute("usuario");
+	String email = request.getParameter("email");
+	String senha = request.getParameter("senha");
+	boolean status = usuario.verificausuario(email, senha);
+	
 	%>
-	Id:
-	<%=usuario.getId()%><br> Email
-	<%=usuario.getEmail()%><br> Password
-	<%=usuario.getPassword()%><br>
 	
 
 </body>

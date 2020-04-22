@@ -62,7 +62,7 @@
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<a href="Usuarioindex.jsp" class="btn btn-primary">Voltar</a>
+				<a href="UsuarioIndex.jsp" class="btn btn-primary">Voltar</a>
 			</div>
 		</div>
 	</div>

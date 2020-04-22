@@ -28,5 +28,8 @@ public class CategoriaService {
 	public ArrayList<Categoria> carregarAll() {
 		return dao.buscarCategoria();
 	}
+	public ArrayList<Categoria> buscarCategoria(String chave){
+		return dao.buscarCategoria(chave);
+	}
 
 }

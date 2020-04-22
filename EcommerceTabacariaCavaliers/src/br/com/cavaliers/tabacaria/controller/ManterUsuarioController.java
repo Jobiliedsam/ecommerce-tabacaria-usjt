@@ -30,16 +30,33 @@ public class ManterUsuarioController extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String pId = request.getParameter("id");
     	String pEmail = request.getParameter("Email");
 		String pPassword = request.getParameter("Password");
+		String pAcao = request.getParameter("acao");
+		int id = -1;
+		try {
+			id = Integer.parseInt(pId);
+		}
+		catch(NumberFormatException e){
+			
+		}
+		
 		
 		Usuario usuario = new Usuario();
 		UsuarioService us = new UsuarioService();
 		us.criar(usuario);
 		usuario = us.carregar(usuario.getId());
 		
+		usuario.setId(id);
 		usuario.setEmail(pEmail);
 		usuario.setPassword(pPassword);
+		RequestDispatcher view = null;
+		if(pAcao.equals("Login")) {
+			
+			us.verificausuario(pEmail, pPassword);
+			view = request.getRequestDispatcher("Login.jsp");
+		}
 		
 		Usuario usuarioTeste = us.carregar(usuario.getId());
 		
@@ -50,7 +67,7 @@ public class ManterUsuarioController extends HttpServlet {
         //enviar para o jsp
         request.setAttribute("usuario", usuario);
         
-        RequestDispatcher view = 
+        
         request.getRequestDispatcher("Usuario.jsp");
         view.forward(request, response);
         

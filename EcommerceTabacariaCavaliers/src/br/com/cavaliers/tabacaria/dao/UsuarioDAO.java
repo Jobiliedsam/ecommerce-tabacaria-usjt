@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UsuarioDAO {
 	
@@ -150,6 +151,74 @@ public class UsuarioDAO {
     	
       return result;
 	}
+    public ArrayList<Usuario> buscarUsuario()
+    {
+    	String sqlSelect ="SELECT email FROM Usuario";
+    	ArrayList<Usuario> lista = new ArrayList<>();
+    	Usuario usuario;
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
+		{
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				while (resultSet.next())
+				{
+					usuario = new Usuario();
+					usuario.setId(resultSet.getInt("Id"));
+                    usuario.setEmail(resultSet.getString("Email"));
+                    usuario.setPassword(resultSet.getString("Password"));
+					lista.add(usuario);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
+    public ArrayList<Usuario> buscarUsuario(String chave)
+    {
+    	String sqlSelect = "SELECT id, email FROM categoria where upper(email) like ?";
+    	ArrayList<Usuario> lista = new ArrayList<>();
+    	Usuario usuario;
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
+		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				while (resultSet.next())
+				{
+					usuario = new Usuario();
+					usuario.setId(resultSet.getInt("Id"));
+                    usuario.setEmail(resultSet.getString("Email"));
+                    usuario.setPassword(resultSet.getString("Password"));
+					lista.add(usuario);
+					}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
 
 }
 

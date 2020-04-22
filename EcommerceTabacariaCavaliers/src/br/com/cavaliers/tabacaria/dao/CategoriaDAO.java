@@ -163,5 +163,41 @@ public class CategoriaDAO
 
 		return lista;
     }
+    public ArrayList<Categoria> buscarCategoria(String chave)
+    {
+    	String sqlSelect = "SELECT id, nome, status, descricao FROM categoria where upper(nome) like ?";
+    	ArrayList<Categoria> lista = new ArrayList<>();
+    	Categoria categoria;
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
+		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				while (resultSet.next())
+				{
+					categoria = new Categoria();
+                    categoria.setIdCategoria(resultSet.getInt("Id_Categoria"));
+                    categoria.setCategoria(resultSet.getString("Nome_Categoria"));
+					categoria.setStatus(resultSet.getString("Status_Categoria"));
+					categoria.setDescricao(resultSet.getString("Descricao"));
+					lista.add(categoria);
+				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
+
 
 }

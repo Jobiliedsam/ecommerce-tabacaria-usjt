@@ -1,5 +1,7 @@
 package br.com.cavaliers.tabacaria.service;
 
+import java.util.ArrayList;
+
 import br.com.cavaliers.tabacaria.dao.UsuarioDAO;
 import br.com.cavaliers.tabacaria.model.Usuario;
 
@@ -22,8 +24,14 @@ public class UsuarioService {
 	public Usuario carregar(int id) {
 		return dao.carregar(id);
 	}
-	public boolean verificausuario(String email, String password) {
+	public  boolean verificausuario(String email, String password) {
 		return dao.verificausuario(email, password);
+	}
+	public ArrayList<Usuario> buscarUsuario() {
+		return dao.buscarUsuario();
+	}
+	public ArrayList<Usuario> buscarUsuario(String chave){
+		return dao.buscarUsuario(chave);
 	}
 
 }

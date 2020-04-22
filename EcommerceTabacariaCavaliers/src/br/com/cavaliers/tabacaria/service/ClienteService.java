@@ -1,5 +1,7 @@
 package br.com.cavaliers.tabacaria.service;
 
+import java.util.ArrayList;
+
 import br.com.cavaliers.tabacaria.dao.ClienteDAO;
 import br.com.cavaliers.tabacaria.model.Cliente;
 
@@ -21,5 +23,11 @@ public class ClienteService {
 		
 	public Cliente carregar(int id){
 		return dao.carregar(id);
+	}
+	public ArrayList<Cliente> buscarCliente() {
+		return dao.buscarCliente();
+	}
+	public ArrayList<Cliente> buscarCliente(String chave){
+		return dao.buscarCliente(chave);
 	}
 }

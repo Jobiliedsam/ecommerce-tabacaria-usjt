@@ -1,5 +1,6 @@
 package br.com.cavaliers.tabacaria.dao;
 
+
 import br.com.cavaliers.tabacaria.model.Cliente;
 
 
@@ -145,7 +146,7 @@ public class ClienteDAO {
 
 		return cliente;
 	}
-	public ArrayList<Cliente> buscarCliente(int idCliente)
+	public ArrayList<Cliente> buscarCliente()
 	{
 		String sqlSelect ="SELECT * FROM cliente";
     	ArrayList<Cliente> lista = new ArrayList<>();
@@ -189,4 +190,44 @@ public class ClienteDAO {
 
 		return lista;
 	}
+	public ArrayList<Cliente> buscarCliente(String chave)
+    {
+    	String sqlSelect = "SELECT * FROM categoria where upper(nome) like ?";
+    	ArrayList<Cliente> lista = new ArrayList<>();
+    	Cliente cliente;
+
+
+		try (Connection connection = new ConnectionFactory().obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
+		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
+			try (ResultSet resultSet = stm.executeQuery();)
+			{
+				while (resultSet.next())
+				{
+					cliente = new Cliente();
+					cliente.setIdCliente(resultSet.getInt("Id_Cliente"));
+					cliente.setNomeCompleto(resultSet.getString("Nome_Completo"));
+					cliente.setTelefone(resultSet.getString("Telefone"));
+					cliente.setCelular(resultSet.getString("Celular"));
+					cliente.setCpfCnpj(resultSet.getString("CPF"));
+					cliente.setGenero(resultSet.getString("Genero"));
+					cliente.setTipo(resultSet.getString("Tipo"));
+					cliente.setEmail(resultSet.getString("Email"));
+					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
+					lista.add(cliente);				}
+			}
+			catch (SQLException sqlException)
+			{
+				sqlException.printStackTrace();
+			}
+			
+		}
+		catch (SQLException sqlException1) 
+		{
+			sqlException1.printStackTrace();
+		}
+
+		return lista;
+    }
+
 }
