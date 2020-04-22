@@ -1,4 +1,4 @@
-package command;
+package br.com.cavaliers.tabacaria.command;
 
 import java.io.IOException;
 import java.util.ArrayList;

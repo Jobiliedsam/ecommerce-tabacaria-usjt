@@ -105,8 +105,7 @@ public class ManterCategoriaController extends HttpServlet {
         //enviar para o jsp
         request.setAttribute("categoria", categoriaTeste);
         
-        RequestDispatcher view = 
-        request.getRequestDispatcher("Categoria.jsp");
+        view = request.getRequestDispatcher("Categoria.jsp");
         view.forward(request, response);
         
     }

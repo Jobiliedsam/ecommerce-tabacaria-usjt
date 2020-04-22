@@ -1,4 +1,4 @@
-package command;
+package br.com.cavaliers.tabacaria.command;
 
 import java.io.IOException;
 
@@ -6,11 +6,12 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Fornecedor;
 import br.com.cavaliers.tabacaria.service.FornecedorService;
 
-public class EditarFornecedor implements Command {
+public class VisualizarFornecedor implements Command {
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
@@ -25,10 +26,10 @@ public class EditarFornecedor implements Command {
 		
 		try {
 			id = Integer.parseInt(pId);
-		}catch(NumberFormatException e) {
-			
+		} catch (NumberFormatException e) {
+
 		}
-		
+
 		Fornecedor fornecedor = new Fornecedor();
 		fornecedor.setIdFornecedor(id);
 		fornecedor.setNomeFornecedor(pNome);
@@ -38,11 +39,14 @@ public class EditarFornecedor implements Command {
 		fornecedor.setDescricao(pDescricao);
 		
 		FornecedorService fs = new FornecedorService();
+		
 		RequestDispatcher view = null;
+		HttpSession session = request.getSession();
 		
 		fornecedor = fs.carregar(fornecedor.getIdFornecedor());
 		request.setAttribute("fornecedor", fornecedor);
-		view = request.getRequestDispatcher("AlterarFornecedor.jsp");
+		view = request.getRequestDispatcher("VisualizarFornecedor.jsp");		
+		
 		view.forward(request, response);
 
 	}

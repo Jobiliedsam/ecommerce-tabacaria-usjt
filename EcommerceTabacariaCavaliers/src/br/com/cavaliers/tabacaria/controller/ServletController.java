@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import command.Command;
+import br.com.cavaliers.tabacaria.command.Command;
 /**
  * Servlet implementation class ServletController
  */

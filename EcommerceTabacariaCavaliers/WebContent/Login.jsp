@@ -14,7 +14,6 @@
 	Usuario usuario = (Usuario) request.getAttribute("usuario");
 	String email = request.getParameter("email");
 	String senha = request.getParameter("senha");
-	boolean status = usuario.verificausuario(email, senha);
 	
 	%>
 	

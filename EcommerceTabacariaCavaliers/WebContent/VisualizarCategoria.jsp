@@ -42,7 +42,7 @@
                             </div>
                             <div class="modal-footer">
                                 <form action="controller.do" method="post">
-                                    <input type="hidden" name="id" value="${categoria.id }" />
+                                    <input type="hidden" name="id" value="${categoria.idCategoria}" />
                                     <button type="submit" class="btn btn-primary" name="command" value="ExcluirCategoria">Sim</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                                 </form>
@@ -54,13 +54,13 @@
                 <!-- Barra superior com os menus de navegação -->
                 <!-- Container Principal -->
                 <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Categoria ${categoria.idCategoria }</h3>
+                    <h3 class="page-header">Visualizar Categoria ${categoria.idCategoria}</h3>
                     <div class="row">
                         <div class="col-md-12">
                             <p><strong>Nome</strong>
                             </p>
                             <p>
-                                ${categoria.nome }
+                                ${categoria.categoria }
                             </p>
                         </div>
                     </div>

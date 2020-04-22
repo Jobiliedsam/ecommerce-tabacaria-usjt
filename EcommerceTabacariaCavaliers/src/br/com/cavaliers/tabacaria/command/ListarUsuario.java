@@ -31,7 +31,7 @@ public class ListarUsuario implements Command {
 		}
 		session.setAttribute("lista", lista);
 		
-		RequestDispatcher view = request.getRequestDispatcher("CategoriaLista.");
+		view = request.getRequestDispatcher("CategoriaLista.jsp");
 		view.forward(request, response);
 
 	}

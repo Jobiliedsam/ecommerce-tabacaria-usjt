@@ -98,7 +98,7 @@
                                                ${categoria.idCategoria }
                                             </td>
                                             <td>
-                                                ${categoria.nomeCategoria }
+                                                ${categoria.categoria }
                                             </td>
                                             <td>
                                                 ${categoria.status }
@@ -109,7 +109,8 @@
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCategoria&id=${categoria.idCategoria }">Visualizar</a>
                                                 <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }">Editar</a>
-                                                <button id="btn${categoria.idCategoria }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.id }">Excluir</button>
+                                                <button id="btn${categoria.idCategoria }"  
+                                                type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.idCategoria }">Excluir</button>
                                             </td>
                                         </tr>
                             </c:forEach>

@@ -31,7 +31,7 @@ public class ListarCategoria implements Command {
 			session.setAttribute("lista", lista);
 		 
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("CategoriaLista.");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("CategoriaLista.jsp");
 		dispatcher.forward(request, response);
 
 	}

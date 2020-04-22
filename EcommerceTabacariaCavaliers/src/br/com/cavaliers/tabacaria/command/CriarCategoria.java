@@ -12,12 +12,13 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Categoria;
 import br.com.cavaliers.tabacaria.service.CategoriaService;
 
-public class CriarCategoria implements Command {
+public class CriarCategoria implements Command 
+{
 
 	@Override
-	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String pNome = request.getParameter("nome");
+	public void executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		String pNome = request.getParameter("nomeCategoria");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
 		
@@ -34,7 +35,7 @@ public class CriarCategoria implements Command {
 		ArrayList<Categoria> lista = new ArrayList<>();
 		lista.add(categoria);
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("CategoriaLista");
+		view = request.getRequestDispatcher("CategoriaLista.jsp");
 		
 		view.forward(request, response);
 	}

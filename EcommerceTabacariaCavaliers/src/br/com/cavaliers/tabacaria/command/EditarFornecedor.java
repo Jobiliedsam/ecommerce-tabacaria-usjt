@@ -1,19 +1,16 @@
-package command;
+package br.com.cavaliers.tabacaria.command;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Fornecedor;
 import br.com.cavaliers.tabacaria.service.FornecedorService;
 
-public class AlterarFornecedor implements Command {
+public class EditarFornecedor implements Command {
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
@@ -42,28 +39,12 @@ public class AlterarFornecedor implements Command {
 		
 		FornecedorService fs = new FornecedorService();
 		RequestDispatcher view = null;
-		HttpSession session = request.getSession();
 		
-		fs.atualizar(fornecedor);
-		ArrayList<Fornecedor> lista = (ArrayList<Fornecedor>)session.getAttribute("lista");
-		int pos = busca(fornecedor, lista);
-		lista.remove(pos);
-		lista.add(pos,fornecedor);
-		session.setAttribute("lista", lista);
+		fornecedor = fs.carregar(fornecedor.getIdFornecedor());
 		request.setAttribute("fornecedor", fornecedor);
-		view = request.getRequestDispatcher("VisualizarFornecedor.jsp");
-
+		view = request.getRequestDispatcher("AlterarFornecedor.jsp");
 		view.forward(request, response);
-	}
-		public int busca(Fornecedor fornecedor, ArrayList<Fornecedor> lista) {
-			Fornecedor to;
-			for(int i = 0; i < lista.size(); i++){
-				to = lista.get(i);
-				if(to.getIdFornecedor() == fornecedor.getIdFornecedor()){
-					return i;
-				}
-			}
-			return -1;
+
 	}
 
 }

@@ -28,10 +28,8 @@
 			<!-- area de campos do form -->
 			<div class="row">
 				<div class="form-group col-md-12">
-					<p><label for="nomeCategoria">Nome</label></p> <input type="text"
-						class="form-control" name="nomeCategoria" id="nomeCategoria" required
-						maxlength="100" placeholder="nome completo">
-
+					<p><label for="nomeCategoria">Nome</label></p>
+					 <input type="text" class="form-control" name="nomeCategoria" id="nomeCategoria" required maxlength="100" placeholder="nome completo">
 				</div>
 			</div>
 			<div class="row">
@@ -53,7 +51,6 @@
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary" name="command"
 						value="CriarCategoria">Salvar</button>
-
 					<a href="CategoriaLista.jsp" class="btn btn-default">Voltar</a>
 				</div>
 			</div>

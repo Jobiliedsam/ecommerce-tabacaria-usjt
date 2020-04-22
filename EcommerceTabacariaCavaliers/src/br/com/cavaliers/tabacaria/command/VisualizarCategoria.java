@@ -11,20 +11,24 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Categoria;
 import br.com.cavaliers.tabacaria.service.CategoriaService;
 
-public class VisualizarCategoria implements Command {
+public class VisualizarCategoria implements Command 
+{
 
 	@Override
-	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void executar(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException 
+	{
 		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nomeCategoria");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
 		int id = -1;
 
-		try {
+		try 
+		{
 			id = Integer.parseInt(pId);
-		} catch (NumberFormatException e) {
+		} 
+		catch (NumberFormatException e)
+		{
 
 		}
 
@@ -43,7 +47,7 @@ public class VisualizarCategoria implements Command {
 
 		categoria = cs.carregar(categoria.getIdCategoria());
 		request.setAttribute("categoria", categoria);
-		view = request.getRequestDispatcher("VisualizarCategoria.");
+		view = request.getRequestDispatcher("VisualizarCategoria.jsp");
 		
 		view.forward(request, response);
 

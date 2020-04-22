@@ -155,8 +155,6 @@ public class ClienteDAO {
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, idCliente);
-
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
 				if (resultSet.next())
