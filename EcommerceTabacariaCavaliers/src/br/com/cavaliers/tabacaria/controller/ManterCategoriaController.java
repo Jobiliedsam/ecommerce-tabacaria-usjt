@@ -93,9 +93,29 @@ public class ManterCategoriaController extends HttpServlet {
 			view = request.getRequestDispatcher("AlterarCategoria.jsp");
 		}
 
-		view.forward(request, response);
+		categoria.setIdCategoria(cs.criar(categoria));
+		
+		
+		Categoria categoriaTeste = cs.carregar(categoria.getIdCategoria());
+		
+		System.out.println(categoriaTeste.toString());
+		
+		response.getStatus();
+		
+        //enviar para o jsp
+        request.setAttribute("categoria", categoriaTeste);
+        
+        RequestDispatcher view = 
+        request.getRequestDispatcher("Categoria.jsp");
+        view.forward(request, response);
+        
+    }
+    
 
-	}
+
+
+
+	
 
 	public int busca(Categoria categoria, ArrayList<Categoria> lista) {
 		Categoria to;

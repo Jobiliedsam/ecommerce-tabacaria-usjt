@@ -32,7 +32,7 @@ button, .white, .white a, .white span, .white i, .white h1, .white h2, .white h3
 .bg-dark, #header-top{
     background: #080300;
 }
-.bg-light, .questions a, .learn-more{
+.bg-light, .questions a, .learn-more, .button2{
     background: #178C03;
 }
 button, .bg-color, #back-to-top, .shop-cart i > span, #footer-top, #back-to-top, .buy-button > form > button{
@@ -68,7 +68,7 @@ a, button, #back-to-top {
 }
 
 /* Margins */
-#product-page, #singup-form, #cart-page {
+#product-page, #singup-form, #cart-page{
     padding: 30px 0;
 } 
 
@@ -437,3 +437,126 @@ button:hover, #back-to-top:hover, .social-bt a:hover, .buy-button > form > butto
     padding: 20px 0;
     border: 1px solid #080300;
 }
+
+/* Pagina de Pedido */
+#request-page h3, #revision-page h3{
+    margin: 30px 0 20px 0;
+}
+#request-page table h3, #revision-page table h3{
+    margin: 10px 0;
+}
+.info-form > .row {
+    margin-bottom: 15px;
+}
+.summary {
+    min-width: 320px;
+    max-width: 380px;
+    top: 0;
+    z-index: 1;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #F2F2F2;
+}
+.summary table {
+    border-collapse: collapse;
+    border-spacing: 0; 
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+.summary p {
+    font-size: 12px;
+    color: #858585;
+    text-align: right;
+}
+.summary h3 {
+    color: #474747;
+    font-weight: normal;
+    font-size: 15px;
+    padding: 0 0 7px;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.summary h4 {
+    color: #474747;
+    font-size: 15px;
+    margin: 0;
+}
+.summary thead, .summary tfoot {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.summary tbody { 
+    max-height: 300px;
+    width: 100%;
+    display: block;
+    overflow-y: auto;
+}
+.summary table tbody tr {
+    width: 100%;
+}
+.summary table thead, .summary table tfoot,
+.summary table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+.summary tbody td{
+    padding: 10px;
+}
+.summary thead th, .summary tbody .thead td, .summary tfoot td {
+    padding: 5px 10px;
+}
+.summary thead th, .summary tbody .thead td {
+    text-align: left;
+    background-color: #d9d9d9;
+    color: #6c6c6c;
+}
+.summary thead th, .summary tbody td, .summary tfoot td{
+    font-size: 12px;
+    color: #858585;
+    font-weight: normal;
+}
+.summary thead th + th, .summary tbody .thead td + td {
+    text-align: right;
+}
+.summary tbody td + td, .summary tfoot td + td {
+    font-size: 16px;
+    color: #000;
+    text-align: right;
+    white-space: nowrap;
+}
+.summary tfoot tr {
+    background-color: #d9d9d9;
+    border-bottom: 5px solid #F2F2F2;
+}
+.summary tbody td + td {
+    vertical-align: bottom;
+}
+.summary tfoot td {
+    vertical-align: middle;
+}
+.no-padding-right {
+    padding-right: 0;
+}
+.min-padding-left {
+    padding-left: 5px;
+}
+#aside-fixed-container {
+    position: relative;
+}
+#aside-fixed {
+    top: 0;
+}
+#revision-page input, #revision-page select {
+    border: none;
+    font-weight: bold;
+    color: #000;
+}
+#revision-page input:focus, #revision-page select:focus {
+    border: none;
+    box-shadow: none;
+}
+
+
