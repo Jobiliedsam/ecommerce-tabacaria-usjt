@@ -48,8 +48,8 @@ public class PedidoHeader
 		return idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setIdCliente(int pIdCliente) {
+		this.idCliente = pIdCliente;
 	}
 
 	public String getNomeCliente() {
@@ -64,8 +64,8 @@ public class PedidoHeader
 		return qtdItens;
 	}
 
-	public void setQtdItens(int qtdItens) {
-		this.qtdItens = qtdItens;
+	public void setQtdItens(int pQtdItens) {
+		this.qtdItens = pQtdItens;
 	}
 
 	public double getValorTotal() {

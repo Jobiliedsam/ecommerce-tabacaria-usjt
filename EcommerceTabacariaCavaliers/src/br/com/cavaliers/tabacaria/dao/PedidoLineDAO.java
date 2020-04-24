@@ -21,7 +21,7 @@ public class PedidoLineDAO
         {
             stm.setInt(1, pedidoLine.getIdPedidoHeader());
             stm.setInt(2, pedidoLine.getIdProduto());
-            stm.setInt(3, pedidoLine.getQuantidaeProduto());
+            stm.setInt(3, pedidoLine.getQuantidadeProduto());
             stm.setDouble(4, pedidoLine.getValorProduto());
             stm.setString(5, pedidoLine.getNomeDoProduto());
             stm.setDouble(6, pedidoLine.getPrecoUnitario());
@@ -34,7 +34,7 @@ public class PedidoLineDAO
             {
                 if(resultSet.next())
                 {
-                    pedidoLine.setIdPedioLine(resultSet.getInt(1));
+                    pedidoLine.setIdPedidoLine(resultSet.getInt(1));
                 }
             }
             catch (SQLException sqlException) 
@@ -47,7 +47,7 @@ public class PedidoLineDAO
             sqlException.printStackTrace();
         }
         
-        return pedidoLine.getIdPedioLine();
+        return pedidoLine.getIdPedidoLine();
     }
 
     public void atualizar(PedidoLine pedidoLine)
@@ -57,9 +57,9 @@ public class PedidoLineDAO
         try (Connection connection = new ConnectionFactory().obterConexao();
                 PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
-            stm.setInt(1, pedidoLine.getQuantidaeProduto());
+            stm.setInt(1, pedidoLine.getQuantidadeProduto());
             stm.setDouble(2, pedidoLine.getValorProduto());
-            stm.setInt(3, pedidoLine.getIdPedioLine());
+            stm.setInt(3, pedidoLine.getIdPedidoLine());
             stm.execute();
         }
         catch (Exception exception)
@@ -99,7 +99,7 @@ public class PedidoLineDAO
 			{
 				if (resultSet.next())
 				{
-					pedidoLine.setIdPedioLine(resultSet.getInt("Id_Pedido_Line"));
+					pedidoLine.setIdPedidoLine(resultSet.getInt("Id_Pedido_Line"));
 					pedidoLine.setIdPedidoHeader(resultSet.getInt("Id_Pedido_Header"));
 					pedidoLine.setIdProduto(resultSet.getInt("Id_Produto"));
 					pedidoLine.setQuantidaeProduto(resultSet.getInt("Quantidade_Produto"));
@@ -109,7 +109,7 @@ public class PedidoLineDAO
 				}
 				else 
 				{
-					pedidoLine.setIdPedioLine(-1);
+					pedidoLine.setIdPedidoLine(-1);
 				}
 			}
 			catch (SQLException sqlException)
@@ -140,7 +140,7 @@ public class PedidoLineDAO
 			{
 				if (resultSet.next())
 				{
-					pedidoLine.setIdPedioLine(resultSet.getInt("Id_Pedido_Line"));
+					pedidoLine.setIdPedidoLine(resultSet.getInt("Id_Pedido_Line"));
 					pedidoLine.setIdPedidoHeader(resultSet.getInt("Id_Pedido_Header"));
 					pedidoLine.setIdProduto(resultSet.getInt("Id_Produto"));
 					pedidoLine.setQuantidaeProduto(resultSet.getInt("Quantidade_Produto"));
@@ -151,7 +151,7 @@ public class PedidoLineDAO
 				}
 				else 
 				{
-					pedidoLine.setIdPedioLine(-1);
+					pedidoLine.setIdPedidoLine(-1);
 				}
 			}
 			catch (SQLException sqlException)

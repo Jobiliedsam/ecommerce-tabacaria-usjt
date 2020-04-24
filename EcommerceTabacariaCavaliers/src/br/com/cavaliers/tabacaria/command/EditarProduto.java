@@ -17,7 +17,7 @@ public class EditarProduto implements Command {
 			throws ServletException, IOException {
 		String pId = request.getParameter("idProduto");
 		String pNome = request.getParameter("nomeP");
-		String pPreco = request.getParameter("preçoF");
+		double pPreco = Double.parseDouble(request.getParameter("precoF"));
 		String pCategoria = request.getParameter("categoria");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");

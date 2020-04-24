@@ -5,7 +5,8 @@ import br.com.cavaliers.tabacaria.model.Fornecedor;
 import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;  
-import java.sql.SQLException; 
+import java.sql.SQLException;
+import java.util.ArrayList; 
 
 public class FornecedorDAO {
 	public int inserir (Fornecedor fornecedor) {
@@ -121,6 +122,59 @@ public class FornecedorDAO {
 		}
 
 		return fornecedor;
+	}
+	
+	public ArrayList<Fornecedor> listarFornecedores() {
+		Fornecedor fornecedor;
+		ArrayList<Fornecedor> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Id_Fornecedor, Nome_Fornecedor, Cnpj, Telefone, Email, Descricao FROM fornecedor";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obterConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					fornecedor = new Fornecedor();
+					fornecedor.setIdFornecedor(rs.getInt("idFornecedor"));
+					fornecedor.setNomeFornecedor(rs.getString("nomeFornecedor"));
+					fornecedor.setCnpj(rs.getString("cnpj"));
+					fornecedor.setContatoTelefone(rs.getString("contatoTelefone"));
+					fornecedor.setContatoEmail(rs.getString("contatoEmail"));
+					lista.add(fornecedor);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+
+	public ArrayList<Fornecedor> listarFornecedores(String chave) {
+		Fornecedor fornecedor;
+		ArrayList<Fornecedor> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Id_Fornecedor, Nome_Fornecedor, Cnpj, Telefone, Email, Descricao FROM fornecedor where upper(Nome_Fornecedor) like ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obterConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					fornecedor = new Fornecedor();
+					fornecedor.setIdFornecedor(rs.getInt("idFornecedor"));
+					fornecedor.setNomeFornecedor(rs.getString("nomeFornecedor"));
+					fornecedor.setCnpj(rs.getString("cnpj"));
+					fornecedor.setContatoTelefone(rs.getString("contatoTelefone"));
+					fornecedor.setContatoEmail(rs.getString("contatoEmail"));
+					lista.add(fornecedor);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
 	}
 }
 

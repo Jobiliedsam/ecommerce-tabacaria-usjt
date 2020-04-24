@@ -20,7 +20,7 @@
 				<div id="main" class="container">
                     <h3 class="page-header">Alterar Fornecedor #${fornecedor.idFornecedor }</h3>
                     <!-- Formulario para alteração de fornecedor -->
-                    <form action="Controller.do" method="post">
+                    <form action="controller.do" method="post">
                         <!-- area de campos do form -->
                         <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
                         <div class="row">
@@ -58,7 +58,7 @@
                         <hr />
                         <div id="actions" class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="AlterarFornecedor">Salvar</button>
+                                <button type="submit" class="btn btn-primary" name="command" value="EditarFornecedor">Salvar</button>
                                 <a href="ListarFornecedor.jsp" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>

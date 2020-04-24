@@ -5,7 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 
-
 <link rel="stylesheet" href="./css/bootstrap-grid.css">
 <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="./css/bootstrap-reboot.css">
@@ -22,9 +21,11 @@
 	href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap"
 	rel="stylesheet">
 
-<title>Visualizar Fornecedor</title>
+
+<title>Visualizar Produto</title>
 </head>
 <body>
+
 <!-- Modal -->
                 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                     <div class="modal-dialog" role="document">
@@ -32,15 +33,15 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
                                 </button>
-                                <h4 class="modal-title" id="modalLabel">Excluir Fornecedor</h4>
+                                <h4 class="modal-title" id="modalLabel">Excluir Produto</h4>
                             </div>
                             <div class="modal-body">
-                                Deseja realmente excluir este fornecedor?
+                                Deseja realmente excluir este produto?
                             </div>
                             <div class="modal-footer">
                                 <form action="controller.do" method="post">
-                                    <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
-                                    <button type="submit" class="btn btn-primary" name="command" value="ExcluirCliente">Sim</button>
+                                    <input type="hidden" name="id" value="${produto.idProduto }" />
+                                    <button type="submit" class="btn btn-primary" name="command" value="ExcluirProduto">Sim</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                                 </form>
                             </div>
@@ -49,37 +50,37 @@
                 </div>
                 <!-- /.modal -->
 <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Fornecedor ${fornecedor.idFornecedor }</h3>
+                    <h3 class="page-header">Visualizar Produto ${produto.idProduto }</h3>
                     <div class="row">
                         <div class="col-md-12">
-                            <p><strong>Nome</strong>
+                            <p><strong>Nome do Produto</strong>
                             </p>
                             <p>
-                                ${fornecedor.nomeFornecedor }
+                                ${produto.nomeP }
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><strong>Cnpj</strong>
+                            <p><strong>Preço</strong>
                             </p>
                             <p>
-                                ${fornecedor.cnpj }
+                                ${produto.precoF }
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Telefone</strong>
+                            <p><strong>Categoria</strong>
                             </p>
                             <p>
-                                ${fornecedor.contatoTelefone }
+                                ${produto.categoria }
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                            <p><strong>E-Mail</strong>
+                            <p><strong>Status</strong>
                             </p>
                             <p>
-                                ${fornecedor.contatoEmail }
+                                ${produto.status }
                             </p>
                         </div>
                     </div>
@@ -87,16 +88,16 @@
                             <p><strong>Descriçao</strong>
                             </p>
                             <p>
-                                ${fornecedor.descricao }
+                                ${produto.descricao }
                             </p>
                         </div>
                     <div>
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="Controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }" class="btn btn-primary">Editar</a>
+                            <a href="controller.do?command=EditarProduto&id=${produto.idProduto }" class="btn btn-primary">Editar</a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                            <a href="ListarFornecedor.jsp" class="btn btn-default">Voltar</a>
+                            <a href="ListarProduto.jsp" class="btn btn-default">Voltar</a>
                         </div>
                     </div>
                 </div>
@@ -104,5 +105,6 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

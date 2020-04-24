@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Buscar Fornecedor</title>
+            <title>Buscar Produto</title>
 
     <link rel="stylesheet" href="./css/bootstrap-grid.css">
 	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
@@ -22,25 +22,26 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-        </head>
+<title>Produto</title>
+</head>
+<body>
 
-        <body>
-            <!-- Modal -->
+<!-- Modal -->
             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
                             </button>
-                            <h4 class="modal-title" id="modalLabel">Excluir Fornecedor</h4>
+                            <h4 class="modal-title" id="modalLabel">Excluir Produto</h4>
                         </div>
                         <div class="modal-body">
-                            Deseja excluir este fornecedor?
+                            Deseja excluir este produto?
                         </div>
                         <div class="modal-footer">
                             <form action="controller.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
-                                <button type="submit" class="btn btn-primary" name="command" value="ExcluirFornecedor">Sim</button>
+                                <button type="submit" class="btn btn-primary" name="command" value="ExcluirProduto">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                             </form>
                         </div>
@@ -54,14 +55,14 @@
                 <form action="controller.do" method="post">
                     <div id="top" class="row">
                         <div class="col-md-3">
-                            <h2>Fornecedor</h2>
+                            <h2>Produto</h2>
                         </div>
 
                         <div class="col-md-6">
                             <div class="input-group h2">
-                                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Fornecedor">
+                                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Produto">
                                 <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit" name="command" value="ListarFornecedor">
+                <button class="btn btn-primary" type="submit" name="command" value="ListarProduto">
                     <span class="glyphicon glyphicon-search"></span>
                                 Pesquisar
                                  </button>
@@ -70,7 +71,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <a href="CriarFornecedor.jsp" class="btn btn-primary pull-right h2">Novo Fornecedor</a>
+                            <a href="CriarProduto.jsp" class="btn btn-primary pull-right h2">Novo Produto</a>
                         </div>
                     </div>
                     <!-- /#top -->
@@ -85,39 +86,39 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th>Cnpj</th>
-                                    <th>Telefone</th>
-                                    <th>E-Mail</th>
+                                    <th>Preço</th>
+                                    <th>Categoria</th>
+                                    <th>Status</th>
                                     <th>Descriçao</th>
                                     <th class="actions">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-          					<c:forEach var="fornecedor" items="${lista }">
+          					<c:forEach var="produto" items="${lista }">
                                        <tr>
                                             <td>
-                                               ${fornecedor.idFornecedor }
+                                               ${produto.idProduto }
                                             </td>
                                             <td>
-                                                ${fornecedor.nomeFornecedor }
+                                                ${produto.nomeP }
                                             </td>
                                             <td>
-                                                ${fornecedor.cnpj }
+                                                ${produto.precoF }
                                             </td>
                                             <td>
-                                                ${fornecedor.contatoTelefone }
+                                                ${produto.categoria }
                                             </td>
                                             <td>
-                                            	${fornecedor.contatoEmail }
+                                            	${produto.status }
                                             </td>
                                             <td>
-                                            	${fornecedor.descricao }
+                                            	${produto.descricao }
                                             </td>
                                             <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${categoria.idFornecedor }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }">Editar</a>
-                                                <button id="btn${fornecedor.idFornecedor }"  
-                                                type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-fornecedor="${fornecedor.idFornecedor }">Excluir</button>
+                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarProduto&id=${produto.idProduto }">Visualizar</a>
+                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarProduto&id=${produto.idProduto }">Editar</a>
+                                                <button id="btn${produto.idProduto }"  
+                                                type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-produto="${produto.idProduto }">Excluir</button>
                                             </td>
                                         </tr>
                             </c:forEach>
@@ -160,5 +161,6 @@
                     $("#id_excluir").val(recipient);
                 });
             </script>
+
 </body>
 </html>

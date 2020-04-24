@@ -27,7 +27,7 @@
 					<div id="main" class="container">
                     <h3 class="page-header">Alterar Produto ${produto.idProduto }</h3>
                     
-                    <form action="Controller.do" method="post">
+                    <form action="controller.do" method="post">
                         <!-- area de campos do form -->
                         <input type="hidden" name="idProduto" value="${produto.idProduto }" />
                         <div class="row">
@@ -49,15 +49,21 @@
 	                	</div>
 	            	</div>
 	            	<div class="row">
-	                <div class="col-md-12">
-	                    <label for="descricao">Descrição</label>
-	                    <input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriçao" value="${produto.descricao }">
+	               			<div class="col-md-12">
+	                   			<label for="nomeP">Status</label>
+	                   			<input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Nome do Produto" value="${produto.nomeP }">
+	               			</div>
+	           			</div>
+	            	<div class="row">
+	                	<div class="col-md-12">
+	                   		 <label for="descricao">Descrição</label>
+	                    	<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriçao" value="${produto.descricao }">
 	                </div>
 	            </div>
                         <hr />
                         <div id="actions" class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="AlterarProduto">Salvar</button>
+                                <button type="submit" class="btn btn-primary" name="command" value="EdiatrProduto">Salvar</button>
                                 <a href="ListarProduto.jsp" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>

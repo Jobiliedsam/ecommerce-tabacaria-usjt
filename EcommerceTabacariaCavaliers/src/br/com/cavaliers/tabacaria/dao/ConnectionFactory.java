@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-	public Connection obterConexao() throws SQLException 
+	public static Connection obterConexao() throws SQLException 
 	{
 		String servidor = "localhost";
 		String porta = "3306";

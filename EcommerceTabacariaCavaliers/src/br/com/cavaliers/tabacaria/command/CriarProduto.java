@@ -18,7 +18,7 @@ public class CriarProduto implements Command {
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pNome = request.getParameter("nomeP");
-		String pPreco = request.getParameter("preçoF");
+		double pPreco = Double.parseDouble(request.getParameter("precoF"));
 		String pCategoria = request.getParameter("categoria");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");

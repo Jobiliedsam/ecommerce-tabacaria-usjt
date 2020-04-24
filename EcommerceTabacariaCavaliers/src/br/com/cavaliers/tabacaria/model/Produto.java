@@ -53,8 +53,8 @@ public class Produto
 		return precoF;
 	}
 
-	public void setPrecoF(double precoF) {
-		this.precoF = precoF;
+	public void setPrecoF(double pPreco) {
+		this.precoF = pPreco;
 	}
 
 	public String getStatus() {

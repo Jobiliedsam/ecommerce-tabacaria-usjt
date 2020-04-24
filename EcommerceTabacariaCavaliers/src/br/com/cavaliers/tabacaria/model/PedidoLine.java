@@ -3,10 +3,10 @@ package br.com.cavaliers.tabacaria.model;
 public class PedidoLine 
 {
 	
-	private int idPedioLine;
+	private int idPedidoLine;
 	private int idPedidoHeader;
 	private int idProduto;
-	private int quantidaeProduto;
+	private int quantidadeProduto;
 	private double valorProduto;
 	private double precoUnitario;
 	private String nomeDoProduto;
@@ -16,20 +16,20 @@ public class PedidoLine
 		
 	}
 	
-	public PedidoLine( int idPedioLine, int idPedidoHeader, int idProduto, int quantidaeProduto, double valorProduto, 
+	public PedidoLine( int idPedidoLine, int idPedidoHeader, int idProduto, int quantidadeProduto, double valorProduto, 
 			String nomeDoProduto, double precoUnitario ) 
 	{
 		this.idPedidoHeader = idPedidoHeader;
-		this.idPedioLine =	idPedioLine;	
+		this.idPedidoLine =	idPedidoLine;	
 		this.idProduto = idProduto;
 		this.nomeDoProduto = nomeDoProduto;
 		this.precoUnitario = precoUnitario;
-		this.quantidaeProduto = quantidaeProduto; 
+		this.quantidadeProduto = quantidadeProduto; 
 		this.valorProduto = valorProduto;
 	}
 
-	public int getIdPedioLine() {
-		return idPedioLine;
+	public int getIdPedidoLine() {
+		return idPedidoLine;
 	}
 
 	public int getIdPedidoHeader() {
@@ -40,8 +40,8 @@ public class PedidoLine
 		return idProduto;
 	}
 
-	public int getQuantidaeProduto() {
-		return quantidaeProduto;
+	public int getQuantidadeProduto() {
+		return quantidadeProduto;
 	}
 
 	public double getValorProduto() {
@@ -56,8 +56,8 @@ public class PedidoLine
 		return precoUnitario;
 	}
 
-	public void setIdPedioLine(int idPedioLine) {
-		this.idPedioLine = idPedioLine;
+	public void setIdPedidoLine(int idPedidoLine) {
+		this.idPedidoLine = idPedidoLine;
 	}
 
 	public void setIdPedidoHeader(int idPedidoHeader) {
@@ -68,8 +68,8 @@ public class PedidoLine
 		this.idProduto = idProduto;
 	}
 
-	public void setQuantidaeProduto(int quantidaeProduto) {
-		this.quantidaeProduto = quantidaeProduto;
+	public void setQuantidaeProduto(int quantidadeProduto) {
+		this.quantidadeProduto = quantidadeProduto;
 	}
 
 	public void setValorProduto(double valorProduto) {
@@ -86,8 +86,8 @@ public class PedidoLine
 
 	@Override
 	public String toString() {
-		return "PedidoLine [idPedioLine=" + idPedioLine + ", idPedidoHeader=" + idPedidoHeader + ", idProduto="
-				+ idProduto + ", quantidaeProduto=" + quantidaeProduto + ", valorProduto=" + valorProduto
+		return "PedidoLine [idPedidoLine=" + idPedidoLine + ", idPedidoHeader=" + idPedidoHeader + ", idProduto="
+				+ idProduto + ", quantidadeProduto=" + quantidadeProduto + ", valorProduto=" + valorProduto
 				+ ", precoUnitario=" + precoUnitario + ", nomeDoProduto=" + nomeDoProduto + "]";
 	}
 	
