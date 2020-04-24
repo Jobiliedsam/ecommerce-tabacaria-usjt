@@ -44,7 +44,7 @@ public class AlterarCategoria implements Command {
 		lista.add(pos, categoria);
 		session.setAttribute("lista", lista);
 		request.setAttribute("categoria", categoria);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("VisualizarCategoria.jsp");
 		
 		view.forward(request, response);
 

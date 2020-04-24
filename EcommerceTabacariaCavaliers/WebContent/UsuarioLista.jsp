@@ -26,7 +26,7 @@
         </head>
 
         <body>
-            <!-- Modal -->
+            <!-- Modal Não implementado -->
             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -90,7 +90,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-          					<c:forEach var="categoria" items="${lista }">
+          					<c:forEach var="usuario" items="${lista }">
                                        <tr>
                                             <td>
                                                ${usuario.id }
@@ -103,8 +103,8 @@
                                             </td>
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarUsuario&id=${usuario.id }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="controller.do?acao=EditarUsuario&id=${usuario.id }">Editar</a>
-                                                <button id="btn${usuario.id }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.id }">Excluir</button>
+                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarUsuario&id=${usuario.id}">Editar</a>
+                                                <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
                                             </td>
                                         </tr>
                             </c:forEach>

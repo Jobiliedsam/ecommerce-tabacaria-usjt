@@ -36,8 +36,8 @@ public class EditarUsuario implements Command {
 		usuario.setPassword(pPassword);
 		usuario  = us.carregar(usuario.getId());
 
-
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		request.setAttribute("usuario", usuario);
+		view = request.getRequestDispatcher("AlterarUsuario.jsp");
 		view.forward(request, response);
 
 	}

@@ -26,7 +26,7 @@
         </head>
 
         <body>
-            <!-- Modal -->
+           <!-- Modal Não implementado -->
             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -86,8 +86,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th>Area</th>
-                                    <th>Populacao</th>
+                                    <th>status</th>
+                                    <th>descricao</th>
                                     <th class="actions">Ações</th>
                                 </tr>
                             </thead>
@@ -109,8 +109,7 @@
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCategoria&id=${categoria.idCategoria }">Visualizar</a>
                                                 <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }">Editar</a>
-                                                <button id="btn${categoria.idCategoria }"  
-                                                type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.idCategoria }">Excluir</button>
+                                              <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria }">Excluir</a>
                                             </td>
                                         </tr>
                             </c:forEach>
@@ -149,7 +148,7 @@
             <script type="text/javascript">
                 $("#delete-modal").on('show.bs.modal', function(event) {
                     var button = $(event.relatedTarget); //botao que disparou a modal
-                    var recipient = button.data('pais');
+                    var recipient = button.data('categoria');
                     $("#id_excluir").val(recipient);
                 });
             </script>

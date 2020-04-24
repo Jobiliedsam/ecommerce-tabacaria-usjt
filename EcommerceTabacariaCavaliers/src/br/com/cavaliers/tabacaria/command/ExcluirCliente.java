@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Cliente;
-import br.com.cavaliers.tabacaria.model.Usuario;
 import br.com.cavaliers.tabacaria.service.ClienteService;
 
 public class ExcluirCliente implements Command {
@@ -27,16 +26,17 @@ public class ExcluirCliente implements Command {
 
 		}
 		Cliente cliente = new Cliente();
+		cliente.setIdCliente(id);
 		ClienteService clienteService = new ClienteService();
+		
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
-		cliente.setIdCliente(id);
-		clienteService.excluir(id);
 		
-		ArrayList<Cliente> lista =  new ArrayList<>();
-		lista.remove(cliente);
+		clienteService.excluir(id);
+		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("lista");
+		lista.remove(busca(cliente, lista));
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("VisualizarCliente");
+		view = request.getRequestDispatcher("ClienteLista.jsp");
 		view.forward(request, response);
 
 	}

@@ -28,7 +28,7 @@ public class ServletController extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 			@SuppressWarnings("deprecation")
 			Command comando =
-			(Command)Class.forName("br.com.cavaliers.tabacaria.command,"+request.getParameter("command")).newInstance();		
+			(Command)Class.forName("br.com.cavaliers.tabacaria.command."+request.getParameter("command")).newInstance();		
 			comando.executar(request,response);
 		}catch(InstantiationException | IllegalAccessException
 				| ClassNotFoundException e) {

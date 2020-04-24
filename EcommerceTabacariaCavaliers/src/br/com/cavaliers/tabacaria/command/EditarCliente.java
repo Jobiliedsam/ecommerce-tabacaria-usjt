@@ -32,6 +32,7 @@ public class EditarCliente implements Command {
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 		
+		cliente.setIdCliente(id);
 		cliente.setCelular(request.getParameter("celularCliente"));
 		cliente.setNomeCompleto(request.getParameter("nomeCliente"));
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
@@ -40,10 +41,11 @@ public class EditarCliente implements Command {
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setIdCliente(id);
+		cliente.setRg(request.getParameter("rg"));
 		cliente  = clienteService.carregar(cliente.getIdCliente());
 		
-		view = request.getRequestDispatcher("VisualizarCliente");
+		request.setAttribute("cliente", cliente);
+		view = request.getRequestDispatcher("AlterarCliente.jsp");
 		view.forward(request, response);
 
 

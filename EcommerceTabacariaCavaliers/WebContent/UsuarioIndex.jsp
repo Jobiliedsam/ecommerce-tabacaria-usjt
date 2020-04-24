@@ -37,7 +37,7 @@
 
 			<div class="row">
 				<div class="form-group col-md-8">
-					<label for="password"> Senha:</label> <input type="password"
+					<label for="password"> Senha:</label> <input type="text"
 						class="form-control" name="password" id="password" required
 						size="20" maxlength="20" placeholder="password" />
 				</div>

@@ -39,7 +39,7 @@ public class EditarCategoria implements Command {
 			
 			categoria  = cs.carregar(categoria.getIdCategoria());
 			request.setAttribute("categoria", categoria);
-			view = request.getRequestDispatcher("AlterarCategoria");
+			view = request.getRequestDispatcher("AlterarCategoria.jsp");
 			view.forward(request, response);
 	}
 

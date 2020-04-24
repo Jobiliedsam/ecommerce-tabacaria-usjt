@@ -18,19 +18,24 @@ public class CriarCategoria implements Command
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		
 		String pNome = request.getParameter("nomeCategoria");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
 		
+			
 		Categoria categoria = new Categoria();
-		CategoriaService cs = new CategoriaService();
-		RequestDispatcher view = null;
-		HttpSession session = request.getSession();
-		
 		categoria.setCategoria(pNome);
 		categoria.setStatus(pStatus);
 		categoria.setDescricao(pDescricao);
-		cs.criar(categoria);
+		
+		
+		CategoriaService cs = new CategoriaService();
+		categoria.setIdCategoria(cs.criar(categoria));
+		
+		RequestDispatcher view = null;
+		HttpSession session = request.getSession();
+		
 		
 		ArrayList<Categoria> lista = new ArrayList<>();
 		lista.add(categoria);

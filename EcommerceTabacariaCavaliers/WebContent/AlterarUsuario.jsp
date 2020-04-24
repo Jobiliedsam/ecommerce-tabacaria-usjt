@@ -49,7 +49,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="password">senha</label>
-                                <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.senha }">
+                                <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.password }">
                             </div>
                         </div>
                         <hr />

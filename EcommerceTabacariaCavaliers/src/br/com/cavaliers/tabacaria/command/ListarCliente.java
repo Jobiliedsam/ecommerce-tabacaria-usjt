@@ -32,7 +32,7 @@ public class ListarCliente implements Command {
 		session.setAttribute("lista", lista);
 	 
 
-	RequestDispatcher dispatcher = request.getRequestDispatcher("ClienteLista.");
+	RequestDispatcher dispatcher = request.getRequestDispatcher("ClienteLista.jsp");
 	dispatcher.forward(request, response);
 
 

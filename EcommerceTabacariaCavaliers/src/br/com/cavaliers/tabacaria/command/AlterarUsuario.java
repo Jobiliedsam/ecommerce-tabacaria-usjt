@@ -42,7 +42,7 @@ public class AlterarUsuario implements Command {
 		lista.add(pos, usuario);
 		session.setAttribute("lista", lista);
 		request.setAttribute("usuario", usuario);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("VisualizarUsuario.jsp");
 		view.forward(request, response);
 
 	}

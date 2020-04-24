@@ -28,7 +28,7 @@
         </head>
 
         <body>
-                <!-- Modal -->
+                <!-- Modal Não implementado -->
                 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -76,8 +76,8 @@
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="controller.do?acao=EditarUsuario&id=${usuario.id }" class="btn btn-primary">Editar</a>
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                            <a href="controller.do?command=EditarUsuario&id=${usuario.id }" class="btn btn-primary">Editar</a>
+                            <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
                             <a href="UsuarioLista.jsp" class="btn btn-default">Voltar</a>
                         </div>
                     </div>

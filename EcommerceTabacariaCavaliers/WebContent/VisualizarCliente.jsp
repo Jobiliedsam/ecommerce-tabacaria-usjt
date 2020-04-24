@@ -28,7 +28,7 @@
         </head>
 
         <body>
-                <!-- Modal -->
+                <!-- Modal Não implementado -->
                 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -60,7 +60,7 @@
                              <p><strong>Nome</strong>
                             </p>
                             <p>
-                                ${cliente.nomeCliente}
+                                ${cliente.nomeCompleto}
                             </p>
                         </div>
                     </div>
@@ -69,35 +69,35 @@
                             <p><strong>Celular</strong>
                             </p>
                             <p>
-                                ${cliente.celularCliente}
+                                ${cliente.celular}
                             </p>
                         </div>
                         <div class="col-md-12">
                             <p><strong>Telefone</strong>
                             </p>
                             <p>
-                                ${cliente.telefoneCliente }
+                                ${cliente.telefone }
                             </p>
                         </div>
                         <div class="col-md-12">
                             <p><strong>Email</strong>
                             </p>
                             <p>
-                               ${cliente.emailCliente }
+                               ${cliente.email }
                             </p>
                         </div>
                         <div class="col-md-12">
                             <p><strong>Genero</strong>
                             </p>
                             <p>
-                                ${cliente.generoCliente }
+                                ${cliente.genero }
                             </p>
                         </div>
                         <div class="col-md-12">
                             <p><strong>Cpf</strong>
                             </p>
                             <p>
-                                ${cliente.cpfCliente }
+                                ${cliente.cpfCnpj }
                             </p>
                         </div>
                         <div class="col-md-12">
@@ -111,7 +111,14 @@
                             <p><strong>DataNascimento</strong>
                             </p>
                             <p>
-                                ${cliente.DataDeNascimento }
+                                ${cliente.dataDeNascimento }
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <p><strong>rg</strong>
+                            </p>
+                            <p>
+                                ${cliente.rg }
                             </p>
                         </div>
                     </div>
@@ -119,7 +126,7 @@
                     <div id="actions" class="row">
                         <div class="col-md-12">
                             <a href="Controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                            <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
                             <a href="ClienteLista.jsp" class="btn btn-default">Voltar</a>
                         </div>
                     </div>

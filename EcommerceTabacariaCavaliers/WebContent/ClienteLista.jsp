@@ -26,8 +26,8 @@
         </head>
 
         <body>
-            <!-- Modal -->
-            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <!-- Modal Não implementado -->
+             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -36,11 +36,11 @@
                             <h4 class="modal-title" id="modalLabel">Excluir Cliente</h4>
                         </div>
                         <div class="modal-body">
-                            Deseja excluir este Cliente?
+                            Deseja realmente excluir este cliente?
                         </div>
                         <div class="modal-footer">
                             <form action="controller.do" method="post">
-                                <input type="hidden" name="id" id="id_excluir" />
+                            	<input type="hidden" name="id" id="id_excluir" />
                                 <button type="submit" class="btn btn-primary" name="command" value="ExcluirCliente">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                             </form>
@@ -57,7 +57,6 @@
                         <div class="col-md-3">
                             <h2>Cliente</h2>
                         </div>
-
                         <div class="col-md-6">
                             <div class="input-group h2">
                                 <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Cliente">
@@ -70,7 +69,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <a href="Cliente.jsp" class="btn btn-primary pull-right h2">Novo Cliente</a>
+                            <a href="singup.jsp" class="btn btn-primary pull-right h2">Novo Cliente</a>
                         </div>
                     </div>
                     <!-- /#top -->
@@ -90,7 +89,9 @@
                                     <th>Email</th>
                                     <th>Genero</th>
                                   	<th>Cpf</th>
+                                  	<th>Tipo</th>
                                   	<th>DataNascimento</th>
+                                  	<th>rg</th>
                                     <th class="actions">Ações</th>
                                 </tr>
                             </thead>
@@ -101,33 +102,36 @@
                                                ${cliente.idCliente }
                                             </td>
                                             <td>
-                                                ${cliente.nomeCliente}
+                                                ${cliente.nomeCompleto}
                                             </td>
                                             <td>
-                                                ${cliente.celularCliente}
+                                                ${cliente.celular}
                                             </td>
                                             <td>
-                                                ${cliente.telefoneCliente }
+                                                ${cliente.telefone }
                                             </td>
                                             <td>
-                                                ${cliente.emailCliente }
+                                                ${cliente.email }
                                             </td>
                                             <td>
-                                                {cliente.generoCliente }
+                                                ${cliente.genero}
                                             </td>
                                             <td>
-                                                ${cliente.cpfCliente }
+                                                ${cliente.cpfCnpj}
                                             </td>
                                             <td>
                                                 ${cliente.tipo }
                                             </td>
                                             <td>
-                                               ${cliente.DataDeNascimento }
+                                               ${cliente.dataDeNascimento }
+                                            </td>
+                                            <td>
+                                               ${cliente.rg }
                                             </td>
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="Controller.do?command=VisualizarCliente&id=${cliente.idCliente }">Visualizar</a>
                                                 <a class="btn btn-warning btn-xs" href="Controller.do?command=EditarCliente&id=${cliente.idCliente }">Editar</a>
-                                                <button id="btn${cliente.idCliente }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.id }">Excluir</button>
+                                                 <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
                                             </td>
                                         </tr>
                             </c:forEach>

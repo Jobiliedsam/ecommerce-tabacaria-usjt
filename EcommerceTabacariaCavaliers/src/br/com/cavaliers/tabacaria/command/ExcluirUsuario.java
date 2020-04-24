@@ -25,16 +25,18 @@ public class ExcluirUsuario implements Command {
 
 		}
 		Usuario usuario = new Usuario();
+		usuario.setId(id);
+		
 		UsuarioService us = new UsuarioService();
+		
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
-		usuario.setId(id);
-		us.excluir(usuario.getId());
 		
-		ArrayList<Usuario> lista = new ArrayList<>();
+		us.excluir(usuario.getId());
+		ArrayList<Usuario> lista = (ArrayList<Usuario>) session.getAttribute("lista");
 		lista.remove(busca(usuario, lista));
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("UsuarioLista.jsp");
 		view.forward(request, response);
 
 	}

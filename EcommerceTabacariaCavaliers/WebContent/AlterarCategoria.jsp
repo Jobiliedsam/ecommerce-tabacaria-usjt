@@ -35,7 +35,7 @@
                 <!-- Barra superior com os menus de navegação -->
                 <!-- Container Principal -->
                 <div id="main" class="container">
-                    <h3 class="page-header">Alterar Categoria #${categoria.idCategoria }</h3>
+                    <h3 class="page-header">Alterar Categoria - ${categoria.idCategoria }</h3>
                     <!-- Formulario para alteração de clientes -->
                     <form action="controller.do" method="post">
                         <!-- area de campos do form -->
@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="nome">Nome</label>
-                                <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.nomeCategoria }">
+                                <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.categoria}">
                             </div>
                         </div>
                         <div class="row">

@@ -31,13 +31,14 @@ public class CriarCliente implements Command {
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		cliente.setRg(request.getParameter("rg"));
 		clienteService.criar(cliente);
 		
 		
 		ArrayList<Cliente> lista =  new ArrayList<>();
 		lista.add(cliente);
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("ClienteLista.jsp");
 		view.forward(request, response);
 
 

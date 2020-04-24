@@ -31,7 +31,7 @@ public class CriarUsuario implements Command {
 		ArrayList<Usuario> lista = new ArrayList<>();
 		lista.add(usuario);
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("UsuarioLista.jsp");
 		view.forward(request, response);
 
 

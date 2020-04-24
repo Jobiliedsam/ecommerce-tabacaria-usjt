@@ -38,7 +38,7 @@ public class ExcluirCategoria implements Command {
 		ArrayList<Categoria> lista = (ArrayList<Categoria>) session.getAttribute("lista");
 		lista.remove(busca(categoria, lista));
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("CategoriaLista.");
+		view = request.getRequestDispatcher("CategoriaLista.jsp");
 		
 		view.forward(request, response);
 

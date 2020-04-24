@@ -28,7 +28,7 @@
         </head>
 
         <body>
-                <!-- Modal -->
+                <!-- Modal Não implementado -->
                 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -54,7 +54,7 @@
                 <!-- Barra superior com os menus de navegação -->
                 <!-- Container Principal -->
                 <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Categoria ${categoria.idCategoria}</h3>
+                    <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria}</h3>
                     <div class="row">
                         <div class="col-md-12">
                             <p><strong>Nome</strong>
@@ -84,7 +84,7 @@
                     <div id="actions" class="row">
                         <div class="col-md-12">
                             <a href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }" class="btn btn-primary">Editar</a>
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                            <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria }">Excluir</a>
                             <a href="CategoriaLista.jsp" class="btn btn-default">Voltar</a>
                         </div>
                     </div>

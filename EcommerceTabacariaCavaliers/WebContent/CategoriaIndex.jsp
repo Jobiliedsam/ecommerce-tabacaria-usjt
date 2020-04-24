@@ -23,7 +23,7 @@
 <!-- Container Principal -->
 	<div id="main" class="container">
 		<h3 class="page-header">Incluir Categoria</h3>
-		<!-- Formulario para inclusao de pais -->
+		<!-- Formulario para inclusao de categoria -->
 		<form action="controller.do" method="post">
 			<!-- area de campos do form -->
 			<div class="row">

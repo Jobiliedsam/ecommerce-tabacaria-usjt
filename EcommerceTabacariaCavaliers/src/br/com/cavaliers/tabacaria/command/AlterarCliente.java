@@ -29,10 +29,8 @@ public class AlterarCliente implements Command {
 		
 		
 		Cliente cliente = new Cliente();
-		ClienteService clienteService = new ClienteService();
-		RequestDispatcher view = null;
-		HttpSession session = request.getSession();
-		
+				
+		cliente.setIdCliente(id);
 		cliente.setCelular(request.getParameter("celularCliente"));
 		cliente.setNomeCompleto(request.getParameter("nomeCliente"));
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
@@ -41,7 +39,13 @@ public class AlterarCliente implements Command {
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setIdCliente(id);
+		cliente.setRg(request.getParameter("rg"));
+		
+		ClienteService clienteService = new ClienteService();
+		RequestDispatcher view = null;
+		HttpSession session = request.getSession();
+
+	
 		clienteService.atualizar(cliente);
 		
 		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("lista");
@@ -50,7 +54,7 @@ public class AlterarCliente implements Command {
 		lista.add(pos, cliente);
 		session.setAttribute("lista", lista);
 		request.setAttribute("cliente", cliente);
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("VisualizarCliente.jsp");
 		view.forward(request, response);
 
 

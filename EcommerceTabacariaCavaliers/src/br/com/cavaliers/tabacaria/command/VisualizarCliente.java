@@ -25,13 +25,10 @@ public class VisualizarCliente implements Command {
 		} catch (NumberFormatException e) {
 
 		}
-		
-		
+
 		Cliente cliente = new Cliente();
-		ClienteService clienteService = new ClienteService();
-		RequestDispatcher view = null;
-		HttpSession session = request.getSession();
-		
+
+		cliente.setIdCliente(id);
 		cliente.setCelular(request.getParameter("celularCliente"));
 		cliente.setNomeCompleto(request.getParameter("nomeCliente"));
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
@@ -40,9 +37,16 @@ public class VisualizarCliente implements Command {
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setIdCliente(id);
-		cliente.setIdCliente(clienteService.criar(cliente));
+		
+		ClienteService clienteService = new ClienteService();
+		RequestDispatcher view = null;
+		HttpSession session = request.getSession();
+	
+		cliente = clienteService.carregar(cliente.getIdCliente());
+		request.setAttribute("cliente", cliente);
+		view = request.getRequestDispatcher("VisualizarCliente.jsp");
 
+		view.forward(request, response);
 
 	}
 

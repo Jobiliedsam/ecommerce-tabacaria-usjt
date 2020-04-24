@@ -33,9 +33,11 @@ public class VisualizarUsuario implements Command {
 		usuario.setId(id);
 		usuario.setEmail(pEmail);
 		usuario.setPassword(pPassword);
-		usuario.setId(us.criar(usuario));
+		usuario = us.carregar(usuario.getId());
+
+		request.setAttribute("usuario", usuario);
 		
-		view = request.getRequestDispatcher("VisualizarCategoria");
+		view = request.getRequestDispatcher("VisualizarUsuario.jsp");
 		view.forward(request, response);
 
 	}

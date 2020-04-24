@@ -143,5 +143,8 @@ CREATE TABLE IF NOT EXISTS Usuario (
     
 ) Default Charset = UTF8;
 
-CREATE USER 'aluno2'@'localhost' IDENTIFIED BY 'aluno2';
-GRANT ALL PRIVILEGES ON *.* TO 'aluno2'@'localhost';
+ALTER TABLE usuario
+CHANGE Senha Password VARCHAR(30);
+ALTER TABLE usuario
+CHANGE Nome_Usuario Email VARCHAR(30);
+
