@@ -26,7 +26,6 @@
 
     <body>
 
-<<<<<<< HEAD
         <jsp:include page="./componentes/adm-top.html"></jsp:include>
     
     <div class="container-fluid">
@@ -39,7 +38,7 @@
                     <div class="col">
                         <!-- Adicionar aqui o conteúdo de administração -->
 
-                        <!-- Modal -->
+                        <!-- Modal Não implementado -->
                         <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -60,20 +59,6 @@
                                     </div>
                                 </div>
                             </div>
-=======
-        <body>
-            <!-- Modal Não implementado -->
-            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
-                            </button>
-                            <h4 class="modal-title" id="modalLabel">Excluir Usuario</h4>
-                        </div>
-                        <div class="modal-body">
-                            Deseja excluir este Usuario?
->>>>>>> dev-08-03-20
                         </div>
                         <!-- /.modal -->
                         <!-- Barra superior com os menus de navegação -->
@@ -81,21 +66,6 @@
                         <div id="main" class="container">
                             <form action="controller.do" method="post">
                                 <div id="top" class="row">
-                                    <div class="col-md-3">
-                                        <h2>Usuario</h2>
-                                    </div>
-            
-                                    <div class="col-md-6">
-                                        <div class="input-group h2">
-                                            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Usuario">
-                                            <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit" name="command" value="ListarUsuario">Pesquisar
-                                <span class="glyphicon glyphicon-search"></span>
-                                            </button>
-                                            </span>
-                                        </div>
-                                    </div>
-            
                                     <div class="col-md-3">
                                         <a href="UsuarioIndex.jsp" class="btn btn-primary pull-right h2">Novo Usuario</a>
                                     </div>
@@ -117,10 +87,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="categoria" items="${lista }">
-                                                    <tr>
+                                          <c:forEach var="usuario" items="${lista }">
+                                                   <tr>
                                                         <td>
-                                                            ${usuario.id }
+                                                           ${usuario.id }
                                                         </td>
                                                         <td>
                                                             ${usuario.email }
@@ -130,8 +100,8 @@
                                                         </td>
                                                         <td class="actions">
                                                             <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarUsuario&id=${usuario.id }">Visualizar</a>
-                                                            <a class="btn btn-warning btn-xs" href="controller.do?acao=EditarUsuario&id=${usuario.id }">Editar</a>
-                                                            <button id="btn${usuario.id }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${categoria.id }">Excluir</button>
+                                                            <a class="btn btn-warning btn-xs" href="controller.do?command=EditarUsuario&id=${usuario.id}">Editar</a>
+                                                            <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
                                                         </td>
                                                     </tr>
                                         </c:forEach>
@@ -166,73 +136,7 @@
                         </div>
                         <!-- /#main -->
 
-<<<<<<< HEAD
                         <!-- Fim -->
-=======
-                        <div class="col-md-3">
-                            <a href="UsuarioIndex.jsp" class="btn btn-primary pull-right h2">Novo Usuario</a>
-                        </div>
-                    </div>
-                    <!-- /#top -->
-                </form>
-                <hr />
-                <c:if test="${not empty lista}">
-                <div id="list" class="row">
-
-                    <div class="table-responsive col-md-12">
-                        <table class="table table-striped" cellspacing="0" cellpadding="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th class="actions">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-          					<c:forEach var="usuario" items="${lista }">
-                                       <tr>
-                                            <td>
-                                               ${usuario.id }
-                                            </td>
-                                            <td>
-                                                ${usuario.email }
-                                            </td>
-                                            <td>
-                                                ${usuario.password }
-                                            </td>
-                                            <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarUsuario&id=${usuario.id }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarUsuario&id=${usuario.id}">Editar</a>
-                                                <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
-                                            </td>
-                                        </tr>
-                            </c:forEach>
-
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-                <!-- /#list -->
-
-                <div id="bottom" class="row">
-                    <div class="col-md-12">
-                        <!-- paginação ainda não foi implementada -->
-                        <ul class="pagination">
-                            <li class="disabled"><a>&lt; Anterior</a>
-                            </li>
-                            <li class="disabled"><a>1</a>
-                            </li>
-                            <li><a href="#">2</a>
-                            </li>
-                            <li><a href="#">3</a>
-                            </li>
-                            <li class="next"><a href="#" rel="next">Próximo &gt;</a>
-                            </li>
-                        </ul>
-                        <!-- /.pagination -->
->>>>>>> dev-08-03-20
                     </div>
                 </div>
             </div>

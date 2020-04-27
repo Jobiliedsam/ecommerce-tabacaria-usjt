@@ -20,11 +20,7 @@
     
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -34,7 +30,6 @@
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-<<<<<<< HEAD
 				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
 				<div id="admin-center" class="col">
@@ -42,7 +37,7 @@
 						<div class="col">
 							<!-- Adicionar aqui o conteúdo de administração -->
 
-							<!-- Modal -->
+							<!-- Modal Não implementado -->
                             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -63,26 +58,12 @@
                                         </div>
                                     </div>
                                 </div>
-=======
-        <body>
-                <!-- Modal Não implementado -->
-                <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="modalLabel">Excluir Categoria</h4>
-                            </div>
-                            <div class="modal-body">
-                                Deseja excluir esta Categoria?
->>>>>>> dev-08-03-20
                             </div>
                             <!-- /.modal -->
                             <!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
-                                <h3 class="page-header">Visualizar Categoria ${categoria.idCategoria}</h3>
+                                <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria}</h3>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p><strong>Nome</strong>
@@ -112,59 +93,11 @@
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
                                         <a href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                        <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria }">Excluir</a>
                                         <a href="CategoriaLista.jsp" class="btn btn-default">Voltar</a>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-                        </div>
-                    </div>
-                </div>
-                <!-- /.modal -->
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria}</h3>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><strong>Nome</strong>
-                            </p>
-                            <p>
-                                ${categoria.categoria }
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><strong>Status</strong>
-                            </p>
-                            <p>
-                                ${categoria.status }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Descricao</strong>
-                            </p>
-                            <p>
-                                ${categoria.descricao }
-                            </p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div id="actions" class="row">
-                        <div class="col-md-12">
-                            <a href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }" class="btn btn-primary">Editar</a>
-                            <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria }">Excluir</a>
-                            <a href="CategoriaLista.jsp" class="btn btn-default">Voltar</a>
-                        </div>
-                    </div>
-                </div>
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-        </body>
->>>>>>> dev-08-03-20
 
 							<!-- Fim -->
 						</div>

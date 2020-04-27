@@ -21,13 +21,8 @@
     
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
 
-<<<<<<< HEAD
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -57,37 +52,37 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="nomeCliente">Nome</label>
-                                            <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" required maxlength="100" placeholder="Cliente" value="${cliente.nomeCliente }">
+                                            <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" required maxlength="100" placeholder="Cliente" value="${cliente.nomeCompleto }">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="celularCliente">Celular</label>
-                                            <input type="tel" class="form-control" name="celularCliente" id="celularCliente" maxlength="11"  placeholder="celular" value="${cliente.celularCliente }">
+                                            <input type="tel" class="form-control" name="celularCliente" id="celularCliente" maxlength="11"  placeholder="celular" value="${cliente.celular }">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="telefoneCliente">Telefone</label>
-                                            <input type="tel" class="form-control" name="telefoneCliente" id="telefoneCliente" maxlength="11"  placeholder="telefone" value="${cliente.telefoneCliente }">
+                                            <input type="tel" class="form-control" name="telefoneCliente" id="telefoneCliente" maxlength="11"  placeholder="telefone" value="${cliente.telefone }">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="emailCliente">Email</label>
-                                            <input type="email" class="form-control" name="emailCliente" id="emailCliente" maxlength="50"  placeholder="@cavaliers" value="${cliente.emailCliente }">
+                                            <input type="email" class="form-control" name="emailCliente" id="emailCliente" maxlength="50"  placeholder="@cavaliers" value="${cliente.email }">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="generoCliente">Genero</label>
-                                            <input type="text" class="form-control" name="generoCliente" id="generoCliente" maxlength="10"  placeholder="genero" value="${cliente.generoCliente }">
+                                            <input type="text" class="form-control" name="generoCliente" id="generoCliente" maxlength="10"  placeholder="genero" value="${cliente.genero}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="cpfCliente">Cpf</label>
-                                            <input type="number" class="form-control" name="cpfCliente" id="cpfCliente" maxlength="11"  placeholder="cpf" value="${cliente.cpfCliente }">
+                                            <input type="number" class="form-control" name="cpfCliente" id="cpfCliente" maxlength="11"  placeholder="cpf" value="${cliente.cpfCnpj }">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -99,7 +94,13 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="DataDeNascimento">DataDeNascimento</label>
-                                            <input type="date" class="form-control" name="DataDeNascimento" id="DataDeNascimento" maxlength="08"  placeholder="DataDeNascimento" value="${cliente.DataDeNascimento }">
+                                            <input type="date" class="form-control" name="DataDeNascimento" id="DataDeNascimento" maxlength="08"  placeholder="DataDeNascimento" value="${cliente.dataDeNascimento }">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="rg">RG</label>
+                                            <input type="number" class="form-control" name="rg" id="rg" maxlength="11"  placeholder="rg" value="${cliente.rg}">
                                         </div>
                                     </div>
                                     <hr />
@@ -110,76 +111,6 @@
                                         </div>
                                     </div>    
                                 </form>
-=======
-        <body>
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Alterar Cliente #${cliente.idCliente }</h3>
-                    <!-- Formulario para alteração de clientes -->
-                    <form action="controller.do" method="post">
-                        <!-- area de campos do form -->
-                        <input type="hidden" name="id" value="${cliente.idCliente }" />
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="nomeCliente">Nome</label>
-                                <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" required maxlength="100" placeholder="Cliente" value="${cliente.nomeCompleto }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="celularCliente">Celular</label>
-                                <input type="tel" class="form-control" name="celularCliente" id="celularCliente" maxlength="11"  placeholder="celular" value="${cliente.celular }">
-                            </div>
-                        </div>
-                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="telefoneCliente">Telefone</label>
-                                <input type="tel" class="form-control" name="telefoneCliente" id="telefoneCliente" maxlength="11"  placeholder="telefone" value="${cliente.telefone }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="emailCliente">Email</label>
-                                <input type="email" class="form-control" name="emailCliente" id="emailCliente" maxlength="50"  placeholder="@cavaliers" value="${cliente.email }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="generoCliente">Genero</label>
-                                <input type="text" class="form-control" name="generoCliente" id="generoCliente" maxlength="10"  placeholder="genero" value="${cliente.genero}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="cpfCliente">Cpf</label>
-                                <input type="number" class="form-control" name="cpfCliente" id="cpfCliente" maxlength="11"  placeholder="cpf" value="${cliente.cpfCnpj }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="Física">Tipo</label>
-                                <input type="text" class="form-control" name="Física" id="Física" maxlength="11"  placeholder="Física" value="${cliente.tipo }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="DataDeNascimento">DataDeNascimento</label>
-                                <input type="date" class="form-control" name="DataDeNascimento" id="DataDeNascimento" maxlength="08"  placeholder="DataDeNascimento" value="${cliente.dataDeNascimento }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="rg">RG</label>
-                                <input type="number" class="form-control" name="rg" id="rg" maxlength="11"  placeholder="rg" value="${cliente.rg}">
-                            </div>
-                        </div>
-                        <hr />
-                        <div id="actions" class="row">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="AlterarCliente">Salvar</button>
-                                <a href="ClienteLista.jsp" class="btn btn-default">Cancelar</a>
->>>>>>> dev-08-03-20
                             </div>
 
 							<!-- Fim -->

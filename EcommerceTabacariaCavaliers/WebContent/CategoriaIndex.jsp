@@ -1,47 +1,7 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 	<head>
 		<meta charset="ISO-8859-1">
-=======
-<head>
-<meta charset="ISO-8859-1">
-
-	<link rel="stylesheet" href="./css/bootstrap-grid.css">
-	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="./css/bootstrap-reboot.css">
-	<link rel="stylesheet" href="./css/bootstrap.css">
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/fontawesome.min.css">
-	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./css/admin.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-
-<title>Categoria </title>
-
-</head>
-<body>
-
-<!-- Container Principal -->
-	<div id="main" class="container">
-		<h3 class="page-header">Incluir Categoria</h3>
-		<!-- Formulario para inclusao de categoria -->
-		<form action="controller.do" method="post">
-			<!-- area de campos do form -->
-			<div class="row">
-				<div class="form-group col-md-12">
-					<p><label for="nomeCategoria">Nome</label></p>
-					 <input type="text" class="form-control" name="nomeCategoria" id="nomeCategoria" required maxlength="100" placeholder="nome completo">
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-md-12">
-					<label for="status">Status</label> <input type="text"
-						class="form-control" name="status" id="status" maxlength="15"
-						placeholder="status">
->>>>>>> dev-08-03-20
 
 		<link rel="stylesheet" href="./css/bootstrap-grid.css">
 		<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
@@ -75,7 +35,7 @@
 							<!-- Container Principal -->
 							<div id="main" class="container">
 								<h3 class="page-header">Incluir Categoria</h3>
-								<!-- Formulario para inclusao de pais -->
+								<!-- Formulario para inclusao de categoria -->
 								<form action="controller.do" method="post">
 									<!-- area de campos do form -->
 									<div class="row">
@@ -89,7 +49,7 @@
 											<label for="status">Status</label> <input type="text"
 												class="form-control" name="status" id="status" maxlength="15"
 												placeholder="status">
-
+												
 										</div>
 										<div class="form-group col-md-12">
 											<label for="descricao">Descricao</label> <input type="text"

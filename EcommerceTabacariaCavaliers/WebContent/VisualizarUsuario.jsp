@@ -22,9 +22,7 @@
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+
     </head>
 
     <body>
@@ -34,7 +32,6 @@
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-<<<<<<< HEAD
 				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
 				<div id="admin-center" class="col">
@@ -42,7 +39,7 @@
 						<div class="col">
 							<!-- Adicionar aqui o conteúdo de administração -->
 
-							<!-- Modal -->
+							<!-- Modal Não implementado -->
                             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -63,20 +60,6 @@
                                         </div>
                                     </div>
                                 </div>
-=======
-        <body>
-                <!-- Modal Não implementado -->
-                <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="modalLabel">Excluir Usuario</h4>
-                            </div>
-                            <div class="modal-body">
-                                Deseja excluir este Usuario?
->>>>>>> dev-08-03-20
                             </div>
                             <!-- /.modal -->
                             <!-- Barra superior com os menus de navegação -->
@@ -104,53 +87,12 @@
                                 <hr />
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
-                                        <a href="controller.do?acao=EditarUsuario&id=${usuario.id }" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                        <a href="controller.do?command=EditarUsuario&id=${usuario.id }" class="btn btn-primary">Editar</a>
+                                        <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
                                         <a href="UsuarioLista.jsp" class="btn btn-default">Voltar</a>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-                        </div>
-                    </div>
-                </div>
-                <!-- /.modal -->
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Usuario ${usuario.id }</h3>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><strong>Email</strong>
-                            </p>
-                            <p>
-                                ${usuario.email }
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><strong>Password</strong>
-                            </p>
-                            <p>
-                                ${usuario.password }
-                            </p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div id="actions" class="row">
-                        <div class="col-md-12">
-                            <a href="controller.do?command=EditarUsuario&id=${usuario.id }" class="btn btn-primary">Editar</a>
-                            <a href="controller.do?command=ExcluirUsuario&id=${usuario.id }" class="btn btn-danger">Excluir</a>
-                            <a href="UsuarioLista.jsp" class="btn btn-default">Voltar</a>
-                        </div>
-                    </div>
-                </div>
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-        </body>
->>>>>>> dev-08-03-20
 
 							<!-- Fim -->
 						</div>

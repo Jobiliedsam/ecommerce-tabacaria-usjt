@@ -21,38 +21,9 @@
     
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
 
-<<<<<<< HEAD
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
     </head>
-=======
-        <body>
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Alterar Categoria - ${categoria.idCategoria }</h3>
-                    <!-- Formulario para alteração de clientes -->
-                    <form action="controller.do" method="post">
-                        <!-- area de campos do form -->
-                        <input type="hidden" name="id" value="${categoria.idCategoria }" />
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="nome">Nome</label>
-                                <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.categoria}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="status">Status</label>
-                                <input type="text" class="form-control" name="status" id="status" maxlength="15"  placeholder="status" value="${categoria.status }">
-                            </div>
->>>>>>> dev-08-03-20
 
     <body>
 
@@ -71,7 +42,7 @@
 							<!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
-                                <h3 class="page-header">Alterar Categoria #${categoria.idCategoria }</h3>
+                                <h3 class="page-header">Alterar Categoria - ${categoria.idCategoria }</h3>
                                 <!-- Formulario para alteração de clientes -->
                                 <form action="controller.do" method="post">
                                     <!-- area de campos do form -->
@@ -79,7 +50,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="nome">Nome</label>
-                                            <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.nomeCategoria }">
+                                            <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.categoria}">
                                         </div>
                                     </div>
                                     <div class="row">

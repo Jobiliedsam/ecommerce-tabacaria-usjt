@@ -30,7 +30,6 @@
 
                     <jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
-<<<<<<< HEAD
                     <div id="admin-center" class="col">
                         <div class="row">
                             <div class="col">
@@ -49,7 +48,7 @@
                                                 Deseja realmente excluir este fornecedor?
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="Controller.do" method="post">
+                                                <form action="controller.do" method="post">
                                                     <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
                                                     <button type="submit" class="btn btn-primary" name="command" value="ExcluirCliente">Sim</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -113,29 +112,6 @@
                                 </div>
 
                                 <!-- Fim -->
-=======
-<title>Visualizar Fornecedor</title>
-</head>
-<body>
-<!-- Modal -->
-                <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="modalLabel">Excluir Fornecedor</h4>
-                            </div>
-                            <div class="modal-body">
-                                Deseja realmente excluir este fornecedor?
-                            </div>
-                            <div class="modal-footer">
-                                <form action="controller.do" method="post">
-                                    <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
-                                    <button type="submit" class="btn btn-primary" name="command" value="ExcluirCliente">Sim</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-                                </form>
->>>>>>> dev-08-03-20
                             </div>
                         </div>
                     </div>

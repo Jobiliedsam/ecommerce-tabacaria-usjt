@@ -20,11 +20,7 @@
     
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -34,7 +30,6 @@
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-<<<<<<< HEAD
 				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
 				<div id="admin-center" class="col">
@@ -42,7 +37,7 @@
 						<div class="col">
 							<!-- Adicionar aqui o conteúdo de administração -->
 
-							<!-- Modal -->
+							<!-- Modal Não implementado -->
                             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -63,20 +58,6 @@
                                         </div>
                                     </div>
                                 </div>
-=======
-        <body>
-                <!-- Modal Não implementado -->
-                <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="modalLabel">Excluir Cliente</h4>
-                            </div>
-                            <div class="modal-body">
-                                Deseja excluir este Cliente?
->>>>>>> dev-08-03-20
                             </div>
                             <!-- /.modal -->
                             <!-- Barra superior com os menus de navegação -->
@@ -85,10 +66,10 @@
                                 <h3 class="page-header">Visualizar Cliente ${cliente.idCliente }</h3>
                                 <div class="row">
                                     <div class="col-md-12">
-                                         <p><strong>Nome</strong>
+                                        <p><strong>Nome</strong>
                                         </p>
                                         <p>
-                                            ${cliente.nomeCliente}
+                                            ${cliente.nomeCompleto}
                                         </p>
                                     </div>
                                 </div>
@@ -97,35 +78,35 @@
                                         <p><strong>Celular</strong>
                                         </p>
                                         <p>
-                                            ${cliente.celularCliente}
+                                            ${cliente.celular}
                                         </p>
                                     </div>
                                     <div class="col-md-12">
                                         <p><strong>Telefone</strong>
                                         </p>
                                         <p>
-                                            ${cliente.telefoneCliente }
+                                            ${cliente.telefone }
                                         </p>
                                     </div>
                                     <div class="col-md-12">
                                         <p><strong>Email</strong>
                                         </p>
                                         <p>
-                                           ${cliente.emailCliente }
+                                        ${cliente.email }
                                         </p>
                                     </div>
                                     <div class="col-md-12">
                                         <p><strong>Genero</strong>
                                         </p>
                                         <p>
-                                            ${cliente.generoCliente }
+                                            ${cliente.genero }
                                         </p>
                                     </div>
                                     <div class="col-md-12">
                                         <p><strong>Cpf</strong>
                                         </p>
                                         <p>
-                                            ${cliente.cpfCliente }
+                                            ${cliente.cpfCnpj }
                                         </p>
                                     </div>
                                     <div class="col-md-12">
@@ -139,7 +120,14 @@
                                         <p><strong>DataNascimento</strong>
                                         </p>
                                         <p>
-                                            ${cliente.DataDeNascimento }
+                                            ${cliente.dataDeNascimento }
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p><strong>rg</strong>
+                                        </p>
+                                        <p>
+                                            ${cliente.rg }
                                         </p>
                                     </div>
                                 </div>
@@ -147,101 +135,11 @@
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
                                         <a href="Controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                        <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
                                         <a href="ClienteLista.jsp" class="btn btn-default">Voltar</a>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-                        </div>
-                    </div>
-                </div>
-                <!-- /.modal -->
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Visualizar Cliente ${cliente.idCliente }</h3>
-                    <div class="row">
-                        <div class="col-md-12">
-                             <p><strong>Nome</strong>
-                            </p>
-                            <p>
-                                ${cliente.nomeCompleto}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><strong>Celular</strong>
-                            </p>
-                            <p>
-                                ${cliente.celular}
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Telefone</strong>
-                            </p>
-                            <p>
-                                ${cliente.telefone }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Email</strong>
-                            </p>
-                            <p>
-                               ${cliente.email }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Genero</strong>
-                            </p>
-                            <p>
-                                ${cliente.genero }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Cpf</strong>
-                            </p>
-                            <p>
-                                ${cliente.cpfCnpj }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>Tipo</strong>
-                            </p>
-                            <p>
-                                ${cliente.tipo }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>DataNascimento</strong>
-                            </p>
-                            <p>
-                                ${cliente.dataDeNascimento }
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p><strong>rg</strong>
-                            </p>
-                            <p>
-                                ${cliente.rg }
-                            </p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div id="actions" class="row">
-                        <div class="col-md-12">
-                            <a href="Controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
-                            <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
-                            <a href="ClienteLista.jsp" class="btn btn-default">Voltar</a>
-                        </div>
-                    </div>
-                </div>
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-        </body>
->>>>>>> dev-08-03-20
 
 							<!-- Fim -->
 						</div>

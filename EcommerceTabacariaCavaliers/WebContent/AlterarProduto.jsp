@@ -21,7 +21,6 @@
 			href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap"
 			rel="stylesheet">
 
-<<<<<<< HEAD
 		<title>Alterar Produto</title>
 	</head>
 	<body>
@@ -30,56 +29,6 @@
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
-=======
-<title>Alterar Produto</title>
-</head>
-<body>
-					<div id="main" class="container">
-                    <h3 class="page-header">Alterar Produto ${produto.idProduto }</h3>
-                    
-                    <form action="controller.do" method="post">
-                        <!-- area de campos do form -->
-                        <input type="hidden" name="idProduto" value="${produto.idProduto }" />
-                        <div class="row">
-	               			<div class="col-md-12">
-	                   			<label for="nomeP">Nome do Produto</label>
-	                   			<input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Nome do Produto" value="${produto.nomeP }">
-	               			</div>
-	           			</div>
-                        <div class="row">
-	               		<div class="col-md-12">
-	                   			<label for="precoF">Preço Produto</label>
-	                   			<input type="text" name="precoF" class="form-control" id="precoF" required maxlength="10" placeholder="Preço do Produto" value="${produto.precoF }" >
-	               			</div>
-
-                            <div class="col-md-12">
-	                   			<label for="categoria">Categoria</label>
-	                   			<input type="text" name="categoria" class="form-control" id="categoria" required maxlength="20" placeholder="Categoria do Produto" value="${produto.categoria }">
-	               			</div>
-	                	</div>
-	            	</div>
-	            	<div class="row">
-	               			<div class="col-md-12">
-	                   			<label for="nomeP">Status</label>
-	                   			<input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Nome do Produto" value="${produto.nomeP }">
-	               			</div>
-	           			</div>
-	            	<div class="row">
-	                	<div class="col-md-12">
-	                   		 <label for="descricao">Descrição</label>
-	                    	<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriçao" value="${produto.descricao }">
-	                </div>
-	            </div>
-                        <hr />
-                        <div id="actions" class="row">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="EdiatrProduto">Salvar</button>
-                                <a href="ListarProduto.jsp" class="btn btn-default">Cancelar</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
->>>>>>> dev-08-03-20
 
 				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
@@ -91,7 +40,7 @@
 							<div id="main" class="container">
 								<h3 class="page-header">Alterar Produto ${produto.idProduto }</h3>
 								
-								<form action="Controller.do" method="post">
+								<form action="controller.do" method="post">
 									<!-- area de campos do form -->
 									<input type="hidden" name="idProduto" value="${produto.idProduto }" />
 									<div class="row">
@@ -111,16 +60,23 @@
 											   <input type="text" name="categoria" class="form-control" id="categoria" required maxlength="20" placeholder="Categoria do Produto" value="${produto.categoria }">
 										   </div>
 									</div>
+								</div>
 								<div class="row">
-								<div class="col-md-12">
-									<label for="descricao">Descriï¿½ï¿½o</label>
-									<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriï¿½ao" value="${produto.descricao }">
+										   <div class="col-md-12">
+											   <label for="nomeP">Status</label>
+											   <input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Nome do Produto" value="${produto.nomeP }">
+										   </div>
+									   </div>
+								<div class="row">
+									<div class="col-md-12">
+											<label for="descricao">Descriï¿½ï¿½o</label>
+										<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriï¿½ao" value="${produto.descricao }">
 								</div>
 							</div>
 									<hr />
 									<div id="actions" class="row">
 										<div class="col-md-12">
-											<button type="submit" class="btn btn-primary" name="command" value="AlterarProduto">Salvar</button>
+											<button type="submit" class="btn btn-primary" name="command" value="EdiatrProduto">Salvar</button>
 											<a href="ListarProduto.jsp" class="btn btn-default">Cancelar</a>
 										</div>
 									</div>

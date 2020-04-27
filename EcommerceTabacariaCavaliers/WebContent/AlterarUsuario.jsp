@@ -20,11 +20,7 @@
     
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
@@ -37,7 +33,6 @@
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-<<<<<<< HEAD
 				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 
 				<div id="admin-center" class="col">
@@ -62,7 +57,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="password">senha</label>
-                                            <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.senha }">
+                                            <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.password }">
                                         </div>
                                     </div>
                                     <hr />
@@ -73,34 +68,6 @@
                                         </div>
                                     </div>
                                 </form>
-=======
-        <body>
-                <!-- Barra superior com os menus de navegação -->
-                <!-- Container Principal -->
-                <div id="main" class="container">
-                    <h3 class="page-header">Alterar Usuario #${usuario.id }</h3>
-                    <!-- Formulario para alteração de clientes -->
-                    <form action="controller.do" method="post">
-                        <!-- area de campos do form -->
-                        <input type="hidden" name="id" value="${usuario.id }" />
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="email">email</label>
-                                <input type="email" class="form-control" name="email" id="email" required maxlength="100" placeholder="@cavaliers" value="${usuario.email }">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="password">senha</label>
-                                <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.password }">
-                            </div>
-                        </div>
-                        <hr />
-                        <div id="actions" class="row">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="command" value="AlterarUsuario">Salvar</button>
-                                <a href="UsuarioLista.jsp" class="btn btn-default">Cancelar</a>
->>>>>>> dev-08-03-20
                             </div>
 
 							<!-- Fim -->
