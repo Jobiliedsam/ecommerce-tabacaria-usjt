@@ -38,7 +38,7 @@
 
 							<div id="main" class="container">
 								<h3 class="page header">Cadastro de Fornecedor</h3>
-								<form action="ManterFornecedor.do" method="post">
+								<form action="controller.do" method="post">
 									<div class="row">
 										<div class="form-group col-md-12">
 											<label for="nomeFornecedor"> Nome: </label> <input type="text"
@@ -81,8 +81,8 @@
 									<hr />
 									<div id="action" class="row">
 										<div class="col-md-12">
-											<button type="submit" class="btn btn-primary" name="acao"
-												value="Criar">Salvar</button>
+											<button type="submit" class="btn btn-primary" name="command"
+												value="CriarFornecedor">Salvar</button>
 										</div>
 									</div>
 								</form>

@@ -30,7 +30,7 @@ public class ListarProduto implements Command {
 			session.setAttribute("lista", lista);
 		
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarProdutos.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarProduto.jsp");
 		dispatcher.forward(request, response);
 
 	}

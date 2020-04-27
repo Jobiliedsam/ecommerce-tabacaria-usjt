@@ -21,8 +21,19 @@
 </head>
 <body>
 
+
+
+        		<jsp:include page="./componentes/adm-top.html"></jsp:include>
+		
+		<div class="container-fluid">
+			<div id="adm-page" class="row">
+
+				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
 <div id="main" class="container">
-        <h3 class="page-header">Incluir Fornecedor</h3>
+        <h3 class="page-header">Incluir Produto</h3>
+        
+
+        
         
         <form action="controller.do" method="post">
             <!-- area de campos do form -->
@@ -66,6 +77,8 @@
                 </div>
             </div>
         </form>
+    </div>
+    </div>
     </div>
 
 

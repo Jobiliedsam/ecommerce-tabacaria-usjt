@@ -39,7 +39,7 @@ public class CriarProduto implements Command {
 		ArrayList<Produto> lista = new ArrayList<>();
 		lista.add(produto);
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ListarProdutos.jsp");
+		view = request.getRequestDispatcher("ListarProduto.jsp");
 		
 		view.forward(request, response);
 		
