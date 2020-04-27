@@ -29,7 +29,7 @@
 
 		<jsp:include page="./componentes/footer.html"></jsp:include>
 
-		<jsp:include page="./componentes/administration.html"></jsp:include>
+		
 
 		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
 

@@ -18,57 +18,71 @@
 	<title>Cadastro de Produto</title>
 </head>
 <body>
-	<jsp:include page="./componentes/header.html"></jsp:include>
-	
-	<section id="cadastro-produto">
-	<jsp:useBean id="categoriaService" class="br.com.cavaliers.tabacaria.service.CategoriaService"></jsp:useBean>
-	   <div class="container">
-	       <h4> Cadastro de Produtos</h4>
-	       <form action="ManterProduto.do" method="GET" enctype="multipart/form-data">
-	           <div class="row">
-	               <div class="col">
-	                   <label for="nomeProduto">Nome do Produto</label>
-	                   <input type="text" name="nomeProduto" class="form-control">
-	               </div>
-	           </div>
-	           <div class="row">
-	               <div class="col">
-	                   <label for="precoProduto">Preço Produto</label>
-	                   <input type="text" name="precoProduto" class="form-control">
-	               </div>
-	               <div class="col">
-	                   <label for="categoria">Categoria</label>
-	                   <select name="categoria" class="form-control">	       
-	                   		<c:forEach var="cat" items="${ categoriaService.carregarAll()}">
-	                   			<option value="${cat.categoria}">${cat.categoria}</option>
-	                   		</c:forEach>
-	                    </select>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col">
-	                    <label for="descricao">Descrição</label>
-	                    <input type="text" name="descricao" class="form-control">
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-3">
-	                    <label for="foto">Foto do Produto</label>
-	                    <input type="file" name="foto" class="form-control">
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col">
-	                    <input type="submit" class="form-control" value="Cadastrar">
-	                </div>
-	            </div>
-	        </form>
-	    </div>
-	</section>
 
-	<jsp:include page="./componentes/footer.html"></jsp:include>
+	<jsp:include page="./componentes/adm-top.html"></jsp:include>
+		
+	<div class="container-fluid">
+		<div id="adm-page" class="row">
 
-	<jsp:include page="./componentes/administration.html"></jsp:include>
+			<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+
+			<div id="admin-center" class="col">
+				<div class="row">
+					<div class="col">
+						<!-- Adicionar aqui o conteúdo de administração -->
+
+						<section id="cadastro-produto">
+							<jsp:useBean id="categoriaService" class="br.com.cavaliers.tabacaria.service.CategoriaService"></jsp:useBean>
+							   <div class="container">
+								   <h4> Cadastro de Produtos</h4>
+								   <form action="ManterProduto.do" method="GET" enctype="multipart/form-data">
+									   <div class="row">
+										   <div class="col">
+											   <label for="nomeProduto">Nome do Produto</label>
+											   <input type="text" name="nomeProduto" class="form-control">
+										   </div>
+									   </div>
+									   <div class="row">
+										   <div class="col">
+											   <label for="precoProduto">Preço Produto</label>
+											   <input type="text" name="precoProduto" class="form-control">
+										   </div>
+										   <div class="col">
+											   <label for="categoria">Categoria</label>
+											   <select name="categoria" class="form-control">	       
+													   <c:forEach var="cat" items="${ categoriaService.carregarAll()}">
+														   <option value="${cat.categoria}">${cat.categoria}</option>
+													   </c:forEach>
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<label for="descricao">Descrição</label>
+												<input type="text" name="descricao" class="form-control">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-3">
+												<label for="foto">Foto do Produto</label>
+												<input type="file" name="foto" class="form-control">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<input type="submit" class="form-control" value="Cadastrar">
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+
+						<!-- Fim -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
 

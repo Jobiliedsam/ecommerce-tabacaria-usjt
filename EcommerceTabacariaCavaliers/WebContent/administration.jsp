@@ -16,24 +16,34 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 
 	<meta charset="ISO-8859-1">
-	<title>Informação do Pedido</title>
+	<title>Administração</title>
 </head>
 	<body>
-		<jsp:include page="./componentes/header.html"></jsp:include>
 
-		<main>
-
-			<jsp:include page="./componentes/request.html"></jsp:include>
-
-		</main>
-
-		<jsp:include page="./componentes/footer.html"></jsp:include>
-
+		<jsp:include page="./componentes/adm-top.html"></jsp:include>
 		
+		<div class="container-fluid">
+			<div id="adm-page" class="row">
+
+				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+
+				<div id="admin-center" class="col">
+					<div class="row">
+						<div class="col">
+							<!-- Adicionar aqui o conteúdo de administração -->
+
+							<h1>Bem vindo a Pagina de Administração</h1>
+							<h3>Clique nos links laterais e administre sua loja.</h3>
+
+							<!-- Fim -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
-
+		
 		<script src="./js/backtotop.js"></script>
-		<script src="./js/fixe_position.js"></script>
 	</body>
 </html>
