@@ -100,8 +100,8 @@
                                                     <th>Cnpj</th>
                                                     <th>Telefone</th>
                                                     <th>E-Mail</th>
-                                                    <th>Descriï¿½ao</th>
-                                                    <th class="actions">Aï¿½ï¿½es</th>
+                                                    <th>Descriçao</th>
+                                                    <th class="actions">Açoes</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -154,7 +154,7 @@
                                         </li>
                                         <li><a href="#">3</a>
                                         </li>
-                                        <li class="next"><a href="#" rel="next">Prï¿½ximo &gt;</a>
+                                        <li class="next"><a href="#" rel="next">Proximo &gt;</a>
                                         </li>
                                     </ul>
                                     <!-- /.pagination -->
