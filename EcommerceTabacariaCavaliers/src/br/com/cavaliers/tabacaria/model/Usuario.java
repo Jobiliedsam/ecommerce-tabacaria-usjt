@@ -1,6 +1,9 @@
 package br.com.cavaliers.tabacaria.model;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String password;
 	private String email;

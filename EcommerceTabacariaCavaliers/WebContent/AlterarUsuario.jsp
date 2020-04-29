@@ -51,13 +51,13 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="email">email</label>
-                                            <input type="email" class="form-control" name="email" id="email" required maxlength="100" placeholder="@cavaliers" value="${usuario.email }">
+                                            <input type="email" class="form-control" name="email" id="email" required maxlength="100" placeholder="@cavaliers" value="${usuario.email}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="password">senha</label>
-                                            <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.password }">
+                                            <input type="password" class="form-control" name="password" id="password" maxlength="40"  placeholder="senha" value="${usuario.password}">
                                         </div>
                                     </div>
                                     <hr />

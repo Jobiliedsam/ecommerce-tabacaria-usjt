@@ -118,9 +118,9 @@
                                                                     ${categoria.descricao }
                                                                 </td>
                                                                 <td class="actions">
-                                                                    <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCategoria&id=${categoria.idCategoria }">Visualizar</a>
-                                                                    <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCategoria&id=${categoria.idCategoria }">Editar</a>
-                                                                <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria }">Excluir</a>
+                                                                    <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCategoria&id=${categoria.idCategoria}">Visualizar</a>
+                                                                    <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCategoria&id=${categoria.idCategoria}">Editar</a>
+                                                                <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCategoria&id=${categoria.idCategoria}">Excluir</a>
                                                                 </td>
                                                             </tr>
                                                 </c:forEach>

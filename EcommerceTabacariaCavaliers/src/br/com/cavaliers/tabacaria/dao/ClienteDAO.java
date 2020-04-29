@@ -103,7 +103,7 @@ public class ClienteDAO {
 	}
 
 	
-	public Cliente carregar(int id)
+	public Cliente carregar(int idCliente)
 	{
 		Cliente cliente = new Cliente();
 
@@ -112,7 +112,7 @@ public class ClienteDAO {
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, id);
+			stm.setInt(1, idCliente);
 
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
@@ -150,15 +150,16 @@ public class ClienteDAO {
 	{
 		String sqlSelect ="SELECT * FROM cliente";
     	ArrayList<Cliente> lista = new ArrayList<>();
-		Cliente cliente = new Cliente();
+		Cliente cliente;
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
-				if (resultSet.next())
+				while (resultSet.next())
 				{
+					cliente = new Cliente();
 					cliente.setIdCliente(resultSet.getInt("Id_Cliente"));
 					cliente.setNomeCompleto(resultSet.getString("Nome_Completo"));
 					cliente.setTelefone(resultSet.getString("Telefone"));
@@ -170,10 +171,10 @@ public class ClienteDAO {
 					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
 					lista.add(cliente);
 				}
-				else 
-				{
-					cliente.setIdCliente(-1);
-				}
+				//else 
+				//{
+					//cliente.setIdCliente(-1);
+				//}
 			}
 			catch (SQLException sqlException)
 			{
