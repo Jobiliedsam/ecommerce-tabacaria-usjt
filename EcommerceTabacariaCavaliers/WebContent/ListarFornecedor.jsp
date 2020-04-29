@@ -126,7 +126,7 @@
                                                                 ${fornecedor.descricao }
                                                             </td>
                                                             <td class="actions">
-                                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${categoria.idFornecedor }">Visualizar</a>
+                                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${fornecedor.idFornecedor }">Visualizar</a>
                                                                 <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }">Editar</a>
                                                                 <button id="btn${fornecedor.idFornecedor }"  
                                                                 type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-fornecedor="${fornecedor.idFornecedor }">Excluir</button>
