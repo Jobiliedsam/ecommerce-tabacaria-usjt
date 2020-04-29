@@ -33,18 +33,18 @@ public class VisualizarCategoria implements Command
 		}
 
 		Categoria categoria = new Categoria();
-		CategoriaService cs = new CategoriaService();
+		
 
 		categoria.setCategoria(pNome);
 		categoria.setStatus(pStatus);
 		categoria.setDescricao(pDescricao);
-		categoria.setIdCategoria(cs.criar(categoria));
-		//Categoria categoriaTeste = cs.carregar(categoria.getIdCategoria());
-		//System.out.println(categoriaTeste.toString());
-		//response.getStatus();
+		
+
+		CategoriaService cs = new CategoriaService();
+		
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
-
+		
 		categoria = cs.carregar(categoria.getIdCategoria());
 		request.setAttribute("categoria", categoria);
 		view = request.getRequestDispatcher("VisualizarCategoria.jsp");

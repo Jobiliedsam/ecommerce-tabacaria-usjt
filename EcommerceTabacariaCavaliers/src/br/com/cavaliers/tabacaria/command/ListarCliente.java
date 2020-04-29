@@ -20,7 +20,6 @@ public class ListarCliente implements Command {
 			throws ServletException, IOException {
 		String chave = request.getParameter("data[search]");
 		ClienteService clienteService = new ClienteService();
-		RequestDispatcher view = null;
 		ArrayList<Cliente> lista = null;
 		HttpSession session = request.getSession();
 		

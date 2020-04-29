@@ -123,34 +123,6 @@ public class UsuarioDAO {
 
 		return usuario;
     }
-    public boolean result = false;
-    public boolean verificausuario(String email, String Password ) {
-    	
-    	String sql = "";
-    	Connection connection = null;
-		try {
-			connection = new ConnectionFactory().obterConexao();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-    	//i
-    	sql += "select Id From usuario ";
-    	sql += "where email = "+"'"+ email +"'";
-    	sql += "and password = "+"'"+ Password +"'";
-    	
-    	try {
-    		PreparedStatement stm = connection.prepareStatement(sql);
-    		ResultSet resultSet = stm.executeQuery(sql);
-    		if(resultSet.next()) {
-    			result = true;
-    		}
-    	}catch (Exception e) {
-    		
-    	}
-    	
-      return result;
-	}
     public ArrayList<Usuario> buscarUsuario()
     {
     	String sqlSelect ="SELECT email FROM Usuario";
@@ -219,6 +191,38 @@ public class UsuarioDAO {
 
 		return lista;
     }
+
+
+	public boolean validar(Usuario usuario) {
+		String sqlSelect = "SELECT Email, Password FROM usuario "
+				+ " WHERE Email = ? and Password = ?";
+		try {
+			Connection connection = new ConnectionFactory().obterConexao();
+			
+			try(PreparedStatement stm = connection.prepareStatement(sqlSelect)){
+				stm.setString(1, usuario.getEmail());
+				stm.setString(2, usuario.getPassword());
+				try(ResultSet rs = stm.executeQuery()){
+					if(rs.next()) {
+						return true;
+					}
+					else {
+						return false;
+					}
+					
+					
+				}catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			
+		}catch (SQLException e2) {
+			e2.printStackTrace();
+		}
+		return false;
+	}
 
 }
 

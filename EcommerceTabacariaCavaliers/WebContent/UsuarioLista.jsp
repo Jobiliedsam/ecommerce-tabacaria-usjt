@@ -67,7 +67,7 @@
                             <form action="controller.do" method="post">
                                 <div id="top" class="row">
                                     <div class="col-md-3">
-                                        <a href="UsuarioIndex.jsp" class="btn btn-primary pull-right h2">Novo Usuario</a>
+                                        <a href="CriarUsuario.jsp" class="btn btn-primary pull-right h2">Novo Usuario</a>
                                     </div>
                                 </div>
                                 <!-- /#top -->

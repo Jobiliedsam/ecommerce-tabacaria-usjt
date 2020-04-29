@@ -37,23 +37,16 @@
 
 			<div class="row">
 				<div class="form-group col-md-8">
-					<label for="password"> Senha:</label> <input type="password"
+					<label for="password"> Senha:</label> <input type="text"
 						class="form-control" name="password" id="password" required
 						size="20" maxlength="20" placeholder="password" />
 				</div>
 			</div>
 			<hr />
 			<div id="action" class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary" name="command"
-						value="FazerLogin">Salvar</button>
-				</div>
-			</div>
-
-			<div id="top" class="row">
-				<div class="col-md-3">
-					<a href="CriarUsuario.jsp" class="btn btn-primary pull-right h2">Novo
-						Usuario</a>
+						value="CriarUsuario">Salvar</button>
 				</div>
 			</div>
 		</form>

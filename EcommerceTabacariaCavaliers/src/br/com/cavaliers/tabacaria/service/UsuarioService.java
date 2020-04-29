@@ -24,8 +24,8 @@ public class UsuarioService {
 	public Usuario carregar(int id) {
 		return dao.carregar(id);
 	}
-	public  boolean verificausuario(String email, String password) {
-		return dao.verificausuario(email, password);
+	public  boolean validar(Usuario usuario) {
+		return dao.validar(usuario); 
 	}
 	public ArrayList<Usuario> buscarUsuario() {
 		return dao.buscarUsuario();
