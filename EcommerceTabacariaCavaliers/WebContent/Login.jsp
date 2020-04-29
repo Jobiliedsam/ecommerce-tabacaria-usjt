@@ -28,7 +28,7 @@
 	</head>
 	<body>
 
-		<jsp:include page="./componentes/header.html"></jsp:include>
+		<jsp:include page="./componentes/header.jsp"></jsp:include>
 		<main>
 			<%
 				Usuario usuario = (Usuario) request.getAttribute("usuario");
@@ -40,10 +40,9 @@
 
 		</main>
 
-		<jsp:include page="./componentes/footer.html"></jsp:include>
+		<jsp:include page="./componentes/footer.jsp"></jsp:include>
 		
 		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
         <script src="./js/backtotop.js"></script>	
-
 	</body>
 </html>

@@ -25,12 +25,12 @@
 
         <body>
 
-            <jsp:include page="./componentes/adm-top.html"></jsp:include>
+            <jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
 
 				<div id="admin-center" class="col">
 					<div class="row">
@@ -92,7 +92,7 @@
                                     <div id="list" class="row">
                     
                                         <div class="table-responsive col-md-12">
-                                            <table class="table table-striped" cellspacing="0" cellpadding="0">
+                                            <table class="table table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>

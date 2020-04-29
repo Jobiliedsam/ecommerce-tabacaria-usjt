@@ -19,7 +19,7 @@
         <title>Home</title>
     </head>
     <body>
-        <jsp:include page="./componentes/header.html"></jsp:include>
+        <jsp:include page="./componentes/header.jsp"></jsp:include>
         
         <main>
             <jsp:include page="./componentes/banner_home.html"></jsp:include>
@@ -42,7 +42,7 @@
                                             <h4 class="font-weight-bold my-2">R$ ${produtos.precoF }</h4>
                                             <div>
                                                 <!-- Adicionar ao carrinho -->
-                                                <a class="add-to-cart" href="./cart.jsp" title="Adicionar ao Carrinho">
+                                                <a class="add-to-cart" href="controller.do?command=Carrinho&idProduto=${produtos.idProduto}" title="Adicionar ao Carrinho">
                                                     <i class="fas fa-cart-plus"></i>
                                                 </a>
                                                 <!-- Levar a pagina do produto -->
@@ -59,7 +59,7 @@
                 </div>
             </section>
         </main>
-        <jsp:include page="./componentes/footer.html"></jsp:include>
+        <jsp:include page="./componentes/footer.jsp"></jsp:include>
         
         <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
         <script src="./js/backtotop.js"></script>

@@ -53,11 +53,14 @@ public class LoginFilter implements Filter {
 		if(comando == null) {
 			comando = "";
 		}
+		
 		if(usuario == null && !uri.equals(path+ "/UsuarioIndex.jsp") 
-						   && !comando.equals("FazerLogin")&& !comando.equals("CriarUsuario")){
+			&& !comando.equals("FazerLogin")&& !comando.equals("CriarUsuario")
+			&& !comando.equals("Carrinho"))
+		{	
 			((HttpServletResponse)response).sendRedirect(path + "/UsuarioIndex.jsp");
 		}else {
-		chain.doFilter(request, response);
+			chain.doFilter(request, response);
 		}
 	}
 

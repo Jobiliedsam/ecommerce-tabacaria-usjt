@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cavaliers - Alterar Cliente</title>
 
-                    <link rel="stylesheet" href="./css/bootstrap-grid.css">
+        <link rel="stylesheet" href="./css/bootstrap-grid.css">
         <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
         <link rel="stylesheet" href="./css/bootstrap-reboot.css">
         <link rel="stylesheet" href="./css/bootstrap.css">
@@ -29,12 +29,12 @@
 
     <body>
 
-        <jsp:include page="./componentes/adm-top.html"></jsp:include>
+        <jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
 
 				<div id="admin-center" class="col">
 					<div class="row">

@@ -60,7 +60,7 @@ public class ClienteDAO {
 	public void atualizar(Cliente cliente)
 	{
 		String sqlUpdate = "UPDATE `cliente` SET  `Nome_Completo` = ?, `Telefone` = ?, " +
-			"`Celular` = ?, `CPF` = ?, `Genero` = ?, `Tipo` = ?, `Email` = ?,`Data_Nascimeto` = ? " +
+			"`Celular` = ?, `CPF` = ?, `Genero` = ?, `Tipo` = ?, `Email` = ?,`Data_Nascimento` = ? " +
 			"WHERE `Id_Cliente` = ? ";
 
 

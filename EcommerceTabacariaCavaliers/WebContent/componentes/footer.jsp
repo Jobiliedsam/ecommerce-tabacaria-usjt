@@ -1,5 +1,5 @@
-
-<!-- Sessão Footer -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- SessÃ£o Footer -->
 <footer>
     <div id="footer-top">
         <div class="container">
@@ -22,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="col-3 footer-widget">
-                    <h3>Endere�o</h3>
+                    <h3>Endereço</h3>
                     <!-- Aqui, poderia remover o mapa caso a loja seja apenas virtual -->
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i><span>Rua Estamos em quarentena, 7070</span></li>
@@ -54,10 +54,10 @@
     <div id="footer-bottom">
         <div class="container">
             <div class="row">
-                <!-- Essas duas linhas também podem ser dinâmicas -->
-                <span id="copyright">Copyright © 2020 Tabacaria Cavaliers | Criado por <a href="#">Cavaliers Soluctions</a></span>
-                <!-- Por padrão hoje o Google pede essas informações para Shopping e ADS -->
-                <span id="address">Matriz, Av. Estamos em quarentena, 7070, CEP 00000-000, N�o Saia, S�o Paulo -SP  / CNPJ: 00.000.000.0000-00.</span>
+                <!-- Essas duas linhas tambÃ©m podem ser dinÃ¢micas -->
+                <span id="copyright">Copyright Â© 2020 Tabacaria Cavaliers | Criado por <a href="#">Cavaliers Soluctions</a></span>
+                <!-- Por padrÃ£o hoje o Google pede essas informaÃ§Ãµes para Shopping e ADS -->
+                <span id="address">Matriz, Av. Estamos em quarentena, 7070, CEP 00000-000, Não Saia, São Paulo -SP  / CNPJ: 00.000.000.0000-00.</span>
             </div>
         </div>
     </div>

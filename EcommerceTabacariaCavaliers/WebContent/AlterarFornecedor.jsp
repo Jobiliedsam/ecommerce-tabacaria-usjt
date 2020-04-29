@@ -18,18 +18,16 @@
     </head>
     <body>
 
-        <jsp:include page="./componentes/adm-top.html"></jsp:include>
+        <jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
 
 				<div id="admin-center" class="col">
 					<div class="row">
 						<div class="col">
-							<!-- Adicionar aqui o conteúdo de administração -->
-
 							<div id="main" class="container">
                                 <h3 class="page-header">Alterar Fornecedor #${fornecedor.idFornecedor }</h3>
                                 <!-- Formulario para altera��o de fornecedor -->
@@ -77,8 +75,6 @@
                                 </div>
                                 </form>
                             </div>
-
-							<!-- Fim -->
 						</div>
 					</div>
 				</div>

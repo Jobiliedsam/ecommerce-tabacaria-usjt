@@ -25,18 +25,16 @@
 	</head>
 	<body>
 
-		<jsp:include page="./componentes/adm-top.html"></jsp:include>
+		<jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
 
 				<div id="admin-center" class="col">
 					<div class="row">
 						<div class="col">
-							<!-- Adicionar aqui o conteÃºdo de administraÃ§Ã£o -->
-
 							<div id="main" class="container">
 								<h3 class="page-header">Alterar Produto ${produto.idProduto }</h3>
 								
@@ -51,7 +49,7 @@
 									   </div>
 									<div class="row">
 									   <div class="col-md-12">
-											   <label for="precoF">Preï¿½o Produto</label>
+											   <label for="precoF">Preço Produto</label>
 											   <input type="text" name="precoF" class="form-control" id="precoF" required maxlength="10" placeholder="Preï¿½o do Produto" value="${produto.precoF }" >
 										   </div>
 			
@@ -60,7 +58,6 @@
 											   <input type="text" name="categoria" class="form-control" id="categoria" required maxlength="20" placeholder="Categoria do Produto" value="${produto.categoria }">
 										   </div>
 									</div>
-								</div>
 								<div class="row">
 										   <div class="col-md-12">
 											   <label for="nomeP">Status</label>
@@ -69,7 +66,7 @@
 									   </div>
 								<div class="row">
 									<div class="col-md-12">
-											<label for="descricao">Descriï¿½ï¿½o</label>
+											<label for="descricao">Descrição</label>
 										<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriï¿½ao" value="${produto.descricao }">
 								</div>
 							</div>

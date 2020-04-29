@@ -1,4 +1,5 @@
-<!-- Sessão Header -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- SessÃ£o Header -->
 <header>
     <div id="header-top" class="white">
         <div class="container">
@@ -30,17 +31,17 @@
                 </div>
                 <div class="col-6 search-bar">
                     <form>
-                        <!-- Aqui integração-->
+                        <!-- Aqui integraÃ§Ã£o-->
                         <input type="text" name="" id="">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
                 <div class="col-2 login-display">
-                    <!-- Nome da pessoa logada, também pode ser um link para pagina de gerenciamento de pedidos-->
+                    <!-- Nome da pessoa logada, tambÃ©m pode ser um link para pagina de gerenciamento de pedidos-->
                     <span>Login <a href="singup.jsp">Cliente</a></span>
                 </div>
                 <div class="col-1 shop-cart">
-                    <!-- Informação de quantos itens tem no carrinho dentro do span -->
+                    <!-- InformaÃ§Ã£o de quantos itens tem no carrinho dentro do span -->
                     <!-- Precisa link copm atela de Carrinho -->
                     <a href="cart.jsp" id="cart"><i class="fas fa-shopping-cart"><span id="products-number">00</span></i></a>
                 </div>
@@ -51,8 +52,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-9 menu-categories">
-                    <!-- Se possivel isso pode ser dinâmico com banco de dados 
-                    Restricão para quantidade que ira aparecer-->
+                    <!-- Se possivel isso pode ser dinÃ¢mico com banco de dados 
+                    RestricÃ£o para quantidade que ira aparecer-->
                     <ul>
                         <li><a href="#">Arguiles</a></li>
                         <li><a href="#">Tabaco</a></li>

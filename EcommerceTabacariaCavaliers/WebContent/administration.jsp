@@ -16,23 +16,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 
 	<meta charset="ISO-8859-1">
-	<title>AdministraÃ§Ã£o</title>
+	<title>Administração</title>
 </head>
 	<body>
 
-		<jsp:include page="./componentes/adm-top.html"></jsp:include>
+		<jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
 
-				<jsp:include page="./componentes/adm-menu.html"></jsp:include>
+				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
 
 				<div id="admin-center" class="col">
 					<div class="row">
 						<div class="col">
 							<!-- Adicionar aqui o conteÃºdo de administraÃ§Ã£o -->
 
-							<h1>Bem vindo a Pagina de AdministraÃ§Ã£o</h1>
+							<h1>Bem vindo a Pagina de Administrção</h1>
 							<h3>Clique nos links laterais e administre sua loja.</h3>
 
 							<!-- Fim -->
