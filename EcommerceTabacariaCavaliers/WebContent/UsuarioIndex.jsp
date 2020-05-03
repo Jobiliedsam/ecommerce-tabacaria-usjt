@@ -19,13 +19,13 @@
 	href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap"
 	rel="stylesheet">
 
-<title>Cadastro do Usuario</title>
+<title>Login</title>
 
 </head>
 <body>
 
 	<div id="main" class="container">
-		<h3 class="page header">Cadastre seu Usuario</h3>
+		<h3 class="page header">Faça seu Login</h3>
 		<form action="controller.do" method="post">
 			<div class="row">
 				<div class="form-group col-md-8">
@@ -42,6 +42,16 @@
 						size="20" maxlength="20" placeholder="password" />
 				</div>
 			</div>
+			<div class="row">
+                        <div class="col-4">
+                            <label for="tipo">tipo</label>
+                            <select name="tipo" class="form-control" >
+                                <option value="Cliente">Cliente</option>
+                                <option value="Administrativo">Administrativo</option>
+                            </select>
+                        </div>
+                    </div>
+			
 			<hr />
 			<div id="action" class="row">
 				<div class="col-md-6">

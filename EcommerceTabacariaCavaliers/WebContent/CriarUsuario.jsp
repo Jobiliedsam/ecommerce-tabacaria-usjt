@@ -42,11 +42,12 @@
 						size="20" maxlength="20" placeholder="password" />
 				</div>
 			</div>
+			
 			<hr />
 			<div id="action" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary" name="command"
-						value="CriarUsuario">Salvar</button>
+						value="CriarUsuario">Criar</button>
 				</div>
 			</div>
 		</form>

@@ -11,8 +11,8 @@ public class UsuarioDAO {
 	
 	public int inserir(Usuario usuario)
     {
-        String sqlInsert = "INSERT INTO `usuario` (`Email`, `Password`)" +
-        "VALUES (?, ?)";
+        String sqlInsert = "INSERT INTO `usuario` (`Email`, `Password`,`Tipo`)" +
+        "VALUES (?, ?,'Cliente')";
 
         try (Connection connection = new ConnectionFactory().obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
@@ -195,13 +195,15 @@ public class UsuarioDAO {
 
 	public boolean validar(Usuario usuario) {
 		String sqlSelect = "SELECT Email, Password FROM usuario "
-				+ " WHERE Email = ? and Password = ?";
+				+ " WHERE Email = ? and Password = ? and Tipo = ?";
 		try {
 			Connection connection = new ConnectionFactory().obterConexao();
 			
 			try(PreparedStatement stm = connection.prepareStatement(sqlSelect)){
 				stm.setString(1, usuario.getEmail());
 				stm.setString(2, usuario.getPassword());
+				stm.setString(3, usuario.getTipo());
+				
 				try(ResultSet rs = stm.executeQuery()){
 					if(rs.next()) {
 						return true;
@@ -209,6 +211,7 @@ public class UsuarioDAO {
 					else {
 						return false;
 					}
+					
 					
 					
 				}catch (SQLException e) {

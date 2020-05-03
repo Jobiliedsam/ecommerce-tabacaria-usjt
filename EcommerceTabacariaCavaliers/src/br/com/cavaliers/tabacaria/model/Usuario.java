@@ -7,15 +7,17 @@ public class Usuario implements Serializable{
 	private int id;
 	private String password;
 	private String email;
+	private String tipo;
 	
 	public Usuario () {
 		
 	}
 
-	public Usuario(int id, String password, String email) {
+	public Usuario(int id, String password, String email, String tipo) {
 		this.id = id;
 		this.password = password;
 		this.email = email;
+		this.tipo = tipo;
 	}
 
 	public int getId() {
@@ -41,10 +43,17 @@ public class Usuario implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", password=" + password + ", email=" + email + "]";
+		return "Usuario [tipo= " + tipo + ", password=" + password + ", email=" + email + "]";
 	}
 	
 	

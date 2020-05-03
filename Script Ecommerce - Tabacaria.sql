@@ -147,4 +147,7 @@ ALTER TABLE usuario
 CHANGE Senha Password VARCHAR(30);
 ALTER TABLE usuario
 CHANGE Nome_Usuario Email VARCHAR(30);
-
+ALTER TABLE usuario
+CHANGE Tipo_Usuario Tipo ENUM ('Administrativo', 'Cliente') NOT NULL;
+ALTER TABLE usuario
+CHANGE Email Email VARCHAR(50);

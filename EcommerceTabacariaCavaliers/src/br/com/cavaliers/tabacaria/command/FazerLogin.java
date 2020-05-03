@@ -17,22 +17,31 @@ public class FazerLogin implements Command {
 			throws ServletException, IOException {
 		String pEmail = request.getParameter("email");
 		String pPassword = request.getParameter("password");
+		String pTipo = request.getParameter("tipo");
 		
 		Usuario usuario = new Usuario();
 		usuario.setEmail(pEmail);
 		usuario.setPassword(pPassword);
+		usuario.setTipo(pTipo);
 
 		UsuarioService us = new UsuarioService();
 		
-		if(us.validar(usuario)) {
+		 if(us.validar(usuario) && pTipo.equals("Administrativo")) {
+			HttpSession session = request.getSession();
+			session.setAttribute("logado", usuario);
+			response.sendRedirect("administration.jsp");
+		}
+		 else if(us.validar(usuario)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("logado", usuario);
 			System.out.println(usuario + "logado");
-		}else {
+			response.sendRedirect("index.jsp");
+		}
+		else {
 			System.out.println(usuario + "incorreto");
 			throw new ServletException("Email / senha negados");
 		}
-		response.sendRedirect("index.jsp");
+		
 	}
 
 }

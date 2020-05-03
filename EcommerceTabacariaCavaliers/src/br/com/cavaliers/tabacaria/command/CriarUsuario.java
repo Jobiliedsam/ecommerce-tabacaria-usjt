@@ -19,6 +19,7 @@ public class CriarUsuario implements Command {
 			throws ServletException, IOException {
 		String pEmail = request.getParameter("email");
 		String pPassword = request.getParameter("password");
+		String pTipo = request.getParameter("tipo");
 		
 		Usuario usuario = new Usuario();
 		UsuarioService us = new UsuarioService();
@@ -26,12 +27,13 @@ public class CriarUsuario implements Command {
 		HttpSession session = request.getSession();
 		usuario.setEmail(pEmail);
 		usuario.setPassword(pPassword);
+		usuario.setTipo(pTipo);
 		us.criar(usuario);
 		
 		ArrayList<Usuario> lista = new ArrayList<>();
 		lista.add(usuario);
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("UsuarioLista.jsp");
+		view = request.getRequestDispatcher("UsuarioIndex.jsp");
 		view.forward(request, response);
 
 

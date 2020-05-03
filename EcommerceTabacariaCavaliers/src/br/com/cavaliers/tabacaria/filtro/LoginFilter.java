@@ -50,6 +50,7 @@ public class LoginFilter implements Filter {
 		
 		String comando = req.getParameter("command");
 		
+		
 		if(comando == null) {
 			comando = "";
 		}

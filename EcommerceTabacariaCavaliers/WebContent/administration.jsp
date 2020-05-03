@@ -20,7 +20,7 @@
 </head>
 	<body>
 
-		<jsp:include page="./componentes/adm-top.jsp"></jsp:include>
+		 <jsp:include page="./componentes/adm-top.jsp"></jsp:include> 
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
