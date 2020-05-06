@@ -55,12 +55,18 @@ public class UsuarioClienteFilter implements Filter {
 			comando = "";
 		}
 		
-		if(usuario == null && !uri.equals("cart.jsp") && uri.equals(path+"/revision.jsp") && uri.equals(path+"/request.jsp"))
+		if(usuario != (Usuario)session.getAttribute("logado") && uri.equals(path+ "/FornecedorIndex.jsp"))
 		{	
 			((HttpServletResponse)response).sendRedirect(path + "/UsuarioIndex.jsp");
 		}else {
 			chain.doFilter(request, response);
 		}
+		/*if(usuario == null && uri.equals(path+ "/revison.jsp"))
+		{	
+			((HttpServletResponse)response).sendRedirect(path + "/UsuarioIndex.jsp");
+		}else {
+			chain.doFilter(request, response);
+		}*/
 	}
 
 	/**

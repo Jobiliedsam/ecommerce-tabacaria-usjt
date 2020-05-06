@@ -11,8 +11,8 @@ public class ConnectionFactory {
 		String servidor = "localhost";
 		String porta = "3306";
 		String database = "tabacaria";
-		String usuario = "USJTCavaliers";
-		String senha = "USJTCavaliers";
+		String usuario = "thiago";
+		String senha = "thiago!230401";
 
 		String stringConnection = "jdbc:mysql://" 
 			+ servidor + ":" 
