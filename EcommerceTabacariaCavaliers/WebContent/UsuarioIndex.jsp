@@ -56,7 +56,7 @@
 			<div id="action" class="row">
 				<div class="col-md-6">
 					<button type="submit" class="btn btn-primary" name="command"
-						value="FazerLogin">Salvar</button>
+						value="FazerLogin">Logar</button>
 				</div>
 			</div>
 

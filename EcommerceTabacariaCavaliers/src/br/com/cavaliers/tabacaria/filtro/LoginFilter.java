@@ -21,10 +21,9 @@ import br.com.cavaliers.tabacaria.model.Usuario;
 @WebFilter("/controller.do")
 public class LoginFilter implements Filter {
 
- 
-    public LoginFilter() {
-        // TODO Auto-generated constructor stub
-    }
+	public LoginFilter() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see Filter#destroy()
@@ -36,31 +35,32 @@ public class LoginFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
-		HttpServletRequest req = (HttpServletRequest)request;
+
+		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
-		
-		Usuario usuario = (Usuario)session.getAttribute("logado");
-		
+
+		Usuario usuario = (Usuario) session.getAttribute("logado");
+		Usuario usuario1 = (Usuario) session.getAttribute("logadoAdministrador");
 		String path = req.getContextPath();
 		String uri = req.getRequestURI();
-		
+
 		String comando = req.getParameter("command");
-		
-		
-		if(comando == null) {
+
+		if (comando == null) {
 			comando = "";
 		}
+
+		if (usuario == null && usuario1 == null && !uri.equals(path + "/UsuarioIndex.jsp") && !comando.equals("FazerLogin")
+				&& !comando.equals("CriarUsuario") && !comando.equals("Carrinho")) {
+			((HttpServletResponse) response).sendRedirect(path + "/UsuarioIndex.jsp");
+		}
 		
-		if(usuario == null && !uri.equals(path+ "/UsuarioIndex.jsp") 
-			&& !comando.equals("FazerLogin")&& !comando.equals("CriarUsuario")
-			&& !comando.equals("Carrinho"))
-		{	
-			((HttpServletResponse)response).sendRedirect(path + "/UsuarioIndex.jsp");
-		}else {
+
+		else {
 			chain.doFilter(request, response);
 		}
 	}

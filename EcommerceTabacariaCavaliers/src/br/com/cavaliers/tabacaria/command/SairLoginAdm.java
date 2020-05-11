@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Usuario;
 import br.com.cavaliers.tabacaria.service.UsuarioService;
 
-public class SairLogin implements Command {
+public class SairLoginAdm implements Command {
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
@@ -20,7 +20,7 @@ public class SairLogin implements Command {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 
-		Usuario usuario = (Usuario) session.getAttribute("logado");
+		Usuario usuario = (Usuario) session.getAttribute("logadoAdministrador");
 		
 		UsuarioService us = new UsuarioService();
 
@@ -31,4 +31,5 @@ public class SairLogin implements Command {
 		}
 		response.sendRedirect("UsuarioIndex.jsp");
 	}
+
 }

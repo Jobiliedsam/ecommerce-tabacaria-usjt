@@ -16,27 +16,27 @@ import br.com.cavaliers.tabacaria.model.Usuario;
 /**
  * Servlet Filter implementation class UsuarioClienteFilter
  */
-@WebFilter("/controller.do")
-public class UsuarioClienteFilter implements Filter {
+//@WebFilter("/controller.do")
+//public class UsuarioClienteFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public UsuarioClienteFilter() {
+    //public UsuarioClienteFilter() {
         // TODO Auto-generated constructor stub
-    }
+    //}
 
 	/**
 	 * @see Filter#destroy()
 	 */
-	public void destroy() {
+	//public void destroy() {
 		// TODO Auto-generated method stub
-	}
+	//}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	/*public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
@@ -66,14 +66,14 @@ public class UsuarioClienteFilter implements Filter {
 			((HttpServletResponse)response).sendRedirect(path + "/UsuarioIndex.jsp");
 		}else {
 			chain.doFilter(request, response);
-		}*/
+		}
 	}
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
-	public void init(FilterConfig fConfig) throws ServletException {
+	//public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
-	}
+//	}
 
-}
+//}

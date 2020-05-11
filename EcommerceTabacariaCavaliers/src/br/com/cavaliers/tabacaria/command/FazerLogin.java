@@ -28,7 +28,7 @@ public class FazerLogin implements Command {
 		
 		 if(us.validar(usuario) && pTipo.equals("Administrativo")) {
 			HttpSession session = request.getSession();
-			session.setAttribute("logado", usuario);
+			session.setAttribute("logadoAdministrador", usuario);
 			response.sendRedirect("administration.jsp");
 		}
 		 else if(us.validar(usuario)) {
