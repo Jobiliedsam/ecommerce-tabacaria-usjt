@@ -62,7 +62,7 @@
 
 			<div id="top" class="row">
 				<div class="col-md-3">
-					<a href="CriarUsuario.jsp" class="btn btn-primary pull-right h2">Novo
+					<a href="singup.jsp" class="btn btn-primary pull-right h2">Novo
 						Usuario</a>
 				</div>
 			</div>

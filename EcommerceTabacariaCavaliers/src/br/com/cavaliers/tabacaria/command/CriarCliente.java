@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Cliente;
+import br.com.cavaliers.tabacaria.model.Usuario;
 import br.com.cavaliers.tabacaria.service.ClienteService;
+import br.com.cavaliers.tabacaria.service.UsuarioService;
 
 public class CriarCliente implements Command {
 
@@ -19,26 +21,32 @@ public class CriarCliente implements Command {
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Cliente cliente = new Cliente();
+		Usuario usuario = new Usuario();
 		ClienteService clienteService = new ClienteService();
+		UsuarioService us = new UsuarioService();
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 		
 		cliente.setCelular(request.getParameter("celularCliente"));
 		cliente.setNomeCompleto(request.getParameter("nomeCliente"));
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
-		cliente.setEmail(request.getParameter("emailCliente"));
+		cliente.setEmail(request.getParameter("email"));
 		cliente.setGenero(request.getParameter("generoCliente"));
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
 		cliente.setRg(request.getParameter("rg"));
+		usuario.setEmail(request.getParameter("email"));
+		usuario.setPassword(request.getParameter("password"));
+		usuario.setTipo(request.getParameter("tipo"));
 		clienteService.criar(cliente);
+		us.criar(usuario);
 		
 		
 		ArrayList<Cliente> lista =  new ArrayList<>();
 		lista.add(cliente);
-		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ClienteLista.jsp");
+		session.setAttribute("listaCliente", lista);
+		view = request.getRequestDispatcher("UsuarioIndex.jsp");
 		view.forward(request, response);
 
 

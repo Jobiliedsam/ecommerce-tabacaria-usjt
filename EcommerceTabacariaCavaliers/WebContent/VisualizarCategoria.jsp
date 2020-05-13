@@ -63,13 +63,13 @@
                             <!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
-                                <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria}</h3>
+                                <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria }</h3>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p><strong>Nome</strong>
                                         </p>
                                         <p>
-                                            ${categoria.categoria }
+                                            ${categoria.categoria}
                                         </p>
                                     </div>
                                 </div>
@@ -78,14 +78,14 @@
                                         <p><strong>Status</strong>
                                         </p>
                                         <p>
-                                            ${categoria.status }
+                                            ${categoria.status}
                                         </p>
                                     </div>
                                     <div class="col-md-12">
                                         <p><strong>Descricao</strong>
                                         </p>
                                         <p>
-                                            ${categoria.descricao }
+                                            ${categoria.descricao}
                                         </p>
                                     </div>
                                 </div>

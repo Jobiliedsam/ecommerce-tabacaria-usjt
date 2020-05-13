@@ -28,7 +28,7 @@ public class ListarCliente implements Command {
 		} else {
 			lista = clienteService.buscarCliente();
 		}
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaCliente", lista);
 	 
 
 	RequestDispatcher dispatcher = request.getRequestDispatcher("ClienteLista.jsp");

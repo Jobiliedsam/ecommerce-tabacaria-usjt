@@ -14,7 +14,7 @@ public class ListarCategoriaReiniciar implements Command {
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.setAttribute("lista", null);
+		session.setAttribute("listaCategoria", null);
 		RequestDispatcher view = request.getRequestDispatcher("CategoriaLista.jsp");
 		view.forward(request, response);
 	}

@@ -69,7 +69,7 @@ public class UsuarioDAO {
 
     public void excluir(int idUsuario)
     {
-        String sqlDelete = "DELETE FROM categoria WHERE Id = ?";
+        String sqlDelete = "DELETE FROM usuario WHERE Id_Uuario = ?";
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
@@ -88,7 +88,7 @@ public class UsuarioDAO {
     {
         Usuario usuario = new Usuario();
 
-		String sqlSelect = "SELECT * FROM categoria WHERE Id = ?";
+		String sqlSelect = "SELECT * FROM usuario WHERE Id = ?";
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)

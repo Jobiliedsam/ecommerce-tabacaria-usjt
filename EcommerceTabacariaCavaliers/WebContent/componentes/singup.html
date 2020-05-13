@@ -1,119 +1,132 @@
 <!-- Formulário de Cadastro -->
 <section id="singup-form">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3>Informa��es pessoais</h3>
-                <form action="controller.do" method="post">
-                    <div class="row">
-                        <div class="col">
-                            <label for="nomeCliente">Nome Completo</label>
-                            <input type="text" class="form-control" name="nomeCliente" placeholder="Nome Completo">
-                        </div>                
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="telefoneCliente">Telefone Fixo</label>
-                            <input type="tel" class="form-control" name="telefoneCliente" placeholder="(00) XXXX-XXXX">
-                        </div>
-                        <div class="col">
-                            <label for="celularCliente">Telefone Celular</label>
-                            <input type="tel" class="form-control" name="celularCliente" placeholder="(00) XXXXX-XXXX">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="rgCliente">RG</label>
-                            <input type="text" class="form-control" name="rgCliente" placeholder="RG">
-                        </div>
-                        <div class="col">
-                            <label for="cpfCliente">CPF</label>
-                            <input type="text" class="form-control" name="cpfCliente" placeholder="CPF">
-                        </div>
-                        <div class="col">
-                            <label for="dataNascimentoCliente">Data de Nascimento</label>
-                            <input type="date" class="form-control" name="dataNascimentoCliente" placeholder="DD/MM/AAAA">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <label for="generoCliente">Genero</label>
-                            <select name="generoCliente" class="form-control" >
-                                <option value="F">Feminino</option>
-                                <option value="M">Masculino</option>
-                                <option value="O">Outros</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label for="emailCliente">Email</label>
-                            <input type="email" class="form-control" name="emailCliente" placeholder="email@exemplo.com">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="enderecoPrincipal">Endere�o Principal</label>
-                            <input type="text" name="enderecoPrincipal" class="form-control" placeholder="Rua Exemplo 234">
-                        </div>
-                        <div class="col-3">
-                            <label for="cep">CEP</label>
-                            <input type="text" name="cep" class="form-control" placeholder="0000-00">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="bairro">Bairro</label>
-                            <input type="text" name="bairro" class="form-control" placeholder="Bairro">
-                        </div>
-                        <div class="col">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" name="cidade" class="form-control" placeholder="Cidade">
-                        </div>
-                        <div class="col-2">
-                            <label for="estado">Estado</label>
-                            <select name="estado" class="form-control">
-                                <option selected value="" >[Selecione o estado]</option>
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapá</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceará</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Pará</option>
-                                <option value="PB">Paraíba</option>
-                                <option value="PR">Paraná</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piauí</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary" name="command"
-												value="CriarCliente">Salvar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3>Informa��es pessoais</h3>
+				<form action="controller.do" method="post">
+					<div class="row">
+						<div class="col">
+							<label for="nomeCliente">Nome Completo</label> <input type="text"
+								class="form-control" name="nomeCliente"
+								placeholder="Nome Completo">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="telefoneCliente">Telefone Fixo</label> <input
+								type="tel" class="form-control" name="telefoneCliente"
+								placeholder="(00) XXXX-XXXX">
+						</div>
+						<div class="col">
+							<label for="celularCliente">Telefone Celular</label> <input
+								type="tel" class="form-control" name="celularCliente"
+								placeholder="(00) XXXXX-XXXX">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="rg">RG</label> <input type="text"
+								class="form-control" name="rg" placeholder="RG">
+						</div>
+						<div class="col">
+							<label for="cpfCliente">CPF</label> <input type="text"
+								class="form-control" name="cpfCliente" placeholder="CPF">
+						</div>
+						<div class="col">
+							<label for="dataNascimentoCliente">Data de Nascimento</label> <input
+								type="date" class="form-control" name="dataNascimentoCliente"
+								placeholder="DD/MM/AAAA">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<label for="generoCliente">Genero</label> <select
+								name="generoCliente" class="form-control">
+								<option value="F">Feminino</option>
+								<option value="M">Masculino</option>
+								<option value="O">Outros</option>
+							</select>
+						</div>
+					
+						<div class="form-group col-md-6">
+							<label for="email"> Email: </label> <input type="email"
+								class="form-control" name="email" id="email" required
+								maxlength="50" placeholder="email" />
+						</div>
+						<div class="form-group col-md-6">
+							<label for="password"> Senha:</label> <input type="text"
+								class="form-control" name="password" id="password" required
+								size="20" maxlength="20" placeholder="password" />
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="enderecoPrincipal">Endere�o Principal</label> <input
+								type="text" name="enderecoPrincipal" class="form-control"
+								placeholder="Rua Exemplo 234">
+						</div>
+						<div class="col-3">
+							<label for="cep">CEP</label> <input type="text" name="cep"
+								class="form-control" placeholder="0000-00">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="bairro">Bairro</label> <input type="text"
+								name="bairro" class="form-control" placeholder="Bairro">
+						</div>
+						<div class="col">
+							<label for="cidade">Cidade</label> <input type="text"
+								name="cidade" class="form-control" placeholder="Cidade">
+						</div>
+						<div class="col-2">
+							<label for="estado">Estado</label> <select name="estado"
+								class="form-control">
+								<option selected value="">[Selecione o estado]</option>
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						</div>
+						<div class="col">
+							<label for="complemento">Complemento</label> <input type="text"
+								name="complemento" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<button type="submit" class="btn btn-primary" name="command"
+								value="CriarCliente">Salvar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </section>

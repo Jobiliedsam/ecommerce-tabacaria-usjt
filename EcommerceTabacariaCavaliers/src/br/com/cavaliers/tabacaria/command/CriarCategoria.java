@@ -39,7 +39,7 @@ public class CriarCategoria implements Command
 		
 		ArrayList<Categoria> lista = new ArrayList<>();
 		lista.add(categoria);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaCategoria", lista);
 		view = request.getRequestDispatcher("CategoriaLista.jsp");
 		
 		view.forward(request, response);

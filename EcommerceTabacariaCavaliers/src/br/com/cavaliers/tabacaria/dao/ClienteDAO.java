@@ -191,7 +191,7 @@ public class ClienteDAO {
 	}
 	public ArrayList<Cliente> buscarCliente(String chave)
     {
-    	String sqlSelect = "SELECT * FROM categoria where upper(nome) like ?";
+    	String sqlSelect = "SELECT * FROM cliente where upper(Nome_Completo) like ?";
     	ArrayList<Cliente> lista = new ArrayList<>();
     	Cliente cliente;
 

@@ -88,7 +88,7 @@
                                     <!-- /#top -->
                                 </form>
                                 <hr />
-                                <c:if test="${not empty lista}">
+                                <c:if test="${not empty listaCategoria}">
                                     <div id="list" class="row">
                     
                                         <div class="table-responsive col-md-12">
@@ -103,7 +103,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <c:forEach var="categoria" items="${lista }">
+                                                <c:forEach var="categoria" items="${listaCategoria }">
                                                         <tr>
                                                                 <td>
                                                                 ${categoria.idCategoria }

@@ -29,20 +29,23 @@ public class AlterarCategoria implements Command {
 			// TODO: handle exception
 		}
 		Categoria categoria = new Categoria();
-		CategoriaService cs = new CategoriaService();
-		RequestDispatcher view = null;
-		HttpSession session = request.getSession();
 		categoria.setIdCategoria(id);
 		categoria.setCategoria(pNome);
 		categoria.setStatus(pStatus);
 		categoria.setDescricao(pDescricao);
+		
+		CategoriaService cs = new CategoriaService();
+		RequestDispatcher view = null;
+		HttpSession session = request.getSession();
+		
 		cs.atualizar(categoria);
 		
-		ArrayList<Categoria> lista = (ArrayList<Categoria>) session.getAttribute("lista");
+		
+		ArrayList<Categoria> lista = (ArrayList<Categoria>) session.getAttribute("listaCategoria");
 		int pos = busca(categoria, lista);
 		lista.remove(pos);
 		lista.add(pos, categoria);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaCategoria", lista);
 		request.setAttribute("categoria", categoria);
 		view = request.getRequestDispatcher("VisualizarCategoria.jsp");
 		

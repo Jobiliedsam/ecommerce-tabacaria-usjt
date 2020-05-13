@@ -165,7 +165,7 @@ public class CategoriaDAO
     }
     public ArrayList<Categoria> buscarCategoria(String chave)
     {
-    	String sqlSelect = "SELECT id, nome, status, descricao FROM categoria where upper(nome) like ?";
+    	String sqlSelect = "SELECT Id_Categoria, Nome_Categoria, Status_Categoria , descricao FROM categoria where upper(Nome_Categoria) like ?";
     	ArrayList<Categoria> lista = new ArrayList<>();
     	Categoria categoria;
 

@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Cliente;
+import br.com.cavaliers.tabacaria.model.Usuario;
 import br.com.cavaliers.tabacaria.service.ClienteService;
+import br.com.cavaliers.tabacaria.service.UsuarioService;
 
 public class ExcluirCliente implements Command {
 
@@ -25,22 +27,36 @@ public class ExcluirCliente implements Command {
 		} catch (NumberFormatException e) {
 
 		}
+		String pId1 = request.getParameter("idUsuario");
+		int idUsuario = -1;
+
+		try {
+			idUsuario = Integer.parseInt(pId);
+		} catch (NumberFormatException e) {
+
+		}
 		Cliente cliente = new Cliente();
+		Usuario usuario = new Usuario();
 		cliente.setIdCliente(id);
+		usuario.setId(idUsuario);
+
 		ClienteService clienteService = new ClienteService();
-		
+		UsuarioService us = new UsuarioService();
+
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
-		
+
 		clienteService.excluir(id);
-		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("lista");
+		us.excluir(idUsuario);
+		
+		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("listaCliente");
 		lista.remove(busca(cliente, lista));
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaCliente", lista);
 		view = request.getRequestDispatcher("ClienteLista.jsp");
 		view.forward(request, response);
 
 	}
-	
+
 	public int busca(Cliente cliente, ArrayList<Cliente> lista) {
 		Cliente to;
 		for (int i = 0; i < lista.size(); i++) {

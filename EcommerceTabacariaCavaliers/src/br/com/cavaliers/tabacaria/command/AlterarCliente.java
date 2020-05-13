@@ -48,11 +48,11 @@ public class AlterarCliente implements Command {
 	
 		clienteService.atualizar(cliente);
 		
-		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("lista");
+		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("listaCliente");
 		int pos = busca(cliente, lista);
 		lista.remove(pos);
 		lista.add(pos, cliente);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaCliente", lista);
 		request.setAttribute("cliente", cliente);
 		view = request.getRequestDispatcher("VisualizarCliente.jsp");
 		view.forward(request, response);

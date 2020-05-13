@@ -19,7 +19,7 @@ import br.com.cavaliers.tabacaria.model.Usuario;
  */
 @WebFilter(urlPatterns = {"/AlterarCategoria.jsp","/AlterarCliente.jsp", "/AlterarFornecedor.jsp", "/AlterarProduto.jsp", "/AlterarUsuario.jsp",
 		"/CategoriaIndex.jsp", "/ClienteIndex.jsp", "/CriarFornecedor.jsp","/CategoriaLista.jsp", "/ClienteLista.jsp", "/UsuarioLista.jsp","/CriarProduto.jsp",
-		"/VisualizarCategoria.jsp", "/VisualizarCliente.jsp", "/VisualizarFornecedor.jsp", "/VisualizarProduto.jsp", "/VisualizarUsuario.jsp","/ListarFornecedor.jsp"})
+		"/VisualizarCategoria.jsp", "/VisualizarCliente.jsp", "/VisualizarFornecedor.jsp", "/VisualizarProduto.jsp", "/VisualizarUsuario.jsp","/ListarFornecedor.jsp","/administration.jsp"})
 public class LoginFilter1 implements Filter {
 
 	 public LoginFilter1() {

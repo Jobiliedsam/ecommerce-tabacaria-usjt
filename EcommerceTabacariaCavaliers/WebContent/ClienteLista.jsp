@@ -65,7 +65,7 @@
                             <!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
-                                <form action="Controller.do" method="post">
+                                <form action="controller.do" method="post">
                                     <div id="top" class="row">
                                         <div class="col-md-3">
                                             <h2>Cliente</h2>
@@ -88,7 +88,7 @@
                                     <!-- /#top -->
                                 </form>
                                 <hr />
-                                <c:if test="${not empty lista}">
+                                <c:if test="${not empty listaCliente}">
                                 <div id="list" class="row">
                 
                                     <div class="table-responsive col-md-12">
@@ -105,11 +105,12 @@
                                                       <th>Tipo</th>
                                                       <th>DataNascimento</th>
                                                       <th>rg</th>
+                                                      <th>senha</th>
                                                     <th class="actions">Ações</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <c:forEach var="cliente" items="${lista }">
+                                              <c:forEach var="cliente" items="${listaCliente }">
                                                        <tr>
                                                             <td>
                                                                ${cliente.idCliente }
@@ -139,12 +140,15 @@
                                                                ${cliente.dataDeNascimento }
                                                             </td>
                                                             <td>
-                                                               ${cliente.rg }
+                                                               ${cliente.rg}
+                                                            </td>
+                                                            <td>
+                                                               ${usuario.password}
                                                             </td>
                                                             <td class="actions">
-                                                                <a class="btn btn-success btn-xs" href="Controller.do?command=VisualizarCliente&id=${cliente.idCliente }">Visualizar</a>
-                                                                <a class="btn btn-warning btn-xs" href="Controller.do?command=EditarCliente&id=${cliente.idCliente }">Editar</a>
-                                                                 <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
+                                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCliente&id=${cliente.idCliente }">Visualizar</a>
+                                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCliente&id=${cliente.idCliente }">Editar</a>
+                                                                 <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}">Excluir</a>
                                                             </td>
                                                         </tr>
                                             </c:forEach>

@@ -35,6 +35,7 @@ public class VisualizarCategoria implements Command
 		Categoria categoria = new Categoria();
 		
 
+		categoria.setIdCategoria(id);
 		categoria.setCategoria(pNome);
 		categoria.setStatus(pStatus);
 		categoria.setDescricao(pDescricao);

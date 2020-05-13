@@ -28,7 +28,7 @@ public class ListarCategoria implements Command {
 			} else {
 				lista = cs.carregarAll();
 			}
-			session.setAttribute("lista", lista);
+			session.setAttribute("listaCategoria", lista);
 		 
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("CategoriaLista.jsp");

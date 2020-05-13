@@ -134,8 +134,8 @@
                                 <hr />
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
-                                        <a href="Controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
-                                        <a class="btn btn-danger btn-xs" href="Controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
+                                        <a href="controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
+                                        <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
                                         <a href="ClienteLista.jsp" class="btn btn-default">Voltar</a>
                                     </div>
                                 </div>
