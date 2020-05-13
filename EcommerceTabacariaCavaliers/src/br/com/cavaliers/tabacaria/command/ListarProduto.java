@@ -27,7 +27,7 @@ public class ListarProduto implements Command {
 			} else {
 				lista = ps.carregarAll();
 			}
-			session.setAttribute("lista", lista);
+			session.setAttribute("listaProduto", lista);
 		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarProduto.jsp");

@@ -16,7 +16,7 @@ public class VisualizarFornecedor implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idFornecedor");
+		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nomeFornecedor");
 		String pCnpj = request.getParameter("cnpj");
 		String pFone = request.getParameter("contatoTelefone");
@@ -31,6 +31,7 @@ public class VisualizarFornecedor implements Command {
 		}
 
 		Fornecedor fornecedor = new Fornecedor();
+		
 		fornecedor.setIdFornecedor(id);
 		fornecedor.setNomeFornecedor(pNome);
 		fornecedor.setCnpj(pCnpj);

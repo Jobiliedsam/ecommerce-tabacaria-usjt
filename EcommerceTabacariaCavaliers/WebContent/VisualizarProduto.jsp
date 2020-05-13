@@ -74,7 +74,15 @@
                             <p>
                                 ${produto.categoria }
                             </p>
+                            </div>
                         </div>
+                    <div class= "col-md-6">
+                    	<p><strong>Fornecedor</strong>
+                    	</p>
+                    	<p>
+                    		${produto.fornecedor }
+                    	</p>
+                      </div>
                     </div>
                     <div class="col-md-6">
                             <p><strong>Status</strong>
@@ -82,7 +90,6 @@
                             <p>
                                 ${produto.status }
                             </p>
-                        </div>
                     </div>
                     <div class="col-md-6">
                             <p><strong>Descriçao</strong>

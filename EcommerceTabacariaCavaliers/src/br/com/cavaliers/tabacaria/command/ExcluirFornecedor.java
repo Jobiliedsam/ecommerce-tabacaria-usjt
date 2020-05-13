@@ -17,7 +17,7 @@ public class ExcluirFornecedor implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idFornecedor");
+		String pId = request.getParameter("id");
 		int id = -1;
 		
 		try {
@@ -35,10 +35,10 @@ public class ExcluirFornecedor implements Command {
 		HttpSession session = request.getSession();
 		
 		fs.excluir(fornecedor.getIdFornecedor());
-		ArrayList<Fornecedor> lista = (ArrayList<Fornecedor>)session.getAttribute("lista");
+		ArrayList<Fornecedor> lista = (ArrayList<Fornecedor>)session.getAttribute("listaFornecedor");
 		lista.remove(busca(fornecedor, lista));
-		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ListarFornecedores.jsp");			
+		session.setAttribute("listaFornecedor", lista);
+		view = request.getRequestDispatcher("ListarFornecedor.jsp");			
 		
 		view.forward(request, response);
 

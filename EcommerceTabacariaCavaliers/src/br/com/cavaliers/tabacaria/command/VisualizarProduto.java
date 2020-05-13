@@ -15,12 +15,13 @@ public class VisualizarProduto implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idProduto");
-		String pNome = request.getParameter("nomeP");
-		double pPreco = Double.parseDouble(request.getParameter("preçoF"));
-		String pCategoria = request.getParameter("categoria");
-		String pStatus = request.getParameter("status");
-		String pDescricao = request.getParameter("descricao");
+		String pId = request.getParameter("id");
+		//String pNome = request.getParameter("nomeP");
+		//double pPreco = Double.parseDouble(request.getParameter("preçoF"));
+		//String pCategoria = request.getParameter("categoria");
+		//String pFornecedor = request.getParameter("fornecedor");
+		//String pStatus = request.getParameter("status");
+		//String pDescricao = request.getParameter("descricao");
 		int id = -1;
 		
 		try {
@@ -31,11 +32,12 @@ public class VisualizarProduto implements Command {
 		
 		Produto produto = new Produto();
 		produto.setIdProduto(id);
-		produto.setNomeP(pNome);
+		/*produto.setNomeP(pNome);
 		produto.setPrecoF(pPreco);
 		produto.setCategoria(pCategoria);
+		produto.setFornecedor(pFornecedor);
 		produto.setStatus(pStatus);
-		produto.setDescricao(pDescricao);
+		produto.setDescricao(pDescricao);*/
 		
 		ProdutoService ps = new ProdutoService();
 		RequestDispatcher view = null;

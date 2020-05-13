@@ -27,7 +27,7 @@ public class ListarFornecedor implements Command {
 			} else {
 				lista = fs.listarFornecedores();
 			}
-			session.setAttribute("lista", lista);
+			session.setAttribute("listaFornecedor", lista);
 		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarFornecedor.jsp");

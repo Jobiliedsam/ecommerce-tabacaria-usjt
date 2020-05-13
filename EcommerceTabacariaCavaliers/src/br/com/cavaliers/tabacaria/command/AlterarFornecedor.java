@@ -45,11 +45,11 @@ public class AlterarFornecedor implements Command {
 		HttpSession session = request.getSession();
 		
 		fs.atualizar(fornecedor);
-		ArrayList<Fornecedor> lista = (ArrayList<Fornecedor>)session.getAttribute("lista");
+		ArrayList<Fornecedor> lista = (ArrayList<Fornecedor>)session.getAttribute("listaFornecedor");
 		int pos = busca(fornecedor, lista);
 		lista.remove(pos);
 		lista.add(pos,fornecedor);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaFornecedor", lista);
 		request.setAttribute("fornecedor", fornecedor);
 		view = request.getRequestDispatcher("VisualizarFornecedor.jsp");
 

@@ -39,7 +39,7 @@ public class CriarFornecedor implements Command {
 
 		ArrayList<Fornecedor> lista = new ArrayList<>();
 		lista.add(fornecedor);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaFornecedor", lista);
 		view = request.getRequestDispatcher("ListarFornecedor.jsp");
 		
 		view.forward(request, response);

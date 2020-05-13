@@ -19,6 +19,7 @@ public class EditarProduto implements Command {
 		String pNome = request.getParameter("nomeP");
 		double pPreco = Double.parseDouble(request.getParameter("precoF"));
 		String pCategoria = request.getParameter("categoria");
+		String pFornecedor = request.getParameter("fornecedor");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
 		int id = -1;
@@ -34,6 +35,7 @@ public class EditarProduto implements Command {
 		produto.setNomeP(pNome);
 		produto.setPrecoF(pPreco);
 		produto.setCategoria(pCategoria);
+		produto.setFornecedor(pFornecedor);
 		produto.setStatus(pStatus);
 		produto.setDescricao(pDescricao);
 		

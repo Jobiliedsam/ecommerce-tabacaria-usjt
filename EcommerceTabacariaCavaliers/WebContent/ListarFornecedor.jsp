@@ -1,9 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buscar Fornecedor</title>
 
         <link rel="stylesheet" href="./css/bootstrap-grid.css">
         <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
@@ -14,18 +18,14 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/admin.css">
 
-        <link
-            href="https://fonts.googleapis.com/css?family=Lobster&display=swap"
-            rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">        
 
-        <title>Buscar Fornecedor</title>
     </head>
-    <body>
 
-        <jsp:include page="./componentes/adm-top.jsp"></jsp:include>
+        <body>
+
+            <jsp:include page="./componentes/adm-top.jsp"></jsp:include>
 		
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
@@ -37,7 +37,7 @@
 						<div class="col">
 							<!-- Adicionar aqui o conteúdo de administração -->
 
-							<!-- Modal -->
+							<!-- Modal Não implementado -->
                             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <!-- /.modal -->
-                            <!-- Barra superior com os menus de navega��o -->
+                            <!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
                                 <form action="controller.do" method="post">
@@ -88,93 +88,99 @@
                                     <!-- /#top -->
                                 </form>
                                 <hr />
-                                <c:if test="${not empty lista}">
-                                <div id="list" class="row">
-                
-                                    <div class="table-responsive col-md-12">
-                                        <table class="table table-striped" cellspacing="0" cellpadding="0">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Nome</th>
-                                                    <th>Cnpj</th>
-                                                    <th>Telefone</th>
-                                                    <th>E-Mail</th>
-                                                    <th>Descri�ao</th>
-                                                    <th class="actions">A�oes</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <c:forEach var="fornecedor" items="${lista }">
-                                                       <tr>
-                                                            <td>
-                                                               ${fornecedor.idFornecedor }
-                                                            </td>
-                                                            <td>
-                                                                ${fornecedor.nomeFornecedor }
-                                                            </td>
-                                                            <td>
-                                                                ${fornecedor.cnpj }
-                                                            </td>
-                                                            <td>
-                                                                ${fornecedor.contatoTelefone }
-                                                            </td>
-                                                            <td>
-                                                                ${fornecedor.contatoEmail }
-                                                            </td>
-                                                            <td>
-                                                                ${fornecedor.descricao }
-                                                            </td>
-                                                            <td class="actions">
-                                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${fornecedor.idFornecedor }">Visualizar</a>
-                                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }">Editar</a>
-                                                                <button id="btn${fornecedor.idFornecedor }"  
-                                                                type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-fornecedor="${fornecedor.idFornecedor }">Excluir</button>
-                                                            </td>
-                                                        </tr>
-                                            </c:forEach>
-                
-                                            </tbody>
-                                        </table>
-                
+                                <c:if test="${not empty listaFornecedor}">
+                                    <div id="list" class="row">
+                    
+                                        <div class="table-responsive col-md-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Nome</th>
+                                                        <th>Cnpj</th>
+                                                        <th>Telefone</th>
+                                                        <th>Email</th>
+                                                        <th>descricao</th>
+                                                        <th class="actions">Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                <c:forEach var="fornecedor" items="${listaFornecedor }">
+                                                        <tr>
+                                                                <td>
+                                                                ${fornecedor.idFornecedor }
+                                                                </td>
+                                                                <td>
+                                                                    ${fornecedor.nomeFornecedor }
+                                                                </td>
+                                                                <td>
+                                                                    ${fornecedor.cnpj }
+                                                                </td>
+                                                                <td>
+                                                                    ${fornecedor.contatoTelefone }
+                                                                </td>
+                                                                <td>
+                                                                	${fornecedor.contatoEmail }
+                                                                </td>
+                                                                <td>
+                                                                	${fornecedor.descricao }
+                                                                </td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${fornecedor.idFornecedor}">Visualizar</a>
+                                                                    <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor}">Editar</a>
+                                                                <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirFornecedor&id=${fornecedor.idFornecedor}">Excluir</a>
+                                                                </td>
+                                                            </tr>
+                                                </c:forEach>
+                    
+                                                </tbody>
+                                            </table>
+                    
+                                        </div>
                                     </div>
-                                </div>
-                            <!-- /#main -->
-                            <!-- /#list -->
-
-                            <div id="bottom" class="row">
-                                <div class="col-md-12">
-                                    <!-- pagina��o ainda n�o foi implementada -->
-                                    <ul class="pagination">
-                                        <li class="disabled"><a>&lt; Anterior</a>
-                                        </li>
-                                        <li class="disabled"><a>1</a>
-                                        </li>
-                                        <li><a href="#">2</a>
-                                        </li>
-                                        <li><a href="#">3</a>
-                                        </li>
-                                        <li class="next"><a href="#" rel="next">Proximo &gt;</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.pagination -->
-                                </div>
+                                <!-- /#list -->
+                                    <div id="bottom" class="row">
+                                        <div class="col-md-12">
+                                            <!-- paginação ainda não foi implementada -->
+                                            <ul class="pagination">
+                                                <li class="disabled"><a>&lt; Anterior</a>
+                                                </li>
+                                                <li class="disabled"><a>1</a>
+                                                </li>
+                                                <li><a href="#">2</a>
+                                                </li>
+                                                <li><a href="#">3</a>
+                                                </li>
+                                                <li class="next"><a href="#" rel="next">Próximo &gt;</a>
+                                                </li>
+                                            </ul>
+                                            <!-- /.pagination -->
+                                        </div>
+                                    </div>
+                                </c:if>
+                                <!-- /#bottom -->
                             </div>
-                            </c:if>
-                            <!-- /#bottom -->
+                            <!-- /#main -->
+
+                        <!-- Fim -->    
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
             <!-- /#main -->
-            <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+        <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
 		
-            <script src="./js/backtotop.js"></script>
-            <script src="js/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script type="text/javascript">
-                $("#delete-modal").on('show.bs.modal', function(event) {
-                    var button = $(event.relatedTarget); //botao que disparou a modal
-                    var recipient = button.data('fornecedor');
-                    $("#id_excluir").val(recipient);
-                });
-            </script>
+		<script src="./js/backtotop.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $("#delete-modal").on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget); //botao que disparou a modal
+                var recipient = button.data('pais');
+                $("#id_excluir").val(recipient);
+            });
+        </script>
     </body>
 </html>

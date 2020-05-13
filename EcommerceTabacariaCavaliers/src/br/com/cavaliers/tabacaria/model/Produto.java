@@ -7,6 +7,7 @@ public class Produto
 	private double precoF;
 	private String nomeP;
 	private String categoria;
+	private String fornecedor;
 	private String status;
 	private String descricao;
 	
@@ -15,11 +16,12 @@ public class Produto
 		
 	}
 
-	public Produto(int idProduto, String nomeP, String categoria, double precoF, String status, String descricao) 
+	public Produto(int idProduto, String nomeP, String categoria, double precoF, String fornecedor, String status, String descricao) 
 	{
 		this.idProduto = idProduto;
 		this.nomeP = nomeP;
 		this.categoria = categoria;
+		this.fornecedor = fornecedor;
 		this.precoF = precoF;
 		this.status = status;
 		this.descricao = descricao;
@@ -73,10 +75,18 @@ public class Produto
 		this.descricao = descricao;
 	}
 
+	public String getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(String fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
 	@Override
 	public String toString() {
 		return "Produto [idProduto=" + idProduto + ", precoF=" + precoF + ", nomeP=" + nomeP + ", categoria="
-				+ categoria + ", status=" + status + ", descricao=" + descricao + "]";
+				+ categoria + ", fornecedor=" + fornecedor + ", status=" + status + ", descricao=" + descricao + "]";
 	}
 	
 	

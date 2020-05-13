@@ -50,7 +50,7 @@
                                             <div class="modal-footer">
                                                 <form action="controller.do" method="post">
                                                     <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
-                                                    <button type="submit" class="btn btn-primary" name="command" value="ExcluirCliente">Sim</button>
+                                                    <button type="submit" class="btn btn-primary" name="command" value="ExcluirFornecedor">Sim</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
                                                 </form>
                                             </div>
@@ -94,7 +94,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                            <p><strong>Descri�ao</strong>
+                                            <p><strong>Descricao</strong>
                                             </p>
                                             <p>
                                                 ${fornecedor.descricao }
@@ -104,7 +104,7 @@
                                     <hr />
                                     <div id="actions" class="row">
                                         <div class="col-md-12">
-                                            <a href="Controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }" class="btn btn-primary">Editar</a>
+                                            <a href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor }" class="btn btn-primary">Editar</a>
                                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                             <a href="ListarFornecedor.jsp" class="btn btn-default">Voltar</a>
                                         </div>

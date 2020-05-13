@@ -66,14 +66,14 @@ public class FornecedorDAO {
 		}
 	}
 	
-	public void excluir(int id) {
+	public void excluir(int idFornecedor) {
 		
 		String sqlDelete = "DELETE FROM fornecedor WHERE Id_Fornecedor = ?";
 
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
-			stm.setInt(1, id);
+			stm.setInt(1, idFornecedor);
 			stm.execute();
 		}
 		catch (Exception exception)
@@ -83,7 +83,7 @@ public class FornecedorDAO {
 
 	}
 	
-	public Fornecedor carregar(int id)
+	public Fornecedor carregar(int idFornecedor)
 	{
 		Fornecedor fornecedor = new Fornecedor();
 
@@ -92,7 +92,7 @@ public class FornecedorDAO {
 		try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, id);
+			stm.setInt(1, idFornecedor);
 
 			try (ResultSet resultSet = stm.executeQuery();)
 			{

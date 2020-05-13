@@ -17,7 +17,7 @@ public class ExcluirProduto implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idProduto");
+		String pId = request.getParameter("id");
 		int id = -1;
 		
 		try {
@@ -35,9 +35,9 @@ public class ExcluirProduto implements Command {
 		HttpSession session = request.getSession();
 		
 		ps.excluir(produto.getIdProduto());
-		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("lista");
+		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("listaProduto");
 		lista.remove(busca(produto, lista));
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaProduto", lista);
 		view = request.getRequestDispatcher("ListarProdutos.jsp");			
 		
 		view.forward(request, response);

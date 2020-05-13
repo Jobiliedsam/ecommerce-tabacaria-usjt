@@ -21,7 +21,7 @@ public class ProdutoDAO
             stm.setString(1, produto.getNomeP());
             stm.setString(2, produto.getCategoria());
             stm.setDouble(3, produto.getPrecoF());
-            stm.setString(4, "Esqueceram o atributo Implementar");
+            stm.setString(4, produto.getFornecedor());
             stm.setString(5, produto.getStatus());
             stm.setString(6, produto.getDescricao());
 			stm.execute();
@@ -61,7 +61,7 @@ public class ProdutoDAO
 			stm.setString(1, produto.getNomeP());
             stm.setString(2, produto.getCategoria());
             stm.setDouble(3, produto.getPrecoF());
-            stm.setString(4, "Esqueceram o atributo Implementar");
+            stm.setString(4, produto.getFornecedor());
             stm.setString(5, produto.getStatus());
             stm.setString(6, produto.getDescricao());
             stm.setInt(7, produto.getIdProduto());
@@ -110,7 +110,7 @@ public class ProdutoDAO
 					produto.setNomeP(resultSet.getString("Nome_Produto"));
 					produto.setCategoria(resultSet.getString("Nome_Categoria"));
 					produto.setPrecoF(resultSet.getDouble("Preco"));
-					//produto.setFornecedor(resultSet.getString("Fornecedor"));
+					produto.setFornecedor(resultSet.getString("Fornecedor"));
 					produto.setStatus(resultSet.getString("Status_Produto"));
 					produto.setDescricao(resultSet.getString("Descricao"));
 				}
@@ -132,7 +132,7 @@ public class ProdutoDAO
 
 		return produto;
     }
-    public ArrayList<Produto>buscarProdutoCtg(int IdCategoria){
+    public ArrayList<Produto>buscarProdutoCtg(int IdProduto){
     	String sqlSelect ="SELECT * FROM produto WHERE Produto.Id_Categoria = ?";
     	ArrayList<Produto> lista = new ArrayList<>();
     	Produto produto = new Produto();
@@ -140,7 +140,7 @@ public class ProdutoDAO
     	try (Connection connection = new ConnectionFactory().obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
-			stm.setInt(1, IdCategoria);
+			stm.setInt(1, IdProduto);
 
 			try (ResultSet resultSet = stm.executeQuery();)
 			{
@@ -151,7 +151,7 @@ public class ProdutoDAO
 					produto.setNomeP(resultSet.getString("Nome_Produto"));
 					produto.setCategoria(resultSet.getString("Nome_Categoria"));
 					produto.setPrecoF(resultSet.getDouble("Preco"));
-					//produto.setFornecedor(resultSet.getString("Fornecedor"));
+					produto.setFornecedor(resultSet.getString("Fornecedor"));
 					produto.setStatus(resultSet.getString("Status_Produto"));
 					produto.setDescricao(resultSet.getString("Descricao"));
 				    lista.add(produto);
@@ -195,7 +195,7 @@ public class ProdutoDAO
 					produto.setNomeP(resultSet.getString("Nome_Produto"));
 					produto.setCategoria(resultSet.getString("Nome_Categoria"));
 					produto.setPrecoF(resultSet.getDouble("Preco"));
-					//produto.setFornecedor(resultSet.getString("Fornecedor"));
+					produto.setFornecedor(resultSet.getString("Fornecedor"));
 					produto.setStatus(resultSet.getString("Status_Produto"));
 					produto.setDescricao(resultSet.getString("Descricao"));
 				    lista.add(produto);

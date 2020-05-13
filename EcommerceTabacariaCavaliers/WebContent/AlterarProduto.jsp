@@ -50,7 +50,7 @@
 									<div class="row">
 									   <div class="col-md-12">
 											   <label for="precoF">Preço Produto</label>
-											   <input type="text" name="precoF" class="form-control" id="precoF" required maxlength="10" placeholder="Preï¿½o do Produto" value="${produto.precoF }" >
+											   <input type="number" name="precoF" class="form-control" id="precoF" required maxlength="10" placeholder="Preço do Produto" value="${produto.precoF }" >
 										   </div>
 			
 										<div class="col-md-12">
@@ -59,15 +59,20 @@
 										   </div>
 									</div>
 								<div class="row">
+									<div class="col-md-12">
+											<label for="fornecedor">Fornecedor</label>
+										<input type="text" name="fornecedor" class="form-control" id="fornecedor" required maxlength="100" placeholder="Fornecedor" value="${produto.fornecedor }">
+								   </div>
+							    </div>
 										   <div class="col-md-12">
 											   <label for="nomeP">Status</label>
-											   <input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Nome do Produto" value="${produto.nomeP }">
+											   <input type="text" name="nomeP" class="form-control" id="nomeP" required maxlength="100" placeholder="Status" value="${produto.status }">
 										   </div>
 									   </div>
 								<div class="row">
 									<div class="col-md-12">
 											<label for="descricao">Descrição</label>
-										<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriï¿½ao" value="${produto.descricao }">
+										<input type="text" name="descricao" class="form-control" id="descricao" required maxlength="100" placeholder="Descriçao" value="${produto.descricao }">
 								</div>
 							</div>
 									<hr />

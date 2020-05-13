@@ -17,10 +17,11 @@ public class AlterarProduto implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idProduto");
+		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nomeP");
 		double pPreco = Double.parseDouble(request.getParameter("precoF"));
 		String pCategoria = request.getParameter("categoria");
+		String pFornecedor = request.getParameter("fornecedor");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
 		int id = -1;
@@ -36,6 +37,7 @@ public class AlterarProduto implements Command {
 		produto.setNomeP(pNome);
 		produto.setPrecoF(pPreco);
 		produto.setCategoria(pCategoria);
+		produto.setFornecedor(pFornecedor);
 		produto.setStatus(pStatus);
 		produto.setDescricao(pDescricao);
 		
@@ -44,11 +46,11 @@ public class AlterarProduto implements Command {
 		HttpSession session = request.getSession();
 		
 		ps.atualizar(produto);
-		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("lista");
+		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("listaProduto");
 		int pos = busca(produto, lista);
 		lista.remove(pos);
 		lista.add(pos,produto);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaProduto", lista);
 		request.setAttribute("produto", produto);
 		view = request.getRequestDispatcher("VisualizarProduto.jsp");
 
