@@ -127,18 +127,19 @@ public class FornecedorDAO {
 	public ArrayList<Fornecedor> listarFornecedores() {
 		Fornecedor fornecedor;
 		ArrayList<Fornecedor> lista = new ArrayList<>();
-		String sqlSelect = "SELECT Id_Fornecedor, Nome_Fornecedor, Cnpj, Telefone, Email, Descricao FROM fornecedor";
+		String sqlSelect = "SELECT * FROM fornecedor";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obterConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
 			try (ResultSet rs = stm.executeQuery();) {
 				while (rs.next()) {
 					fornecedor = new Fornecedor();
-					fornecedor.setIdFornecedor(rs.getInt("idFornecedor"));
-					fornecedor.setNomeFornecedor(rs.getString("nomeFornecedor"));
+					fornecedor.setIdFornecedor(rs.getInt("Id_Fornecedor"));
+					fornecedor.setNomeFornecedor(rs.getString("Nome_Fornecedor"));
 					fornecedor.setCnpj(rs.getString("cnpj"));
-					fornecedor.setContatoTelefone(rs.getString("contatoTelefone"));
-					fornecedor.setContatoEmail(rs.getString("contatoEmail"));
+					fornecedor.setContatoTelefone(rs.getString("Telefone"));
+					fornecedor.setContatoEmail(rs.getString("Email"));
+					fornecedor.setDescricao(rs.getString("Descricao"));
 					lista.add(fornecedor);
 				}
 			} catch (SQLException e) {
@@ -161,11 +162,12 @@ public class FornecedorDAO {
 			try (ResultSet rs = stm.executeQuery();) {
 				while (rs.next()) {
 					fornecedor = new Fornecedor();
-					fornecedor.setIdFornecedor(rs.getInt("idFornecedor"));
-					fornecedor.setNomeFornecedor(rs.getString("nomeFornecedor"));
+					fornecedor.setIdFornecedor(rs.getInt("Id_Fornecedor"));
+					fornecedor.setNomeFornecedor(rs.getString("Nome_Fornecedor"));
 					fornecedor.setCnpj(rs.getString("cnpj"));
-					fornecedor.setContatoTelefone(rs.getString("contatoTelefone"));
-					fornecedor.setContatoEmail(rs.getString("contatoEmail"));
+					fornecedor.setContatoTelefone(rs.getString("Telefone"));
+					fornecedor.setContatoEmail(rs.getString("Email"));
+					fornecedor.setDescricao(rs.getString("Descricao"));
 					lista.add(fornecedor);
 				}
 			} catch (SQLException e) {

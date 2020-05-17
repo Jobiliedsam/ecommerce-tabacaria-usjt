@@ -38,7 +38,7 @@ public class ExcluirProduto implements Command {
 		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("listaProduto");
 		lista.remove(busca(produto, lista));
 		session.setAttribute("listaProduto", lista);
-		view = request.getRequestDispatcher("ListarProdutos.jsp");			
+		view = request.getRequestDispatcher("ListarProduto.jsp");			
 		
 		view.forward(request, response);
 

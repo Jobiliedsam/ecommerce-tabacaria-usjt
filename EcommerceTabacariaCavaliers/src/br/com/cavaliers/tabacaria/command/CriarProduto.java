@@ -23,6 +23,7 @@ public class CriarProduto implements Command {
 		String pFornecedor = request.getParameter("fornecedor");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
+		int pQuantidade = Integer.parseInt(request.getParameter("quantidade"));
 		
 		Produto produto = new Produto();
 		produto.setNomeP(pNome);
@@ -31,6 +32,7 @@ public class CriarProduto implements Command {
 		produto.setFornecedor(pFornecedor);
 		produto.setStatus(pStatus);
 		produto.setDescricao(pDescricao);
+		produto.setQuantidade(pQuantidade);
 		
 		ProdutoService ps = new ProdutoService();
 		ps.criar(produto);

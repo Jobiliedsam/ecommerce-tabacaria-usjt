@@ -29,6 +29,6 @@ public class ProdutoService
 		return dao.buscarProduto();
 	}
 	public ArrayList<Produto> carregarAll(String chave){
-		return dao.buscarProduto();
+		return dao.buscarProdutor(chave);
 	}
 }

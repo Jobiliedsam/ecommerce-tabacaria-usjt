@@ -22,6 +22,7 @@ public class EditarProduto implements Command {
 		String pFornecedor = request.getParameter("fornecedor");
 		String pStatus = request.getParameter("status");
 		String pDescricao = request.getParameter("descricao");
+		int pQuantidade = Integer.parseInt(request.getParameter("quantidade"));
 		int id = -1;
 		
 		try {
@@ -38,6 +39,7 @@ public class EditarProduto implements Command {
 		produto.setFornecedor(pFornecedor);
 		produto.setStatus(pStatus);
 		produto.setDescricao(pDescricao);
+		produto.setQuantidade(pQuantidade);
 		
 		ProdutoService ps = new ProdutoService();
 		RequestDispatcher view = null;
