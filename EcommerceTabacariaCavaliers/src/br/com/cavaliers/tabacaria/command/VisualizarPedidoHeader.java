@@ -18,11 +18,13 @@ public class VisualizarPedidoHeader implements Command {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String pId = request.getParameter("idPedido");
+		String pIdCliente = request.getParameter("idCliente");
 		String pNomeCliente = request.getParameter("nomeCliente");
-		int pQtdItens = Integer.parseInt(request.getParameter("status"));
+		int pQtdItens = Integer.parseInt(request.getParameter("qtdItens"));
 		double pValorTotal = Double.parseDouble(request.getParameter("valorTotal"));
 		int id = -1;
-
+		int idC = -1;
+		
 		try 
 		{
 			id = Integer.parseInt(pId);
@@ -32,20 +34,30 @@ public class VisualizarPedidoHeader implements Command {
 
 		}
 
+		try 
+		{
+			idC = Integer.parseInt(pIdCliente);
+		} 
+		catch (NumberFormatException e)
+		{
+
+		}
+		
 		PedidoHeader pedidoHeader = new PedidoHeader();
 		PedidoHeaderService phs = new PedidoHeaderService();
-
+		
+		pedidoHeader.setIdPedido(id);
+		pedidoHeader.setIdCliente(idC);
 		pedidoHeader.setNomeCliente(pNomeCliente);
 		pedidoHeader.setQtdItens(pQtdItens);
 		pedidoHeader.setValorTotal(pValorTotal);
-		pedidoHeader.setIdPedido(phs.criar(pedidoHeader));
 
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 
 		pedidoHeader = phs.carregar(pedidoHeader.getIdPedido());
 		request.setAttribute("pedidoHeader", pedidoHeader);
-		view = request.getRequestDispatcher("VisualizarPedidoHeader.jsp");
+		view = request.getRequestDispatcher("VisualizarPedidoHeaderTeste.jsp");
 		
 		view.forward(request, response);
 	}

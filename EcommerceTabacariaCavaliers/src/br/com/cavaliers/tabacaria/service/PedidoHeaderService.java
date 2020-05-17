@@ -3,7 +3,6 @@ package br.com.cavaliers.tabacaria.service;
 import java.util.ArrayList;
 
 import br.com.cavaliers.tabacaria.dao.PedidoHeaderDAO;
-import br.com.cavaliers.tabacaria.model.Categoria;
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
 
 public class PedidoHeaderService 
@@ -17,15 +16,18 @@ public class PedidoHeaderService
 	public void atualizar(PedidoHeader pedidoHeader) {
 		dao.atualizar(pedidoHeader);
 	}
+	public PedidoHeader carregar(int idPedido){
+		return dao.carregar(idPedido);
+	}
 
 	public void excluir(int id) {
 		dao.excluir(id);
 	}
 
-	public PedidoHeader carregar(int id) {
-		return dao.carregar(id);
+	public ArrayList<PedidoHeader> listarPedidoHeader(){
+		return dao.listarPedidoHeader();
 	}
-	public ArrayList<PedidoHeader> buscaPedidoHeaderCliente(int IdCliente) {
-		return dao.buscaPedidoHeader(IdCliente);
+	public ArrayList<PedidoHeader> listarPedidoHeader(String chave){
+		return dao.listarPedidoHeader(chave);
 	}
 }

@@ -19,30 +19,42 @@ public class AlterarPedidoHeader implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("id");
+		String pId = request.getParameter("idPedido");
+		String pIdCliente = request.getParameter("IdCliente");
 		int pQtdItens = Integer.parseInt(request.getParameter("qtdItens"));
 		double pValorTotal = Double.parseDouble(request.getParameter("valorTotal"));
 		int id = -1;
+		int idC = -1;
 		
 		try {
 			id = Integer.parseInt(pId);
 		}catch(NumberFormatException e){
 			// TODO: handle exception
 		}
+		
+		try {
+			idC = Integer.parseInt(pIdCliente);
+		}catch(NumberFormatException e){
+			// TODO: handle exception
+		}
+		
+		
 		PedidoHeader pedidoHeader = new PedidoHeader();
 		PedidoHeaderService phs = new PedidoHeaderService();
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
+		
 		pedidoHeader.setIdPedido(id);
+		pedidoHeader.setIdCliente(idC);
 		pedidoHeader.setQtdItens(pQtdItens);
 		pedidoHeader.setValorTotal(pValorTotal);
 		phs.atualizar(pedidoHeader);
 		
-		ArrayList<PedidoHeader> lista = (ArrayList<PedidoHeader>) session.getAttribute("lista");
+		ArrayList<PedidoHeader> lista = (ArrayList<PedidoHeader>) session.getAttribute("listaPedidoHeader");
 		int pos = buscar(pedidoHeader, lista);
 		lista.remove(pos);
 		lista.add(pos, pedidoHeader);
-		session.setAttribute("lista", lista);
+		session.setAttribute("listaPedidoHeader", lista);
 		request.setAttribute("pedidoHeader", pedidoHeader);
 		view = request.getRequestDispatcher("VisualizarPedidoHeader.jsp");
 		

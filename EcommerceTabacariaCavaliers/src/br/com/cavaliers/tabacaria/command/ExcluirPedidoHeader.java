@@ -17,7 +17,7 @@ public class ExcluirPedidoHeader implements Command {
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pId = request.getParameter("idPedido");
+		String pId = request.getParameter("id");
 		int id = -1;
 		try {
 			id = Integer.parseInt(pId);
@@ -34,10 +34,10 @@ public class ExcluirPedidoHeader implements Command {
 		HttpSession session = request.getSession();
 		
 		phs.excluir(pedidoHeader.getIdPedido());
-		ArrayList<PedidoHeader> lista = (ArrayList<PedidoHeader>) session.getAttribute("lista");
+		ArrayList<PedidoHeader> lista = (ArrayList<PedidoHeader>) session.getAttribute("listaPedidoHeader");
 		lista.remove(busca(pedidoHeader, lista));
-		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ListarPedidoHeader.jsp");
+		session.setAttribute("listaPedidoHeader", lista);
+		view = request.getRequestDispatcher("ListarPedidoHeaderTeste.jsp");
 		
 		view.forward(request, response);
 

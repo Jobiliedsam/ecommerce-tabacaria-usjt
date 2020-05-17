@@ -1,5 +1,6 @@
 package br.com.cavaliers.tabacaria.dao;
 
+import br.com.cavaliers.tabacaria.service.PedidoHeaderService;
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
 
 
@@ -123,91 +124,58 @@ public class PedidoHeaderDAO
 
 		return pedidoHeader;
     }
-    public ArrayList<PedidoHeader> buscaPedidoHeaderCliente(int idCliente)
-    {
-    	String sqlSelect ="SELECT * FROM Pedido_Header WHERE Pedido_Header.Id_Cliente = ?";
-    	ArrayList<PedidoHeader> lista = new ArrayList<>();
-        PedidoHeader pedidoHeader = new PedidoHeader();
-
-
-		try (Connection connection = new ConnectionFactory().obterConexao();
-				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
-		{
-			stm.setInt(1, idCliente);
-
-			try (ResultSet resultSet = stm.executeQuery();)
-			{
-				if (resultSet.next())
-				{
-					pedidoHeader.setIdPedido(resultSet.getInt("Id_Pedido"));
-					pedidoHeader.setIdCliente(resultSet.getInt("Id_Cliente"));
-					pedidoHeader.setDataHoraCriacao(resultSet.getDate("Data_Hora"));
-					pedidoHeader.setNomeCliente(resultSet.getString("Nome_Cliente"));
-					pedidoHeader.setQtdItens(resultSet.getInt("Quantidade_Total"));
-					pedidoHeader.setValorTotal(resultSet.getDouble("Valor_Total"));
+    public ArrayList<PedidoHeader> listarPedidoHeader() {
+		PedidoHeader pedidoHeader;
+		ArrayList<PedidoHeader> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Id_Pedido, , Id_Cliente, Data_Hora, Nome_Cliente, Quantidade_Total, Valor_Total FROM pedido_header";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obterConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pedidoHeader = new PedidoHeader();
+					pedidoHeader.setIdPedido(rs.getInt("Id_Pedido"));
+					pedidoHeader.setIdCliente(rs.getInt("Id_Cliente"));
+					pedidoHeader.setDataHoraCriacao(rs.getDate("Data_Hora"));
+					pedidoHeader.setNomeCliente(rs.getString("Nome_Cliente"));
+					pedidoHeader.setQtdItens(rs.getInt("Quantidade_Total"));
+					pedidoHeader.setValorTotal(rs.getDouble("Valor_Total"));
 					lista.add(pedidoHeader);
-					
 				}
-				else 
-				{
-					pedidoHeader.setIdPedido(-1);
-				}
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
-			catch (SQLException sqlException)
-			{
-				sqlException.printStackTrace();
-			}
-			
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
 		}
-		catch (SQLException sqlException1) 
-		{
-			sqlException1.printStackTrace();
-		}
-
 		return lista;
-    }
-    public ArrayList<PedidoHeader> buscaPedidoHeader(int idCliente)
-    {
-    	String sqlSelect ="SELECT * FROM Pedido_Header WHERE Pedido_Header.Id_Cliente = ?";
-    	ArrayList<PedidoHeader> lista = new ArrayList<>();
-        PedidoHeader pedidoHeader = new PedidoHeader();
+	}
 
-
-		try (Connection connection = new ConnectionFactory().obterConexao();
-				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
-		{
-			stm.setInt(1, idCliente);
-
-			try (ResultSet resultSet = stm.executeQuery();)
-			{
-				if (resultSet.next())
-				{
-					pedidoHeader.setIdPedido(resultSet.getInt("Id_Pedido"));
-					pedidoHeader.setIdCliente(resultSet.getInt("Id_Cliente"));
-					pedidoHeader.setDataHoraCriacao(resultSet.getDate("Data_Hora"));
-					pedidoHeader.setNomeCliente(resultSet.getString("Nome_Cliente"));
-					pedidoHeader.setQtdItens(resultSet.getInt("Quantidade_Total"));
-					pedidoHeader.setValorTotal(resultSet.getDouble("Valor_Total"));
+	public ArrayList<PedidoHeader> listarPedidoHeader(String chave) {
+		PedidoHeader pedidoHeader;
+		ArrayList<PedidoHeader> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Id_Pedido, , Id_Cliente, Data_Hora, Nome_Cliente, Quantidade_Total, Valor_Total FROM pedido_header where upper(Nome_Cliente) like ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obterConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pedidoHeader = new PedidoHeader();
+					pedidoHeader.setIdPedido(rs.getInt("Id_Pedido"));
+					pedidoHeader.setIdCliente(rs.getInt("Id_Cliente"));
+					pedidoHeader.setDataHoraCriacao(rs.getDate("Data_Hora"));
+					pedidoHeader.setNomeCliente(rs.getString("Nome_Cliente"));
+					pedidoHeader.setQtdItens(rs.getInt("Quantidade_Total"));
+					pedidoHeader.setValorTotal(rs.getDouble("Valor_Total"));
 					lista.add(pedidoHeader);
-					
 				}
-				else 
-				{
-					pedidoHeader.setIdPedido(-1);
-				}
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
-			catch (SQLException sqlException)
-			{
-				sqlException.printStackTrace();
-			}
-			
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
 		}
-		catch (SQLException sqlException1) 
-		{
-			sqlException1.printStackTrace();
-		}
-
 		return lista;
-    }
-
+	}
 }

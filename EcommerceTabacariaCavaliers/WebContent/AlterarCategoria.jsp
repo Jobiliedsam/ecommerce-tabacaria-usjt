@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Cavaliers - Alterar Categoria</title>
+        <title>Cavaliers - Alterar Pedido</title>
 
                     <link rel="stylesheet" href="./css/bootstrap-grid.css">
         <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
@@ -42,33 +42,33 @@
 							<!-- Barra superior com os menus de navegação -->
                             <!-- Container Principal -->
                             <div id="main" class="container">
-                                <h3 class="page-header">Alterar Categoria - ${categoria.idCategoria }</h3>
+                                <h3 class="page-header">Alterar Pedido - ${pedidoHeader.idPedido }</h3>
                                 <!-- Formulario para alteração de clientes -->
                                 <form action="controller.do" method="post">
                                     <!-- area de campos do form -->
-                                    <input type="hidden" name="id" value="${categoria.idCategoria }" />
+                                    <input type="hidden" name="id" value="${pedido.idPedido }" />
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <label for="nome">Nome</label>
-                                            <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome completo" value="${categoria.categoria}">
+                                            <label for="nomeCliente">Nome Cliente</label>
+                                            <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" required maxlength="100" placeholder="nome completo" value="${pedidoHeader.nomeCliente}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <label for="status">Status</label>
-                                            <input type="text" class="form-control" name="status" id="status" maxlength="15"  placeholder="status" value="${categoria.status }">
+                                            <label for="qtdItens">Quatidade de Itens</label>
+                                            <input type="number" class="form-control" name="qtdItens" id="qtdItens" maxlength="15"  placeholder="Quantidade de Itens" value="${pedidoHeader.qtdItens }">
                                         </div>
 
                                         <div class="form-group col-md-12">
-                                            <label for="descricao">Descricao</label>
-                                            <input type="text" class="form-control" name="descricao" id="descricao" required maxlength="60" placeholder="descricao" value="${categoria.descricao }">
+                                            <label for="valorTotal">Valor Total</label>
+                                            <input type="number" class="form-control" name="valorTotal" id="valorTotal" required maxlength="60" placeholder="Valor Total" value="${pedidoHeader.valorTotal }">
                                         </div>
                                     </div>
                                     <hr />
                                     <div id="actions" class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn btn-primary" name="command" value="AlterarCategoria">Salvar</button>
-                                            <a href="CategoriaLista.jsp" class="btn btn-default">Cancelar</a>
+                                            <button type="submit" class="btn btn-primary" name="command" value="AlterarPedidoHeader">Salvar</button>
+                                            <a href="ListarPedidoHeaderTeste.jsp" class="btn btn-default">Cancelar</a>
                                         </div>
                                     </div>
                                 </form>

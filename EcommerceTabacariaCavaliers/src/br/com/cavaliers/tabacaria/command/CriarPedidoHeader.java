@@ -33,8 +33,8 @@ public class CriarPedidoHeader implements Command {
 		
 		ArrayList<PedidoHeader> lista = new ArrayList<>();
 		lista.add(pedidoHeader);
-		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ListarPedidoHeader.jsp");
+		session.setAttribute("listaPedidoHeader", lista);
+		view = request.getRequestDispatcher("ListarPedidoHeaderTeste.jsp");
 		
 		view.forward(request, response);
 	}
