@@ -1,8 +1,7 @@
 package br.com.cavaliers.tabacaria.model;
 
-public class Produto 
-{
-	
+public class Produto {
+
 	private int idProduto;
 	private double precoF;
 	private String nomeP;
@@ -10,14 +9,14 @@ public class Produto
 	private String fornecedor;
 	private String status;
 	private String descricao;
-	
-	public Produto () 
-	{
-		
+	private int quantidade;
+
+	public Produto() {
+
 	}
 
-	public Produto(int idProduto, String nomeP, String categoria, double precoF, String fornecedor, String status, String descricao) 
-	{
+	public Produto(int idProduto, String nomeP, String categoria, double precoF, String fornecedor, String status,
+			String descricao, int quntidade) {
 		this.idProduto = idProduto;
 		this.nomeP = nomeP;
 		this.categoria = categoria;
@@ -25,6 +24,7 @@ public class Produto
 		this.precoF = precoF;
 		this.status = status;
 		this.descricao = descricao;
+		this.quantidade = quantidade;
 	}
 
 	public int getIdProduto() {
@@ -83,11 +83,18 @@ public class Produto
 		this.fornecedor = fornecedor;
 	}
 
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 	@Override
 	public String toString() {
 		return "Produto [idProduto=" + idProduto + ", precoF=" + precoF + ", nomeP=" + nomeP + ", categoria="
 				+ categoria + ", fornecedor=" + fornecedor + ", status=" + status + ", descricao=" + descricao + "]";
 	}
-	
-	
+
 }

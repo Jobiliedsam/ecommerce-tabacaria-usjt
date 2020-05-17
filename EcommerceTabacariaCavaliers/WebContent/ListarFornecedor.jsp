@@ -127,7 +127,7 @@
                                                                 </td>
                                                                 <td class="actions">
                                                                     <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarFornecedor&id=${fornecedor.idFornecedor}">Visualizar</a>
-                                                                    <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&id=${fornecedor.idFornecedor}">Editar</a>
+                                                                    <a class="btn btn-warning btn-xs" href="controller.do?command=EditarFornecedor&idFornecedor=${fornecedor.idFornecedor}">Editar</a>
                                                                 <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirFornecedor&id=${fornecedor.idFornecedor}">Excluir</a>
                                                                 </td>
                                                             </tr>

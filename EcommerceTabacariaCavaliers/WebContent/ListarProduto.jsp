@@ -102,6 +102,7 @@
                                                         <th>Fornecedor</th>
                                                         <th>Status</th>
                                                         <th>Descricao</th>
+                                                        <th>Quantidade</th>
                                                         <th class="actions">Ações</th>
                                                     </tr>
                                                 </thead>
@@ -129,10 +130,13 @@
                                                                 <td>
                                                                 	${produto.descricao }
                                                                 </td>
+                                                                <td>
+                                                                	${produto.quantidade}
+                                                                </td>
                                                                 <td class="actions">
                                                                     <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarProduto&id=${produto.idProduto}">Visualizar</a>
                                                                     <a class="btn btn-warning btn-xs" href="controller.do?command=EditarProduto&id=${produto.idProduto}">Editar</a>
-                                                                <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirProduto&id=${produto.idProduto}">Excluir</a>
+                                                                    <a class="btn btn-danger btn-xs"  href="controller.do?command=ExcluirProduto&id=${produto.idProduto}">Excluir</a>
                                                                 </td>
                                                             </tr>
                                                 </c:forEach>
@@ -182,7 +186,7 @@
         <script type="text/javascript">
             $("#delete-modal").on('show.bs.modal', function(event) {
                 var button = $(event.relatedTarget); //botao que disparou a modal
-                var recipient = button.data('pais');
+                var recipient = button.data('produto');
                 $("#id_excluir").val(recipient);
             });
         </script>
