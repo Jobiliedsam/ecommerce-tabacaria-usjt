@@ -42,16 +42,6 @@
 						size="20" maxlength="20" placeholder="password" />
 				</div>
 			</div>
-			<div class="row">
-                        <div class="col-4">
-                            <label for="tipo">tipo</label>
-                            <select name="tipo" class="form-control" >
-                                <option value="Cliente">Cliente</option>
-                                <option value="Administrativo">Administrativo</option>
-                            </select>
-                        </div>
-                    </div>
-			
 			<hr />
 			<div id="action" class="row">
 				<div class="col-md-6">

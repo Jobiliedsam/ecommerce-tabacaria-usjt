@@ -19,21 +19,19 @@
         <title>Home</title>
     </head>
     <body>
-        <jsp:include page="./componentes/header.jsp"></jsp:include>
-        
+	<jsp:useBean id="produtosService" class="br.com.cavaliers.tabacaria.service.ProdutoService"></jsp:useBean>
+    <jsp:include page="./componentes/header.jsp"></jsp:include>
         <main>
             <jsp:include page="./componentes/banner_home.html"></jsp:include>
             
             <section class="product-grid">
                 <div class="container">
-                    <jsp:useBean id="produtosService" class="br.com.cavaliers.tabacaria.service.ProdutoService">
-                    </jsp:useBean>
                     <div class="row">
                         <!--  Inicio do forEach -->
                         <c:forEach var="produtos" items="${produtosService.carregarAll()}">
                             <div class="col-lg-6 shadow mb-5">
                                 <div class="media align-items-lg-center flex-lg-row m-3">
-                                    <img src="./imagens/produtos/isqueiro.jpg" alt="" width="500"
+                                    <img src="./imagens/produtos/${produtos.nomeP}_0.jpg" alt="" width="500"
                                         class="ml-lg-3 order-2 order-lg-2">
                                     <div class="media-body">
                                         <h5 class="mt-10">${produtos.nomeP}</h5>
@@ -46,8 +44,9 @@
                                                     <i class="fas fa-cart-plus"></i>
                                                 </a>
                                                 <!-- Levar a pagina do produto -->
-                                                <a class="learn-more" href="./product.jsp" title="Saiba mais">Saiba
-                                                    Mais</a>
+                                              
+                                                <a class="learn-more" href="./product.jsp?produtoDescId=${produtos.idProduto}" title="Saiba mais">Saiba Mais>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -151,3 +151,6 @@ ALTER TABLE usuario
 CHANGE Tipo_Usuario Tipo ENUM ('Administrativo', 'Cliente') NOT NULL;
 ALTER TABLE usuario
 CHANGE Email Email VARCHAR(50);
+USE Tabacaria;
+ALTER TABLE produto
+ADD COLUMN Quantidade INT NOT NULL;

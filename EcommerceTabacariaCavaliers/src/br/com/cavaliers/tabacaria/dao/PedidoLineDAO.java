@@ -16,7 +16,7 @@ public class PedidoLineDAO
         + "VALUES (?, ?, ?, ?, ?, ?)";
 
         
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
             stm.setInt(1, pedidoLine.getIdPedidoHeader());
@@ -54,7 +54,7 @@ public class PedidoLineDAO
     {
         String sqlUpdate = "UPDATE `pedido_line` SET `Quantidade_Produto` = ?, `Valor_Produto` = ? WHERE `Id_Pedido_Line` = ?";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
                 PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
             stm.setInt(1, pedidoLine.getQuantidadeProduto());
@@ -72,7 +72,7 @@ public class PedidoLineDAO
     {
         String sqlDelete = "DELETE FROM `pedido_line` WHERE Id_Pedido_Line = ";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idPedidoLine);
@@ -90,7 +90,7 @@ public class PedidoLineDAO
 
 		String sqlSelect = "SELECT * FROM pedido_line WHERE Id_Pedido_Line = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idPedidoLine);
@@ -131,7 +131,7 @@ public class PedidoLineDAO
     	ArrayList<PedidoLine> lista = new ArrayList<>();
     	PedidoLine pedidoLine = new PedidoLine();
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idPedidoLine);

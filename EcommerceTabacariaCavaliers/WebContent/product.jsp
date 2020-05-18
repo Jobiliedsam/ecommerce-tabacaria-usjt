@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +15,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 	<title>Cadastro Cliente</title>
 </head>
+<jsp:useBean id="produtosService" class="br.com.cavaliers.tabacaria.service.ProdutoService"></jsp:useBean>
+<c:set var="produtoDescId" scope="session" value="${param.produtoDescId}"></c:set>
+<c:set var="produtoDesc" scope="session" value="${produtosService.carregar(produtoDescId)}"></c:set>
 	<body>
 		<jsp:include page="./componentes/header.jsp"></jsp:include>
 		<main>
@@ -35,7 +38,7 @@
             </div>
             <div class="col-5 produtc-infos">
                 <h1 class="product-name">
-                    Nome do Produto, Isqueiro voador não identificado - ISQUEFOFO-1
+                    <c:out value="${produtoDesc}"></c:out>
                 </h1>
                 <p class="product-promotion">
                     <span>De</span> 
@@ -52,7 +55,7 @@
                     <span class="price-decimal">90</span>
                 </p>
                 <p class="product-small-desc">
-                    Descrição curta, exemplo: Esse produto é top, compra logo
+                    DescriÃ§Ã£o curta, exemplo: Esse produto Ã© top, compra logo
                 </p>
                 <div class="product-meta">
                     <p>
@@ -68,7 +71,7 @@
                         <span class="product-model">Normal</span>
                     </p>
                     <p>
-                        <span>ReferÃªncia: </span>
+                        <span>ReferÃƒÂªncia: </span>
                         <span class="product-reference">99999998845412</span>
                     </p>
                     <p>
@@ -90,8 +93,8 @@
         <div class="row">
             <div class="col product-description">
                 <div class="item">
-                    <!-- Esses itens nÃ£o precisam estar assim, pode ser apenas um texto em vez de lista -->
-                    <h3>Descrição</h3>
+                    <!-- Esses itens nÃƒÂ£o precisam estar assim, pode ser apenas um texto em vez de lista -->
+                    <h3>DescriÃ§Ã£o</h3>
                     <ul class="description-box">
                         <li>- Info 1</li>
                         <li>- Info 2</li>

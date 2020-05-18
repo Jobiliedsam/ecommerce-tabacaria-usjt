@@ -33,7 +33,7 @@
                                 <!-- Formulario para altera��o de fornecedor -->
                                 <form action="controller.do" method="post">
                                     <!-- area de campos do form -->
-                                    <input type="hidden" name="id" value="${fornecedor.idFornecedor }" />
+                                    <input type="hidden" name="idFornecedor" value="${fornecedor.idFornecedor }" />
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="nome">Nome</label>
@@ -50,12 +50,12 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label for="contatoTelefone">Telefone</label>
-                                            <input type="tel" class="form-control" name="contatoTelefone" id="contatoTelefone" maxlength="15" pattern="(?:\(\d{2}\)|\d{2})[- ]?\d{5}[- ]?\d{4}" placeholder="(99) 99999-9999" value="${fornecedor.contatoTelefone }">
+                                            <input type="tel" class="form-control" name="contatoTelefone" id="contatoTelefone" maxlength="15" value="${fornecedor.contatoTelefone}">
                                         </div>
             
                                         <div class="form-group col-md-6">
                                             <label for="contatoEmail">E-Mail</label>
-                                            <input type="email" class="form-control" name="contatoEmail" id="contatoEmail" required maxlength="60" placeholder="email obrigat�rio" value="${fornecedor.contatoEmail }">
+                                            <input type="email" class="form-control" name="contatoEmail" id="contatoEmail" required maxlength="60" placeholder="email" value="${fornecedor.contatoEmail }">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -69,7 +69,7 @@
                                 <hr />
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary" name="command" value="EditarFornecedor">Salvar</button>
+                                        <button type="submit" class="btn btn-primary" name="command" value="AlterarFornecedor">Salvar</button>
                                         <a href="ListarFornecedor.jsp" class="btn btn-default">Cancelar</a>
                                     </div>
                                 </div>

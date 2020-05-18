@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <link rel="stylesheet" href="./css/bootstrap-grid.css">
 <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
@@ -52,9 +51,10 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<label for="precoF">Preço Produto</label> <input type="number"
+										<label for="precoF">PreÃ§o Produto</label> 
+										<input type="number"
 											name="precoF" class="form-control" id="precoF" required
-											maxlength="10" placeholder="Preço do Produto"
+											maxlength="10" placeholder="PreÃ§o do Produto"
 											value="${produto.precoF}">
 									</div>
 
@@ -83,9 +83,9 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<label for="descricao">Descrição</label> <input type="text"
+										<label for="descricao">DescriÃ§Ã£o</label> <input type="text"
 											name="descricao" class="form-control" id="descricao" required
-											maxlength="100" placeholder="Descriçao"
+											maxlength="100" placeholder="DescriÃ§ao"
 											value="${produto.descricao }">
 									</div>
 								</div>
@@ -101,7 +101,7 @@
 								<div id="actions" class="row">
 									<div class="col-md-12">
 										<button type="submit" class="btn btn-primary" name="command"
-											value="EdiatrProduto">Salvar</button>
+											value="AlterarProduto">Salvar</button>
 										<a href="ListarProduto.jsp" class="btn btn-default">Cancelar</a>
 									</div>
 								</div>

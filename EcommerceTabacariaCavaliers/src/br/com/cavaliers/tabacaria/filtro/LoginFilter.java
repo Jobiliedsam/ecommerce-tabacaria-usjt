@@ -15,28 +15,17 @@ import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Usuario;
 
-/**
- * Servlet Filter implementation class LoginFilter
- */
 @WebFilter("/controller.do")
-public class LoginFilter implements Filter {
+public class LoginFilter implements Filter 
+{
 
-	public LoginFilter() {
-		// TODO Auto-generated constructor stub
-	}
+	public LoginFilter() {}
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+	public void destroy() {}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
+			throws IOException, ServletException 
+	{
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
@@ -50,23 +39,22 @@ public class LoginFilter implements Filter {
 
 		String comando = req.getParameter("command");
 
-		if (comando == null) {
+		if (comando == null) 
+		{
 			comando = "";
 		}
 
 		if (usuario == null && usuario1 == null && !uri.equals(path + "/UsuarioIndex.jsp") && !comando.equals("FazerLogin")
-				&& !comando.equals("CriarUsuario") && !comando.equals("Carrinho")) {
+				&& !comando.equals("CriarUsuario") && !comando.equals("Carrinho")) 
+		{
 			((HttpServletResponse) response).sendRedirect(path + "/UsuarioIndex.jsp");
 		}
-		
-
-		else {
+		else
+		{
 			chain.doFilter(request, response);
 		}
 	}
 
-	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
-	}
+	public void init(FilterConfig fConfig) throws ServletException {}
 
 }

@@ -1,3 +1,69 @@
+/* Pedido Status */
+.order-status {
+    font-size: 15px;
+    text-align: center;
+}
+.order-status i {
+    position: relative;
+    color: #ccc;
+    border: 3px solid #ccc;
+    border-radius: 70px;
+    padding: 17px 0;
+    margin: 10px 0;
+    background-color: #fff;
+    font-size: 28px;
+    width: 70px;
+    height: 70px;
+}
+.order-status i:after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 5px;
+    display: block;
+    background-color: #ccc;
+    right: -65px;
+    top: 30px;
+}
+.order-status i.last:after {
+    display: none;
+}
+.order-status .active i:after {
+    background-color: #2dc258;
+}
+.order-status .active i {
+    color: #fff;
+    border: 3px solid #2dc258;
+    background-color: #2dc258;
+}
+.order-info {
+    margin: 30px 0;
+    padding: 15px;
+    border: 1px solid #080300
+}
+.confirmation {
+    background: #e8fdf6;
+    color: #178C03;
+    margin: 30px 0;
+    padding: 15px;
+    border: 1px solid #2dc258;
+}
+.confirmation h3{
+    padding: 20px;
+    background: #2dc258;
+    color: #fff;
+}
+.confirmation span{
+    font-weight: bold;
+}
+.confirmation i{
+    padding-right: 15px;
+}
+
+/*PedidoStatus*/
+
+
+
 body {
     padding: 0;
     margin: 0;

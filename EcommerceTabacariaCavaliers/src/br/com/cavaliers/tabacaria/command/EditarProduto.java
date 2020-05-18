@@ -14,37 +14,29 @@ public class EditarProduto implements Command {
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		String pId = request.getParameter("idProduto");
-		String pNome = request.getParameter("nomeP");
-		double pPreco = Double.parseDouble(request.getParameter("precoF"));
-		String pCategoria = request.getParameter("categoria");
-		String pFornecedor = request.getParameter("fornecedor");
-		String pStatus = request.getParameter("status");
-		String pDescricao = request.getParameter("descricao");
-		int pQuantidade = Integer.parseInt(request.getParameter("quantidade"));
+
 		int id = -1;
 		
-		try {
+		try 
+		{
 			id = Integer.parseInt(pId);
-		}catch(NumberFormatException e) {
+		}
+		catch(NumberFormatException e) 
+		{
 			
 		}
 		
-		Produto produto = new Produto();
-		produto.setIdProduto(id);
-		produto.setNomeP(pNome);
-		produto.setPrecoF(pPreco);
-		produto.setCategoria(pCategoria);
-		produto.setFornecedor(pFornecedor);
-		produto.setStatus(pStatus);
-		produto.setDescricao(pDescricao);
-		produto.setQuantidade(pQuantidade);
 		
 		ProdutoService ps = new ProdutoService();
 		RequestDispatcher view = null;
 		
+		Produto produto = new Produto();
+		produto.setIdProduto(id);
 		produto = ps.carregar(produto.getIdProduto());
+		
 		request.setAttribute("produto", produto);
 		view = request.getRequestDispatcher("AlterarProduto.jsp");
 		view.forward(request, response);

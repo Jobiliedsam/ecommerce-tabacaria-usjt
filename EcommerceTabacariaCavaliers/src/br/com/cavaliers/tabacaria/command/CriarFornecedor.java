@@ -20,7 +20,7 @@ public class CriarFornecedor implements Command {
 		String pNome = request.getParameter("nomeFornecedor");
 		String pCnpj = request.getParameter("cnpj");
 		String pFone = request.getParameter("contatoTelefone");
-		String pEmail = request.getParameter("contatoTelefone");
+		String pEmail = request.getParameter("contatoEmail");
 		String pDescricao = request.getParameter("descricao");
 		
 		Fornecedor fornecedor = new Fornecedor();

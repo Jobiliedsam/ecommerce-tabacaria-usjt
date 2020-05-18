@@ -12,24 +12,25 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Fornecedor;
 import br.com.cavaliers.tabacaria.service.FornecedorService;
 
-public class ListarFornecedor implements Command {
+public class ListarFornecedor implements Command 
+{
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		String chave = request.getParameter("data[search]");
 		FornecedorService fs = new FornecedorService();
 		ArrayList<Fornecedor> lista = null;
 		HttpSession session = request.getSession();
 
-			if (chave != null && chave.length() > 0) {
-				lista = fs.listarFornecedores(chave);
-			} else {
-				lista = fs.listarFornecedores();
-			}
-			session.setAttribute("listaFornecedor", lista);
-		
+		if (chave != null && chave.length() > 0) 
+			lista = fs.listarFornecedores(chave); 
+		else 
+			lista = fs.listarFornecedores();
 
+		session.setAttribute("listaFornecedor", lista);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarFornecedor.jsp");
 		dispatcher.forward(request, response);
 

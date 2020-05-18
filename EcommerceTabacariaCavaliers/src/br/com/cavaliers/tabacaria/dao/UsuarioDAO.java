@@ -14,7 +14,7 @@ public class UsuarioDAO {
         String sqlInsert = "INSERT INTO `usuario` (`Email`, `Password`,`Tipo`)" +
         "VALUES (?, ?,'Cliente')";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
             stm.setString(1, usuario.getEmail());
@@ -44,13 +44,12 @@ public class UsuarioDAO {
         return usuario.getId();
     }
 
-
     public void atualizar(Usuario usuario)
     {
         String sqlUpdate = "UPDATE `usuario` SET `Email` = ?, `Email` = ?," +
             "WHERE `Id` = ?";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
             
@@ -66,12 +65,12 @@ public class UsuarioDAO {
 		}
     }
 
-
+    
     public void excluir(int idUsuario)
     {
         String sqlDelete = "DELETE FROM usuario WHERE Id_Uuario = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idUsuario);
@@ -90,7 +89,7 @@ public class UsuarioDAO {
 
 		String sqlSelect = "SELECT * FROM usuario WHERE Id = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idUsuario);
@@ -101,8 +100,7 @@ public class UsuarioDAO {
 				{
                     usuario.setId(resultSet.getInt("Id"));
                     usuario.setEmail(resultSet.getString("Email"));
-					usuario.setPassword(resultSet.getString("Password"));
-					
+					usuario.setPassword(resultSet.getString("Password"));	
 				}
 				else 
 				{
@@ -123,6 +121,8 @@ public class UsuarioDAO {
 
 		return usuario;
     }
+    
+    
     public ArrayList<Usuario> buscarUsuario()
     {
     	String sqlSelect ="SELECT email FROM Usuario";
@@ -130,7 +130,7 @@ public class UsuarioDAO {
     	Usuario usuario;
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			try (ResultSet resultSet = stm.executeQuery();)
@@ -157,14 +157,16 @@ public class UsuarioDAO {
 
 		return lista;
     }
+    
+    
     public ArrayList<Usuario> buscarUsuario(String chave)
     {
-    	String sqlSelect = "SELECT id, email FROM categoria where upper(email) like ?";
+    	String sqlSelect = "SELECT id, email FROM categoria WHERE UPPER (email) LIKE ?";
     	ArrayList<Usuario> lista = new ArrayList<>();
     	Usuario usuario;
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
 		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
 			try (ResultSet resultSet = stm.executeQuery();)
@@ -193,40 +195,45 @@ public class UsuarioDAO {
     }
 
 
-	public boolean validar(Usuario usuario) {
-		String sqlSelect = "SELECT Email, Password FROM usuario "
-				+ " WHERE Email = ? and Password = ? and Tipo = ?";
-		try {
-			Connection connection = new ConnectionFactory().obterConexao();
+	public boolean validar(Usuario usuario) 
+	{
+		String sqlSelect = "SELECT Email, Password, Tipo FROM usuario "
+				+ " WHERE Email = ? and Password = ?";
+		try 
+		{
+			Connection connection = ConnectionFactory.obterConexao();
 			
-			try(PreparedStatement stm = connection.prepareStatement(sqlSelect)){
+			try(PreparedStatement stm = connection.prepareStatement(sqlSelect))
+			{
 				stm.setString(1, usuario.getEmail());
 				stm.setString(2, usuario.getPassword());
-				stm.setString(3, usuario.getTipo());
 				
-				try(ResultSet rs = stm.executeQuery()){
-					if(rs.next()) {
+				try(ResultSet rs = stm.executeQuery())
+				{
+					if(rs.next()) 
+					{
+						usuario.setTipo(rs.getString("Tipo"));
 						return true;
 					}
-					else {
-						return false;
-					}
-					
-					
-					
-				}catch (SQLException e) {
+					else return false;		
+				}
+				catch (SQLException e) 
+				{
 					e.printStackTrace();
 				}
-			}catch (SQLException e1) {
+			}
+			catch (SQLException e1) 
+			{
 				e1.printStackTrace();
 			}
 			
-		}catch (SQLException e2) {
+		}
+		catch (SQLException e2) 
+		{
 			e2.printStackTrace();
 		}
 		return false;
-	}
-
+	}	
 }
 
 

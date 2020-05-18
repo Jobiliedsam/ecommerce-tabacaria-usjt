@@ -20,7 +20,7 @@ public class ClienteDAO {
 			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento)" +
 			"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 			PreparedStatement stm = connection.prepareStatement(sqlInsert);)
 		{
 			stm.setString(1, cliente.getNomeCompleto());
@@ -64,7 +64,7 @@ public class ClienteDAO {
 			"WHERE `Id_Cliente` = ? ";
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
 		{
 			stm.setString(1, cliente.getNomeCompleto());
@@ -89,7 +89,7 @@ public class ClienteDAO {
 	{
 		String sqlDelete = "DELETE FROM cliente WHERE Id_Cliente = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, id);
@@ -109,7 +109,7 @@ public class ClienteDAO {
 
 		String sqlSelect = "SELECT * FROM cliente WHERE Id_Cliente = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idCliente);
@@ -152,7 +152,7 @@ public class ClienteDAO {
     	ArrayList<Cliente> lista = new ArrayList<>();
 		Cliente cliente;
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			try (ResultSet resultSet = stm.executeQuery();)
@@ -196,7 +196,7 @@ public class ClienteDAO {
     	Cliente cliente;
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
 		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
 			try (ResultSet resultSet = stm.executeQuery();)

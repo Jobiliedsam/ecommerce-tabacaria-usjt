@@ -1,6 +1,5 @@
 package br.com.cavaliers.tabacaria.dao;
 
-import br.com.cavaliers.tabacaria.service.PedidoHeaderService;
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
 
 
@@ -18,7 +17,7 @@ public class PedidoHeaderDAO
             "VALUES (?, ?, ?, ?)";
 
         
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
             stm.setInt(1, pedidoHeader.getIdCliente());
@@ -54,7 +53,7 @@ public class PedidoHeaderDAO
     {
         String sqlUpdate = "UPDATE `pedido_header` SET  `Quantidade_Total` = ?,  `Valor_Total` = ? WHERE `Id_Pedido` = ?";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
                 PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
             stm.setInt(1, pedidoHeader.getQtdItens());
@@ -72,7 +71,7 @@ public class PedidoHeaderDAO
     {
         String sqlDelete = "DELETE FROM `pedido_header` WHERE `Id_Pedido` = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idPedido);
@@ -90,7 +89,7 @@ public class PedidoHeaderDAO
 
 		String sqlSelect = "SELECT * FROM pedido_header WHERE Id_Pedido = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idPedido);

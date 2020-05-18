@@ -12,7 +12,7 @@ public class FornecedorDAO {
 	public int inserir (Fornecedor fornecedor) {
 		String sqlInsert = "INSERT INTO fornecedor (Nome_Fornecedor, Cnpj, Telefone, Email, Descricao)	VALUES (?, ?, ?, ?, ?)";
 		
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlInsert);) {
 			
 			stm.setString(1, fornecedor.getNomeFornecedor());
@@ -48,9 +48,9 @@ public class FornecedorDAO {
 	public void atualizar (Fornecedor fornecedor) {
 		
 		String sqlUpdate = "UPDATE `fornecedor` SET  `Nome_Fornecedor` = ?, `Cnpj` = ?, " +
-				"`Telefone` = ?, `Email` = ?, `Descricao` = ?,";
+				"`Telefone` = ?, `Email` = ?, `Descricao` = ? WHERE Id_Fornecedor = ?";
 		
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlUpdate);) {
 			
 			stm.setString(1, fornecedor.getNomeFornecedor());
@@ -58,6 +58,7 @@ public class FornecedorDAO {
 			stm.setString(3, fornecedor.getContatoTelefone());
 			stm.setString(4, fornecedor.getContatoEmail());
 			stm.setString(5, fornecedor.getDescricao());
+			stm.setInt(6, fornecedor.getIdFornecedor());
 			stm.execute();
 	   }
 		catch (Exception exception)
@@ -70,7 +71,7 @@ public class FornecedorDAO {
 		
 		String sqlDelete = "DELETE FROM fornecedor WHERE Id_Fornecedor = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idFornecedor);
@@ -89,7 +90,7 @@ public class FornecedorDAO {
 
 		String sqlSelect = "SELECT * FROM fornecedor WHERE Id_Fornecedor = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idFornecedor);

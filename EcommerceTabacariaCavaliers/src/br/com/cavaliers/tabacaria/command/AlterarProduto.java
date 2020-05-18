@@ -12,12 +12,14 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Produto;
 import br.com.cavaliers.tabacaria.service.ProdutoService;
 
-public class AlterarProduto implements Command {
+public class AlterarProduto implements Command 
+{
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String pId = request.getParameter("id");
+			throws ServletException, IOException 
+	{
+		String pId = request.getParameter("idProduto");
 		String pNome = request.getParameter("nomeP");
 		double pPreco = Double.parseDouble(request.getParameter("precoF"));
 		String pCategoria = request.getParameter("categoria");
@@ -27,11 +29,11 @@ public class AlterarProduto implements Command {
 		int pQuantidade = Integer.parseInt(request.getParameter("quantidade"));
 		int id = -1;
 		
-		try {
+		try 
+		{
 			id = Integer.parseInt(pId);
-		}catch(NumberFormatException e) {
-			
 		}
+		catch(NumberFormatException e) {}
 		
 		Produto produto = new Produto();
 		produto.setIdProduto(id);
@@ -59,14 +61,18 @@ public class AlterarProduto implements Command {
 
 	}
 
-	public int busca(Produto produto, ArrayList<Produto> lista) {
+	public int busca(Produto produto, ArrayList<Produto> lista) 
+	{
 		Produto to;
-		for(int i = 0; i < lista.size(); i++){
+		for(int i = 0; i < lista.size(); i++)
+		{
 			to = lista.get(i);
-			if(to.getIdProduto() == produto.getIdProduto()){
+			if(to.getIdProduto() == produto.getIdProduto())
+			{
 				return i;
 			}
 		}
+		
 		return -1;
 	}
 

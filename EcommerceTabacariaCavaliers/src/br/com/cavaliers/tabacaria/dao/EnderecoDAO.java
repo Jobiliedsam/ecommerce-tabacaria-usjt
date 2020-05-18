@@ -14,7 +14,7 @@ public class EnderecoDAO {
             "(`Id_Cliente`, `Endereco_Principal`, `Endereco_Secundario`, `CEP`, `Cidade`, `Estado`, `Complemento`)" +
             "Values (?, ?, ?, ?, ?, ?, ?)";
         
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
 
@@ -57,7 +57,7 @@ public class EnderecoDAO {
             "`Complemento` = ?  WHERE `Id_Cliente` = ?;";
 
         
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
 
@@ -82,7 +82,7 @@ public class EnderecoDAO {
     {
         String sqlDelete = "DELETE FROM endereco WHERE Id_Cliente = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idCliente);
@@ -100,7 +100,7 @@ public class EnderecoDAO {
 
 		String sqlSelect = "SELECT * FROM endereco WHERE Id_Cliente = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idCliente);

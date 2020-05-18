@@ -15,7 +15,7 @@ public class CategoriaDAO
         String sqlInsert = "INSERT INTO `categoria` (`Nome_Categoria`, `Status_Categoria`, `Descricao`)" +
             "VALUES (?, ?, ?)";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
             stm.setString(1, categoria.getCategoria());
@@ -52,7 +52,7 @@ public class CategoriaDAO
         String sqlUpdate = "UPDATE `categoria` SET `Nome_Categoria` = ?, `Status_Categoria` = ?," +
             "`Descricao` = ? WHERE `Id_Categoria` = ?";
 
-        try (Connection connection = new ConnectionFactory().obterConexao();
+        try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlUpdate);)
         {
             
@@ -73,7 +73,7 @@ public class CategoriaDAO
     {
         String sqlDelete = "DELETE FROM categoria WHERE Id_Categoria = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);)
 		{
 			stm.setInt(1, idCategoria);
@@ -92,7 +92,7 @@ public class CategoriaDAO
 
 		String sqlSelect = "SELECT * FROM categoria WHERE Id_Categoria = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			stm.setInt(1, idCategoria);
@@ -135,7 +135,7 @@ public class CategoriaDAO
     	Categoria categoria;
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);)
 		{
 			try (ResultSet resultSet = stm.executeQuery();)
@@ -170,7 +170,7 @@ public class CategoriaDAO
     	Categoria categoria;
 
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);){
 		        stm.setString(1, "%" + chave.toUpperCase() + "%");		
 			try (ResultSet resultSet = stm.executeQuery();)

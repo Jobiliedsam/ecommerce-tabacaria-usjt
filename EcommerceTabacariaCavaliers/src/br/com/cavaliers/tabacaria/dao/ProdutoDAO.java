@@ -13,7 +13,7 @@ public class ProdutoDAO {
 		String sqlInsert = "INSERT INTO `produto` (`Nome_Produto`, `Nome_Categoria`, `Preco`, `Fornecedor`, `Status_Produto`, `Descricao`, `Quantidade`)"
 				+ "VALUES (?, ?, ?, ?, ?, ?,?);";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlInsert);) {
 			stm.setString(1, produto.getNomeP());
 			stm.setString(2, produto.getCategoria());
@@ -45,7 +45,7 @@ public class ProdutoDAO {
 		String sqlUpdate = "UPDATE `produto` SET `Nome_Produto` = ?, `Nome_Categoria` = ?, `Preco` = ?, `Fornecedor` = ?,"
 				+ "`Status_Produto` = ?, `Descricao` = ?, `Quantidade` = ? WHERE `Id_Produto` =	?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlUpdate);) {
 			stm.setString(1, produto.getNomeP());
 			stm.setString(2, produto.getCategoria());
@@ -64,7 +64,7 @@ public class ProdutoDAO {
 	public void excluir(int idProduto) {
 		String sqlDelete = "DELETE FROM `produto` WHERE`Id_Produto` = ?;";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlDelete);) {
 			stm.setInt(1, idProduto);
 			stm.execute();
@@ -73,12 +73,13 @@ public class ProdutoDAO {
 		}
 	}
 
-	public Produto carregar(int idProduto) {
+	public Produto carregar(int idProduto) 
+	{
 		Produto produto = new Produto();
 
 		String sqlSelect = "SELECT * FROM produto WHERE Id_Produto = ?";
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);) {
 			stm.setInt(1, idProduto);
 
@@ -111,7 +112,7 @@ public class ProdutoDAO {
 		ArrayList<Produto> lista = new ArrayList<>();
 		Produto produto = new Produto();
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);) {
 			stm.setInt(1, IdProduto);
 
@@ -147,7 +148,7 @@ public class ProdutoDAO {
 		ArrayList<Produto> lista = new ArrayList<>();
 		Produto produto;
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);) {
 
 			try (ResultSet resultSet = stm.executeQuery();) {
@@ -180,7 +181,7 @@ public class ProdutoDAO {
 		ArrayList<Produto> lista = new ArrayList<>();
 		Produto produto;
 
-		try (Connection connection = new ConnectionFactory().obterConexao();
+		try (Connection connection = ConnectionFactory.obterConexao();
 				PreparedStatement stm = connection.prepareStatement(sqlSelect);) {
 			stm.setString(1, "%" + chave.toUpperCase() + "%");
 			try (ResultSet resultSet = stm.executeQuery();) {

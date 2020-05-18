@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 	<title>Cadastro Cliente</title>
 </head>
 	<body>
@@ -44,22 +44,22 @@
             </div>
             <div class="col cart-p-name">
                 <span>
-                    ${produtoCarrinho.nomeP }
+                    ${produtoCarrinho.nomeDoProduto }	
                 </span>
             </div>
             <div class="col-2">
                 <span class="price">
-                    ${produtoCarrinho.precoF }
+                    ${produtoCarrinho.precoUnitario }
                 </span>
             </div>
             <div class="col-2 cart-p-quantity">
                 <form action="">
-                    <input type="number" name="quantidade" id="" value="1">
+                    <input type="number" name="quantidade" id="" value="${produtoCarrinho.quantidadeProduto}">
                 </form>
             </div>
             <div class="col-2">
                 <span class="price">
-                    R$ 79,90
+                    ${produtoCarrinho.valorProduto }
                 </span>
             </div>
         </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="row">
             <div class="col offset-9 total-infos">
-                <p><strong>Sub-Total:</strong> <span>R$ 79,90</span></p>
+                <p><strong>Sub-Total:</strong> <span></span></p>
                 <p><strong>Valor do Frete:</strong> <span>R$ 19,90</span></p>
                 <p><strong>Total:</strong> <span>R$ 79,90</span></p>
             </div>
