@@ -32,14 +32,14 @@
                 <h3>Lista de Produtos</h3>
             </div>
         </div>
-    	<c:forEach var="produtoCarrinho" items="${produtosCarrinho}">
+    	<c:forEach var="produtoCarrinho" items="${produtosCarrinho}" varStatus="loop">
 			        <div class="row item">
             <div class="col-1 col-md-1 trash">
-                <a href="#" title="Remover esse item"><i class="fas fa-trash"></i></a>
+                <a href="controller.do?command=Carrinho&itemRemove=${loop.index}"><i class="fas fa-trash"></i></a>
             </div>
             <div class="col-2">
                 <figure>
-                    <img src="template/imagens/produtos/isqueiro.jpg" alt="Nome do produto">
+                    <img src="./imagens/produtos/${produtoCarrinho.nomeDoProduto}_0.jpg">
                 </figure>
             </div>
             <div class="col cart-p-name">

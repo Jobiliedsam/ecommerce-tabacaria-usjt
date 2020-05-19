@@ -38,12 +38,12 @@ public class CriarProduto implements Command
 		double pPreco = Double.parseDouble(request.getParameter("precoF").replace(",", "."));
 		int pQuantidade = Integer.parseInt(request.getParameter("quantidade"));
 		
-
-
 		
 		// Capturando a lista de fotos
-		List<Part> fileParts = request.getParts().stream()
-				.filter(part -> "fotos".equals(part.getName()) && part.getSize() > 0).collect(Collectors.toList());
+		List<Part> fileParts = request.getParts()
+				.stream()
+				.filter(part -> "fotos".equals(part.getName()) && part.getSize() > 0)
+				.collect(Collectors.toList());
 		
 		// Salvando cada foto em um local especifico	
 		for(Part filePart : fileParts)
@@ -53,10 +53,10 @@ public class CriarProduto implements Command
 					//Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			
 			InputStream fileContent = filePart.getInputStream();
+			HttpSession session = request.getSession();
 			
 			System.out.println("Iamgem inserida com sucesso 3");
-			File file = new File(
-					"C:\\Users\\jobil\\OneDrive\\Prog\\Git\\EcommerceTabacaria_SJ\\EcommerceTabacariaCavaliers\\WebContent\\imagens\\produtos\\" + fileName);
+			File file = new File(session.getServletContext().getRealPath(File.separator) + "\\imagens\\produtos\\" , fileName);
 			
 			Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			numeroFoto++;
@@ -78,6 +78,7 @@ public class CriarProduto implements Command
 
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
+		session.getServletContext().getRealPath(File.separator);
 
 		ArrayList<Produto> lista = new ArrayList<>();
 		lista.add(produto);

@@ -32,9 +32,18 @@ public class Carrinho implements Command
 		//Produto produtoCarrinho = new Produto();
 		int intQtd = 0; 
 		
-		Produto produtoCarrinho = produtoService.carregar(Integer.parseInt(request.getParameter("idProduto")));
+		String sIdProdutoRemove = request.getParameter("itemRemove"); 
+		
+		Produto produtoCarrinho = null;
+		
+		
+		if (sIdProdutoRemove == null)
+		{
+			produtoCarrinho = produtoService.carregar(Integer.parseInt(request.getParameter("idProduto")));			
+		}
 		String quantidade = request.getParameter("qtd");
 		
+		// Tratando a quantidade 
 		if (quantidade != null)
 		{
 			intQtd = Integer.parseInt(quantidade);
@@ -48,6 +57,7 @@ public class Carrinho implements Command
 		}
 	
 		
+		// Criando um produto no formato do carrinho (PedidoLine)
 		if (produtoCarrinho != null)
 		{
 			pedidoLine.setIdProduto(produtoCarrinho.getIdProduto());
@@ -61,7 +71,7 @@ public class Carrinho implements Command
 
 		
 		// Verficando as formas de inserir o produto no carrinho e sua quantidade da maneira correta
-		if (listaCarrinho.isEmpty() || indexPedidoLine == - 1)
+		if (listaCarrinho.isEmpty() || (indexPedidoLine == - 1  && sIdProdutoRemove == null) )
 		{
 			listaCarrinho.add(pedidoLine);			
 		} 
@@ -72,7 +82,7 @@ public class Carrinho implements Command
 			aux.setValorProduto(aux.getPrecoUnitario() * aux.getQuantidadeProduto());
 			listaCarrinho.set(indexPedidoLine, aux);
 		}
-		else
+		else if (sIdProdutoRemove == null)
 		{
 			PedidoLine aux = listaCarrinho.get(indexPedidoLine);
 			aux.setQuantidaeProduto(intQtd); 
@@ -82,8 +92,16 @@ public class Carrinho implements Command
 			session.setAttribute("qtd", null);
 		}
 		
-
+		// Retirando a compra do carrinho
+		if (!listaCarrinho.isEmpty() && sIdProdutoRemove != null)
+		{
+			int intIdProdutoRemove = Integer.parseInt(sIdProdutoRemove);
+			
+			listaCarrinho.remove(intIdProdutoRemove);
+		}
 		
+
+		// Retirar a responsabilidade do calculo do valor total da classe carrinho
 		if (!listaCarrinho.isEmpty())
 		{
 
