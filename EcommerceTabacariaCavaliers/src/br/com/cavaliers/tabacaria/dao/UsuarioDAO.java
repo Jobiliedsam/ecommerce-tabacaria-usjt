@@ -197,7 +197,7 @@ public class UsuarioDAO {
 
 	public boolean validar(Usuario usuario) 
 	{
-		String sqlSelect = "SELECT Email, Password, Tipo FROM usuario "
+		String sqlSelect = "SELECT * FROM usuario "
 				+ " WHERE Email = ? and Password = ?";
 		try 
 		{
@@ -212,6 +212,7 @@ public class UsuarioDAO {
 				{
 					if(rs.next()) 
 					{
+						usuario.setId(rs.getInt("Id_Uuario"));
 						usuario.setTipo(rs.getString("Tipo"));
 						return true;
 					}

@@ -9,27 +9,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.cavaliers.tabacaria.model.Cliente;
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
+import br.com.cavaliers.tabacaria.model.PedidoLine;
 import br.com.cavaliers.tabacaria.service.PedidoHeaderService;
+import br.com.cavaliers.tabacaria.service.PedidoLineService;
 
-public class CriarPedidoHeader implements Command {
+public class CriarPedidoHeader implements Command 
+{
 
 	@Override
 	public void executar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String pNomeCliente = request.getParameter("nomeCliente");
-		int pQtdItens = Integer.parseInt(request.getParameter("qtdItens"));
-		double pValorTotal = Double.parseDouble(request.getParameter("valorTotal"));
-		
-		PedidoHeader pedidoHeader = new PedidoHeader();
-		PedidoHeaderService phs = new PedidoHeaderService();
+			throws ServletException, IOException 
+	{
+		System.out.print("Estou aqui2");
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 		
-		pedidoHeader.setNomeCliente(pNomeCliente);
-		pedidoHeader.setQtdItens(pQtdItens);
-		pedidoHeader.setValorTotal(pValorTotal);
-		phs.criar(pedidoHeader);
+		Cliente cliente = (Cliente)session.getAttribute("currentUser");
+		ArrayList<PedidoLine> pedidoLines = (ArrayList<PedidoLine>)session.getAttribute("produtosCarrinho");
+		PedidoHeader pedidoHeader = (PedidoHeader)session.getAttribute("orderHeader");
+		
+		
+		PedidoHeaderService phs = new PedidoHeaderService();
+		PedidoLineService pls = new PedidoLineService();
+		
+		if (pedidoHeader.getNomeCliente() == null || pedidoHeader.getIdCliente() == 0)
+		{
+			pedidoHeader.setNomeCliente(cliente.getNomeCompleto());
+			pedidoHeader.setIdCliente(cliente.getIdCliente());
+		}
+		
+		pedidoHeader.setIdPedido(phs.criar(pedidoHeader));
+		
+		for (PedidoLine linha : pedidoLines)
+		{
+			linha.setIdPedidoHeader(pedidoHeader.getIdPedido());
+			pls.criar(linha);
+			
+		}
+		
 		
 		ArrayList<PedidoHeader> lista = new ArrayList<>();
 		lista.add(pedidoHeader);

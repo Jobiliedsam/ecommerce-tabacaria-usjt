@@ -29,7 +29,8 @@
 		<form action="controller.do" method="post">
 			<div class="row">
 				<div class="form-group col-md-8">
-					<label for="email"> Email: </label> <input type="email"
+					<label for="email"> Email: </label> 
+					<input type="email"
 						class="form-control" name="email" id="email" required
 						maxlength="50" placeholder="email" />
 				</div>

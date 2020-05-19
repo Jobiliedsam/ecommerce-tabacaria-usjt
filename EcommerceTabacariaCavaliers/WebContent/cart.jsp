@@ -52,14 +52,22 @@
                     ${produtoCarrinho.precoUnitario }
                 </span>
             </div>
-            <div class="col-2 cart-p-quantity">
-                <form action="">
-                    <input type="number" name="quantidade" id="" value="${produtoCarrinho.quantidadeProduto}">
-                </form>
-            </div>
+            <form class="col-2 cart-p-quantity" action="controller.do" method="post">           
+              <div class="input-group">
+                 <input type="hidden" name="idProduto" value="${produtoCarrinho.idProduto}">
+                 <input type="text" name="qtd" id="qtd"class="form-control input-number" value="${produtoCarrinho.quantidadeProduto}">
+                 
+                 <span class="input-group-btn">
+                     <button type="submit" class="quantity-right-plus btn btn-success btn-number" name="command" value="Carrinho">
+                     	<span class="glyphicon glyphicon-minus"></span>
+                     </button>
+                 </span>
+             	</div>
+             </form>
+                        
             <div class="col-2">
                 <span class="price">
-                    ${produtoCarrinho.valorProduto }
+                    ${produtoCarrinho.precoUnitario * produtoCarrinho.quantidadeProduto}
                 </span>
             </div>
         </div>
@@ -88,7 +96,7 @@
         </div>
         <div class="row">
             <div class="col offset-9 total-infos">
-                <p><strong>Sub-Total:</strong> <span></span></p>
+                <p><strong>Sub-Total: ${orderHeader.valorTotal}</strong> <span></span></p>
                 <p><strong>Valor do Frete:</strong> <span>R$ 19,90</span></p>
                 <p><strong>Total:</strong> <span>R$ 79,90</span></p>
             </div>

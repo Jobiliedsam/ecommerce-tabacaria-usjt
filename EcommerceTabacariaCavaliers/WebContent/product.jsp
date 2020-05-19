@@ -29,64 +29,48 @@
     <div class="container">
         <div class="row">
             <div class="col-7 product-img">
-                <img id="product-img-ative" src="./images/produtos/isqueiro.jpg">
+                <img id="product-img-ative" src="./imagens/produtos/${produtoDesc.nomeP}_0.jpg">
                 <div class="product-img-gallery">
-                    <img src="./images/produtos/isqueiro.jpg">
-                    <img src="./images/produtos/isqueiro.jpg">
-                    <img src="./images/produtos/isqueiro.jpg">
+                    <img src="./imagens/produtos/${produtoDesc.nomeP}_1.jpg">
+                    <img src="./imagens/produtos/${produtoDesc.nomeP}_2.jpg">
                 </div>
             </div>
             <div class="col-5 produtc-infos">
                 <h1 class="product-name">
-                    <c:out value="${produtoDesc}"></c:out>
+                    <c:out value="${produtoDesc.nomeP}"></c:out>
                 </h1>
-                <p class="product-promotion">
-                    <span>De</span> 
-                    <span class="price-currency">R$</span> 
-                    <span class="price-fraction">100</span>
-                    <span class="price-separator">,</span>
-                    <span class="price-decimal">00</span>
-                    <span>por</span>
-                </p>
                 <p class="product-price">
                     <span class="price-currency">R$ </span>                                 
-                    <span class="price-fraction">79</span>
-                    <span class="price-separator">, </span>
-                    <span class="price-decimal">90</span>
+                    <span class="price-fraction">${produtoDesc.precoF}</span>
                 </p>
                 <p class="product-small-desc">
-                    Descrição curta, exemplo: Esse produto é top, compra logo
+                  
                 </p>
                 <div class="product-meta">
                     <p>
-                        <span>REF: </span>
-                        <span class="product-sku">REFERENCIADOPRODUTO</span>
+                        <span>Categoria: </span>
+                        <span class="product-sku">${produtoDesc.categoria}</span>
                     </p>
                     <p>
-                        <span>Marca: </span>
-                        <span class="product-brand">Zippo</span>
+                        <span>Fornecedor: </span>
+                        <span class="product-brand">${produtoDesc.fornecedor}</span>
                     </p>
                     <p>
-                        <span>Modelo: </span>
-                        <span class="product-model">Normal</span>
-                    </p>
-                    <p>
-                        <span>ReferÃªncia: </span>
-                        <span class="product-reference">99999998845412</span>
+                        <span>Código do Produto: </span>
+                        <span class="product-reference">${produtoDesc.idProduto}</span>
                     </p>
                     <p>
                         <span>Disponibilidade: </span>
-                        <span class="product-quantity">10</span>
+                        <span class="product-quantity">${produtoDesc.quantidade} itens</span>
                     </p>
                 </div>
                 <div class="buy-button">
-                    <form>
+        
                         <!-- Adicionar ao Carrinho e comprar-->
-                        <a href="#" title="Adicionar ao carrinho">
+                        <a href="controller.do?command=Carrinho&idProduto=${produtoDesc.idProduto}" title="Adicionar ao carrinho">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <button type="submit" title="Comprar">COMPRAR</button>
-                    </form>
+                        <button type="submit" title="Comprar">Comprar</button>
                 </div>
             </div>
         </div>
@@ -96,12 +80,7 @@
                     <!-- Esses itens nÃ£o precisam estar assim, pode ser apenas um texto em vez de lista -->
                     <h3>Descrição</h3>
                     <ul class="description-box">
-                        <li>- Info 1</li>
-                        <li>- Info 2</li>
-                        <li>- Info 3</li>
-                        <li>- Info 4</li>
-                        <li>- Info 5</li>
-                        <li>- Info 6</li>
+                        <li>${produtoDesc.descricao}</li>
                     </ul>
                 </div>
             </div>

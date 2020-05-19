@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Usuario;
+import br.com.cavaliers.tabacaria.model.Cliente;
+import br.com.cavaliers.tabacaria.model.Endereco;
+import br.com.cavaliers.tabacaria.service.ClienteService;
 import br.com.cavaliers.tabacaria.service.UsuarioService;
+import br.com.cavaliers.tabacaria.service.EnderecoService;
 
 public class FazerLogin implements Command 
 {
@@ -19,6 +23,11 @@ public class FazerLogin implements Command
 	{
 		String pEmail = request.getParameter("email");
 		String pPassword = request.getParameter("password");
+		
+		// Classes para já trazer as informações do usuário
+		ClienteService cs = new ClienteService();
+		EnderecoService es = new EnderecoService();
+		
 		
 		Usuario usuario = new Usuario();
 		usuario.setEmail(pEmail);
@@ -36,9 +45,13 @@ public class FazerLogin implements Command
 		}
 		else if(isUser) 
 		{
+			Cliente cliente = cs.carregar(usuario.getId());
+			Endereco endereco = es.carregar(cliente.getIdCliente());
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("logado", usuario);
-			System.out.println(usuario + "logado");
+			session.setAttribute("currentUser", cliente);
+			session.setAttribute("currentUserEndereco", endereco);
 			response.sendRedirect("index.jsp");
 		}
 		else 
