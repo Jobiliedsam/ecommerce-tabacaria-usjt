@@ -64,7 +64,7 @@ public class CriarCliente implements Command
 		ArrayList<Cliente> lista =  new ArrayList<>();
 		lista.add(cliente);
 		session.setAttribute("listaCliente", lista);
-		view = request.getRequestDispatcher("UsuarioIndex.jsp");
+		view = request.getRequestDispatcher("index.jsp");
 		view.forward(request, response);
 
 

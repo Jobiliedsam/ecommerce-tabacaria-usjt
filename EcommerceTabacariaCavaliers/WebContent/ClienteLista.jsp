@@ -104,8 +104,7 @@
                                                       <th>Cpf</th>
                                                       <th>Tipo</th>
                                                       <th>DataNascimento</th>
-                                                      <th>rg</th>
-                                                      <th>senha</th>
+                                                      
                                                     <th class="actions">Ações</th>
                                                 </tr>
                                             </thead>
@@ -142,13 +141,10 @@
                                                             <td>
                                                                ${cliente.rg}
                                                             </td>
-                                                            <td>
-                                                               ${usuario.password}
-                                                            </td>
                                                             <td class="actions">
                                                                 <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCliente&id=${cliente.idCliente }">Visualizar</a>
-                                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCliente&id=${cliente.idCliente }">Editar</a>
-                                                                 <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}">Excluir</a>
+                                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCliente&id=${cliente.idCliente }&id=${endereco.idEndereco}">Editar</a>
+                                                                 <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}&idEndereco=${endereco.idEndereco}">Excluir</a>
                                                             </td>
                                                         </tr>
                                             </c:forEach>

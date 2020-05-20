@@ -130,12 +130,54 @@
                                             ${cliente.rg }
                                         </p>
                                     </div>
+                                     <div class="col-md-12">
+                                        <p><strong>Cep</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.cep }
+                                        </p>
+                                    </div>
+                                     <div class="col-md-12">
+                                        <p><strong>Endereço Principal</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.enderecoP }
+                                        </p>
+                                    </div>
+                                     <div class="col-md-12">
+                                        <p><strong>Endereço Secundario</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.enderecoS}
+                                        </p>
+                                    </div>
+                                     <div class="col-md-12">
+                                        <p><strong>Cidade</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.cidade }
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p><strong>Estado</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.estado}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p><strong>Complemento</strong>
+                                        </p>
+                                        <p>
+                                            ${endereco.complemento }
+                                        </p>
+                                    </div>
                                 </div>
                                 <hr />
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
                                         <a href="controller.do?command=EditarCliente&id=${cliente.idCliente }" class="btn btn-primary">Editar</a>
-                                        <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente }">Excluir</a>
+                                       <a class="btn btn-danger btn-xs" href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}&idEndereco=${endereco.idEndereco}">Excluir</a>
                                         <a href="ClienteLista.jsp" class="btn btn-default">Voltar</a>
                                     </div>
                                 </div>

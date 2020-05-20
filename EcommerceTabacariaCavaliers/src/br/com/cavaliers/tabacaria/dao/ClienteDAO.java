@@ -17,8 +17,8 @@ public class ClienteDAO {
 	public int inserir(Cliente cliente)
 	{		
 		String sqlInsert = "INSERT INTO cliente " +
-			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento)" +
-			"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento, RG)" +
+			"VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
 		
 		try (Connection connection = ConnectionFactory.obterConexao();
 			PreparedStatement stm = connection.prepareStatement(sqlInsert);)
@@ -31,6 +31,7 @@ public class ClienteDAO {
 			stm.setString(6, cliente.getTipo());
 			stm.setString(7, cliente.getEmail());
 			stm.setDate(8, new Date(cliente.getDataDeNascimento().getTime()));
+			stm.setString(9, cliente.getRg());
 			stm.execute();
 
 			String sqlQuery = "SELECT LAST_INSERT_ID()";
@@ -60,7 +61,7 @@ public class ClienteDAO {
 	public void atualizar(Cliente cliente)
 	{
 		String sqlUpdate = "UPDATE `cliente` SET  `Nome_Completo` = ?, `Telefone` = ?, " +
-			"`Celular` = ?, `CPF` = ?, `Genero` = ?, `Tipo` = ?, `Email` = ?,`Data_Nascimento` = ? " +
+			"`Celular` = ?,`Genero` = ?, `Tipo` = ?, `Email` = ?" +
 			"WHERE `Id_Cliente` = ? ";
 
 
@@ -70,12 +71,10 @@ public class ClienteDAO {
 			stm.setString(1, cliente.getNomeCompleto());
 			stm.setString(2, cliente.getTelefone());
 			stm.setString(3, cliente.getCelular());
-			stm.setString(4, cliente.getCpfCnpj());
-			stm.setString(5, cliente.getGenero());
-			stm.setString(6, cliente.getTipo());
-			stm.setString(7, cliente.getEmail());
-			stm.setDate(8, new Date(cliente.getDataDeNascimento().getTime()));
-			stm.setInt(9, cliente.getIdCliente());
+			stm.setString(4, cliente.getGenero());
+			stm.setString(5, cliente.getTipo());
+			stm.setString(6, cliente.getEmail());
+			stm.setInt(7, cliente.getIdCliente());
 			stm.execute();
 		}
 		catch (Exception exception)

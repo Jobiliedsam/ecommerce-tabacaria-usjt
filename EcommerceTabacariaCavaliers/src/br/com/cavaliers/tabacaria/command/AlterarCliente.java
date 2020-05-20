@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Cliente;
+import br.com.cavaliers.tabacaria.model.Endereco;
 import br.com.cavaliers.tabacaria.service.ClienteService;
+import br.com.cavaliers.tabacaria.service.EnderecoService;
 
 public class AlterarCliente implements Command {
 
@@ -29,6 +31,10 @@ public class AlterarCliente implements Command {
 		
 		
 		Cliente cliente = new Cliente();
+		Endereco endereco = new Endereco();
+		
+		ClienteService clienteService = new ClienteService();
+		EnderecoService enderecoService = new EnderecoService();
 				
 		cliente.setIdCliente(id);
 		cliente.setCelular(request.getParameter("celularCliente"));
@@ -41,12 +47,22 @@ public class AlterarCliente implements Command {
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
 		cliente.setRg(request.getParameter("rg"));
 		
-		ClienteService clienteService = new ClienteService();
+		endereco.setIdCliente(cliente.getIdCliente());
+		endereco.setEnderecoP(request.getParameter("enderecoPrincipal"));
+		endereco.setCep(request.getParameter("cep"));
+		endereco.setEnderecoS(request.getParameter("bairro"));
+		endereco.setCidade(request.getParameter("cidade"));
+		endereco.setEstado(request.getParameter("estado"));
+		endereco.setComplemento(request.getParameter("complemento"));
+		
+		
+		
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 
 	
 		clienteService.atualizar(cliente);
+		enderecoService.atualizar(endereco);
 		
 		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("listaCliente");
 		int pos = busca(cliente, lista);

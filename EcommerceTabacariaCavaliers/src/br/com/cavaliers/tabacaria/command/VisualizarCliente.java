@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cavaliers.tabacaria.model.Cliente;
+import br.com.cavaliers.tabacaria.model.Endereco;
 import br.com.cavaliers.tabacaria.service.ClienteService;
+import br.com.cavaliers.tabacaria.service.EnderecoService;
 
 public class VisualizarCliente implements Command {
 
@@ -27,7 +29,11 @@ public class VisualizarCliente implements Command {
 		}
 
 		Cliente cliente = new Cliente();
+		Endereco endereco = new Endereco();
 
+		ClienteService clienteService = new ClienteService();
+		EnderecoService enderecoService = new EnderecoService();
+		
 		cliente.setIdCliente(id);
 		cliente.setCelular(request.getParameter("celularCliente"));
 		cliente.setNomeCompleto(request.getParameter("nomeCliente"));
@@ -37,13 +43,25 @@ public class VisualizarCliente implements Command {
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		cliente.setRg(request.getParameter("rg"));
 		
-		ClienteService clienteService = new ClienteService();
+		endereco.setIdCliente(cliente.getIdCliente());
+		endereco.setEnderecoP(request.getParameter("enderecoPrincipal"));
+		endereco.setCep(request.getParameter("cep"));
+		endereco.setEnderecoS(request.getParameter("bairro"));
+		endereco.setCidade(request.getParameter("cidade"));
+		endereco.setEstado(request.getParameter("estado"));
+		endereco.setComplemento(request.getParameter("complemento"));
+		
+		
+		
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 	
 		cliente = clienteService.carregar(cliente.getIdCliente());
+		endereco = enderecoService.carregar(cliente.getIdCliente());
 		request.setAttribute("cliente", cliente);
+		request.setAttribute("endereco", endereco);
 		view = request.getRequestDispatcher("VisualizarCliente.jsp");
 
 		view.forward(request, response);
