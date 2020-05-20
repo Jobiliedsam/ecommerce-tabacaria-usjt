@@ -73,7 +73,7 @@
                                             <div class="input-group h2">
                                                 <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Pedido">
                                                 <span class="input-group-btn">
-                                <button class="btn btn-primary" type="submit" name="command" value="ListarPedidoHeaderTeste.jsp">
+                                <button class="btn btn-primary" type="submit" name="command" value="ListarPedidoHeader">
                                     <span class="glyphicon glyphicon-search"></span>
                                                 Pesquisar
                                                  </button>

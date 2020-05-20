@@ -32,7 +32,7 @@ public class ListarPedidoHeader implements Command {
 			session.setAttribute("listaPedidoHeader", lista);
 		
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarPedidoHeader.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarPedidoHeaderTeste.jsp");
 		dispatcher.forward(request, response);
 
 	}

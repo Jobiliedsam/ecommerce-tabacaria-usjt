@@ -56,7 +56,7 @@ public class AlterarPedidoHeader implements Command {
 		lista.add(pos, pedidoHeader);
 		session.setAttribute("listaPedidoHeader", lista);
 		request.setAttribute("pedidoHeader", pedidoHeader);
-		view = request.getRequestDispatcher("VisualizarPedidoHeader.jsp");
+		view = request.getRequestDispatcher("VisualizarPedidoHeaderTeste.jsp");
 		
 		view.forward(request, response);
 
