@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS Produto (
     INDEX (Preco),
     
     # Chave Estrangeira
-    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(Nome_Categoria),
+    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(clienteNome_Categoria),
     
     # Validadores
     CONSTRAINT chk_preco CHECK (Preco >= 0)

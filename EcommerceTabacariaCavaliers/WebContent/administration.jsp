@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,39 +11,29 @@
 	<link rel="stylesheet" href="./css/fontawesome.min.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/admin.css">
-
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-
-	<meta charset="ISO-8859-1">
-	<title>Administração</title>
+	<meta charset="UTF-8">
+	<title>Cavaliers - AdministraÃ§Ã£o</title>
 </head>
-	<body>
-
-		 <jsp:include page="./componentes/adm-top.jsp"></jsp:include> 
-		
-		<div class="container-fluid">
-			<div id="adm-page" class="row">
-
-				<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
-
-				<div id="admin-center" class="col">
-					<div class="row">
-						<div class="col">
-							<!-- Adicionar aqui o conteÃºdo de administraÃ§Ã£o -->
-
-							<h1>Bem vindo a Pagina de Administrção</h1>
-							<h3>Clique nos links laterais e administre sua loja.</h3>
-
-							<!-- Fim -->
-						</div>
+<body>
+	<c:import url="./componentes/adm-top.jsp"></c:import>
+	<div class="container-fluid">
+		<div id="adm-page" class="row">
+			<c:import url="./componentes/adm-menu.jsp"></c:import>
+			<div id="admin-center" class="col">
+				<div class="row">
+					<div class="col">
+						<h1>Bem vindo a Pagina de AdministrÃ§Ã£o</h1>
+						<h3>Clique nos links laterais e administre sua loja.</h3>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
-		
-		<script src="./js/backtotop.js"></script>
-	</body>
+	</div>
+	<div id="back-to-top">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+	<script src="./js/backtotop.js"></script>
+</body>
 </html>

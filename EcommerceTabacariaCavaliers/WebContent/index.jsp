@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,14 +13,15 @@
         <link rel="stylesheet" href="./css/fontawesome.min.css">
         <link rel="stylesheet" href="./css/slider_gallery.css">
         <link rel="stylesheet" href="./css/banner_slider.css">
-        <link rel="stylesheet" href="./css/admin.css">
+        
+        
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
         <title>Home</title>
     </head>
     <body>
 	<jsp:useBean id="produtosService" class="br.com.cavaliers.tabacaria.service.ProdutoService"></jsp:useBean>
-    <jsp:include page="./componentes/header.jsp"></jsp:include>
+    <c:import url="./componentes/header.jsp"></c:import>
         <main>
             <jsp:include page="./componentes/banner_home.html"></jsp:include>
             
@@ -58,7 +59,7 @@
                 </div>
             </section>
         </main>
-        <jsp:include page="./componentes/footer.jsp"></jsp:include>
+        <c:import url="./componentes/footer.jsp"></c:import>
         
         <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
         <script src="./js/backtotop.js"></script>

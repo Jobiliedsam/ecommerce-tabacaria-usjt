@@ -34,33 +34,27 @@
 
 <body>
 
-	<jsp:include page="./componentes/adm-top.jsp"></jsp:include>
+	<c:import url="./componentes/adm-top.jsp"></c:import>
 
 	<div class="container-fluid">
 		<div id="adm-page" class="row">
 
-			<jsp:include page="./componentes/adm-menu.jsp"></jsp:include>
+			<c:import url="./componentes/adm-menu.jsp"></c:import>
 
 			<div id="admin-center" class="col">
 				<div class="row">
 					<div class="col">
-						<!-- Adicionar aqui o conteúdo de administração -->
-
-						<!-- Barra superior com os menus de navegação -->
-						<!-- Container Principal -->
 						<div id="main" class="container">
-							<h3 class="page-header">Alterar Cliente #${cliente.idCliente
-								}</h3>
-							<!-- Formulario para alteração de clientes -->
+							<h3 class="page-header">Alterar Cliente #${cliente.idCliente}</h3>
+
 							<form action="controller.do" method="post">
-								<!-- area de campos do form -->
-								<input type="hidden" name="id" value="${cliente.idCliente }" />
+								<input type="hidden" name="id" value="${cliente.idCliente}"/>
 								<div class="row">
 									<div class="form-group col-md-12">
 										<label for="nomeCliente">Nome</label> <input type="text"
 											class="form-control" name="nomeCliente" id="nomeCliente"
 											required maxlength="100" placeholder="Cliente"
-											value="${cliente.nomeCompleto }">
+											value="${cliente.nomeCompleto}">
 									</div>
 								</div>
 								<div class="row">
@@ -68,7 +62,7 @@
 										<label for="celularCliente">Celular</label> <input type="tel"
 											class="form-control" name="celularCliente"
 											id="celularCliente" maxlength="11" placeholder="celular"
-											value="${cliente.celular }">
+											value="${cliente.celular}">
 									</div>
 								</div>
 								<div class="row">
@@ -76,7 +70,7 @@
 										<label for="telefoneCliente">Telefone</label> <input
 											type="tel" class="form-control" name="telefoneCliente"
 											id="telefoneCliente" maxlength="11" placeholder="telefone"
-											value="${cliente.telefone }">
+											value="${cliente.telefone}">
 									</div>
 								</div>
 								<div class="row">
@@ -158,8 +152,6 @@
 								</div>
 							</form>
 						</div>
-
-						<!-- Fim -->
 					</div>
 				</div>
 			</div>

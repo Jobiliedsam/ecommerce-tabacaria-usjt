@@ -37,8 +37,9 @@
                     </form>
                 </div>
                 <div class="col-2 login-display">
+                	<span><a href="UsuarioIndex.jsp">Logar</a></span>
                     <!-- Nome da pessoa logada, tambÃ©m pode ser um link para pagina de gerenciamento de pedidos-->
-                    <span>Login <a href="singup.jsp">Cliente</a></span>
+                    <span><a href="singup.jsp">Cliente</a></span>
                 </div>
                 <div class="col-1 shop-cart">
                     <!-- InformaÃ§Ã£o de quantos itens tem no carrinho dentro do span -->

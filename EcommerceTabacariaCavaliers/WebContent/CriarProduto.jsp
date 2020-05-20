@@ -17,9 +17,8 @@
 		<title>Criar Produto</title>
 	</head>
 	<body>
-		<jsp:useBean id="categorias" class="br.com.cavaliers.tabacaria.service.CategoriaService"/>
-		<jsp:useBean id="fornecedores" class="br.com.cavaliers.tabacaria.service.FornecedorService"/>
-		
+		<jsp:useBean id="categorias" class="br.com.cavaliers.tabacaria.service.CategoriaService" />
+		<jsp:useBean id="fornecedores" class="br.com.cavaliers.tabacaria.service.FornecedorService" />
 		<c:import url="./componentes/adm-top.jsp"></c:import>
 		<div class="container-fluid">
 			<div id="adm-page" class="row">
@@ -34,42 +33,44 @@
 									<!-- area de campos do form -->
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="nomeP">Nome do Produto:</label> 
-											<input type="text"
-												class="form-control" name="nomeP" id="nomeP" required maxlength="100"
-												placeholder="Nome do Produto">
+											<label for="nomeP">Nome do Produto:</label>
+											<input type="text" class="form-control" name="nomeP" id="nomeP" required
+												maxlength="100" placeholder="Nome do Produto">
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-12">
 											<label for="precoF"> Preço: </label>
-											<input type="number" class="form-control" name="precoF" id="precoF" required
+											<input type="text" class="form-control" name="precoF" id="precoF" required
 												maxlength="100" placeholder="Preço do Produto" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="categoria">Categoria:</label> 
+											<label for="categoria">Categoria:</label>
 											<select class="form-control" name="categoria" id="categoria" required>
 												<c:forEach var="categoria" items="${categorias.carregarAll()}">
-													<option value="${categoria.categoria}">${categoria.categoria} (${categoria.status}) </option>
+													<option value="${categoria.categoria}">${categoria.categoria}
+														(${categoria.status}) </option>
 												</c:forEach>
 											</select>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="fornecedor">Fornecedor</label> 
+											<label for="fornecedor">Fornecedor</label>
 											<select class="form-control" name="fornecedor" id="fornecedor" required>
-												<c:forEach var="fornecedor" items="${fornecedores.listarFornecedores()}">
-													<option value="${fornecedor.nomeFornecedor}">${fornecedor.nomeFornecedor} </option>
+												<c:forEach var="fornecedor"
+													items="${fornecedores.listarFornecedores()}">
+													<option value="${fornecedor.nomeFornecedor}">
+														${fornecedor.nomeFornecedor} </option>
 												</c:forEach>
 											</select>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="status">Status</label> 
+											<label for="status">Status</label>
 											<select class="form-control" name="status" id="status" required>
 												<option value="Ativo"> Ativo </option>
 												<option value="Inativo"> Inativo </option>
@@ -78,10 +79,9 @@
 									</div>
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="descricao"> Descrição: </label> 
-											<input type="text"
-												class="form-control" name="descricao" id="descricao" required
-												maxlength="100" placeholder="descricao" />
+											<label for="descricao"> Descrição: </label>
+											<input type="text" class="form-control" name="descricao" id="descricao"
+												required maxlength="100" placeholder="descricao" />
 										</div>
 									</div>
 									<div class="row">
@@ -94,7 +94,7 @@
 									<div class="row">
 										<div class="form-group col-md-12">
 											<label for="fotos">Fotos do Produto</label>
-											<input type="file" name="fotos" id="fotos" multiple required/>
+											<input type="file" name="fotos" id="fotos" multiple required />
 										</div>
 									</div>
 									<hr />
