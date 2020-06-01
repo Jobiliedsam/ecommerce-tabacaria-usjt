@@ -43,7 +43,7 @@ public class CriarCliente implements Command
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
 		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setRg(request.getParameter("rg"));
+		//cliente.setRg(request.getParameter("rg"));
 		cliente.setIdCliente(clienteService.criar(cliente));
 		
 		endereco.setIdCliente(cliente.getIdCliente());
@@ -55,6 +55,7 @@ public class CriarCliente implements Command
 		endereco.setComplemento(request.getParameter("complemento"));
 		endereco.setEndereco(enderecoService.criar(endereco));
 		
+		usuario.setId(cliente.getIdCliente());
 		usuario.setEmail(request.getParameter("email"));
 		usuario.setPassword(request.getParameter("password"));
 		usuario.setTipo(request.getParameter("tipo"));
