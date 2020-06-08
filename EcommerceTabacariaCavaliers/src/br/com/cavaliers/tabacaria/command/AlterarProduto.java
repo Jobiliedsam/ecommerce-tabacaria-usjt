@@ -49,11 +49,11 @@ public class AlterarProduto implements Command
 		HttpSession session = request.getSession();
 		
 		ps.atualizar(produto);
-		ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("listaProduto");
-		int pos = busca(produto, lista);
-		lista.remove(pos);
-		lista.add(pos,produto);
-		session.setAttribute("listaProduto", lista);
+		//ArrayList<Produto> lista = (ArrayList<Produto>)session.getAttribute("listaProduto");
+		//int pos = busca(produto, lista);
+		//lista.remove(pos);
+		//lista.add(pos,produto);
+		//session.setAttribute("listaProduto", lista);
 		request.setAttribute("produto", produto);
 		view = request.getRequestDispatcher("VisualizarProduto.jsp");
 

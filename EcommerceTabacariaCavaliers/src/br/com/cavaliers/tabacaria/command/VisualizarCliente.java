@@ -1,7 +1,7 @@
 package br.com.cavaliers.tabacaria.command;
 
 import java.io.IOException;
-import java.util.Date;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,7 +42,7 @@ public class VisualizarCliente implements Command {
 		cliente.setGenero(request.getParameter("generoCliente"));
 		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
-		cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		cliente.setDataDeNascimento(request.getParameter("data"));
 		cliente.setRg(request.getParameter("rg"));
 		
 		endereco.setIdCliente(cliente.getIdCliente());

@@ -8,41 +8,41 @@
 					<div class="row">
 						<div class="col">
 							<label for="nomeCliente">Nome Completo</label> <input type="text"
-								class="form-control" name="nomeCliente"
+								class="form-control" name="nomeCliente" required
 								placeholder="Nome Completo">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							<label for="telefoneCliente">Telefone Fixo</label> <input
-								type="tel" class="form-control" name="telefoneCliente"
+								type="tel" class="form-control" name="telefoneCliente" required
 								placeholder="(00) XXXX-XXXX">
 						</div>
 						<div class="col">
 							<label for="celularCliente">Telefone Celular</label> <input
-								type="tel" class="form-control" name="celularCliente"
+								type="tel" class="form-control" name="celularCliente" required
 								placeholder="(00) XXXXX-XXXX">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							<label for="rg">RG</label> <input type="text"
-								class="form-control" name="rg" placeholder="RG">
+								class="form-control" name="rg" required placeholder="RG">
 						</div>
 						<div class="col">
 							<label for="cpfCliente">CPF</label> <input type="text"
-								class="form-control" name="cpfCliente" placeholder="CPF">
+								class="form-control" name="cpfCliente" required placeholder="CPF">
 						</div>
 						<div class="col">
 							<label for="dataNascimentoCliente">Data de Nascimento</label> <input
-								type="date" class="form-control" name="dataNascimentoCliente"
+								type="date" class="form-control" name="data" required
 								placeholder="DD/MM/AAAA">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-4">
 							<label for="generoCliente">Genero</label> <select
-								name="generoCliente" class="form-control">
+								name="generoCliente" required class="form-control">
 								<option value="F">Feminino</option>
 								<option value="M">Masculino</option>
 								<option value="O">Outros</option>
@@ -65,25 +65,25 @@
 						<div class="col">
 							<label for="enderecoPrincipal">Endereço Principal</label> <input
 								type="text" name="enderecoPrincipal" class="form-control"
-								placeholder="Rua Exemplo 234">
+								required placeholder="Rua Exemplo 234">
 						</div>
 						<div class="col-3">
 							<label for="cep">CEP</label> <input type="text" name="cep"
-								class="form-control" placeholder="0000-00">
+								class="form-control" required placeholder="0000-00">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							<label for="bairro">Bairro</label> <input type="text"
-								name="bairro" class="form-control" placeholder="Bairro">
+								name="bairro" class="form-control"  required placeholder="Bairro">
 						</div>
 						<div class="col">
 							<label for="cidade">Cidade</label> <input type="text"
-								name="cidade" class="form-control" placeholder="Cidade">
+								name="cidade" class="form-control" required placeholder="Cidade">
 						</div>
 						<div class="col-2">
 							<label for="estado">Estado</label> <select name="estado"
-								class="form-control">
+								class="form-control" required>
 								<option selected value="">[Selecione o estado]</option>
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
@@ -116,7 +116,7 @@
 						</div>
 						<div class="col">
 							<label for="complemento">Complemento</label> <input type="text"
-								name="complemento" class="form-control">
+								name="complemento" required class="form-control">
 						</div>
 					</div>
 					<div class="row">

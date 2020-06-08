@@ -39,14 +39,13 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-4">
 											<label for="precoF"> Preço: </label>
 											<input type="text" class="form-control" name="precoF" id="precoF" required
 												maxlength="100" placeholder="Preço do Produto" />
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
+									
+										<div class="form-group col-md-4">
 											<label for="categoria">Categoria:</label>
 											<select class="form-control" name="categoria" id="categoria" required>
 												<c:forEach var="categoria" items="${categorias.carregarAll()}">
@@ -55,9 +54,8 @@
 												</c:forEach>
 											</select>
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
+									
+										<div class="form-group col-md-4">
 											<label for="fornecedor">Fornecedor</label>
 											<select class="form-control" name="fornecedor" id="fornecedor" required>
 												<c:forEach var="fornecedor"
@@ -69,30 +67,28 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-6">
 											<label for="status">Status</label>
 											<select class="form-control" name="status" id="status" required>
 												<option value="Ativo"> Ativo </option>
 												<option value="Inativo"> Inativo </option>
 											</select>
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
+									
+										<div class="form-group col-md-6">
 											<label for="descricao"> Descrição: </label>
 											<input type="text" class="form-control" name="descricao" id="descricao"
 												required maxlength="100" placeholder="descricao" />
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-6">
 											<label for="quantidade"> Quantidade: </label> <input type="number"
 												class="form-control" name="quantidade" id="quantidade" required
 												maxlength="100" placeholder="quantidade" />
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
+									
+										<div class="form-group col-md-6">
 											<label for="fotos">Fotos do Produto</label>
 											<input type="file" name="fotos" id="fotos" multiple required />
 										</div>

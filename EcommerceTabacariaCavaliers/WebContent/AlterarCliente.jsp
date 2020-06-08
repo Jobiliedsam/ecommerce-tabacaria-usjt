@@ -58,15 +58,14 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-12">
+									<div class="form-group col-md-6">
 										<label for="celularCliente">Celular</label> <input type="tel"
 											class="form-control" name="celularCliente"
 											id="celularCliente" maxlength="11" placeholder="celular"
 											value="${cliente.celular}">
 									</div>
-								</div>
-								<div class="row">
-									<div class="form-group col-md-12">
+								
+									<div class="form-group col-md-6">
 										<label for="telefoneCliente">Telefone</label> <input
 											type="tel" class="form-control" name="telefoneCliente"
 											id="telefoneCliente" maxlength="11" placeholder="telefone"
@@ -82,52 +81,48 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-12">
+									<div class="form-group col-md-6">
 										<label for="generoCliente">Genero</label> <input type="text"
 											class="form-control" name="generoCliente" id="generoCliente"
 											maxlength="10" placeholder="genero" value="${cliente.genero}">
 									</div>
-								</div>
-								<div class="row">
-									<div class="form-group col-md-12">
+								
+									<div class="form-group col-md-6">
 										<label for="Física">Tipo</label> <input type="text"
 											class="form-control" name="Física" id="Física" maxlength="11"
 											placeholder="Física" value="${cliente.tipo }">
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-12">
-										<label for="enderecoP">Endereço</label> <input type="text"
-											class="form-control" name="enderecoP" id="enderecoP"
+									<div class="form-group col-md-8">
+										<label for="enderecoPrincipal">Endereço</label> <input type="text"
+											class="form-control" name="enderecoPrincipal" id="enderecoPrincipal"
 											maxlength="100" placeholder="Endereço"
 											value="${endereco.enderecoP }">
 									</div>
-								</div>
-								<div class="row">
-									<div class="form-group col-md-12">
+								
+									<div class="form-group col-md-4">
 										<label for="cep">Cep</label> <input type="text"
 											class="form-control" name="cep" id="cep" maxlength="8"
 											placeholder="Cep" value="${endereco.cep }">
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-12">
+									<div class="form-group col-md-4">
 										<label for="bairro">Bairro</label> <input type="text"
 											class="form-control" name="bairro" id="bairro"
 											maxlength="100" placeholder="Bairro"
-											value="${endereco.bairro }">
+											value="${endereco.enderecoS }">
 									</div>
-								</div>
-								<div class="row">
-									<div class="form-group col-md-12">
+								
+									<div class="form-group col-md-4">
 										<label for="cidade">Cidade</label> <input type="text"
 											class="form-control" name="cidade" id="cidade"
 											maxlength="100" placeholder="Cidade"
 											value="${endereco.cidade }">
 									</div>
-								</div>
-								<div class="row">
-									<div class="form-group col-md-12">
+								
+									<div class="form-group col-md-4">
 										<label for="estado">Estado</label> <input type="text"
 											class="form-control" name="estado" id="estado"
 											maxlength="100" placeholder="Estado"

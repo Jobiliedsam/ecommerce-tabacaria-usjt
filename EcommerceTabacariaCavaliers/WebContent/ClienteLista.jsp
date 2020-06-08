@@ -116,9 +116,9 @@
                                                                 <a class="btn btn-success btn-xs"
                                                                     href="controller.do?command=VisualizarCliente&id=${cliente.idCliente }">Visualizar</a>
                                                                 <a class="btn btn-warning btn-xs"
-                                                                    href="controller.do?command=EditarCliente&id=${cliente.idCliente }&id=${endereco.idEndereco}">Editar</a>
+                                                                    href="controller.do?command=EditarCliente&id=${cliente.idCliente }">Editar</a>
                                                                 <a class="btn btn-danger btn-xs"
-                                                                    href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}&idEndereco=${endereco.idEndereco}">Excluir</a>
+                                                                    href="controller.do?command=ExcluirCliente&id=${cliente.idCliente}&idUsuario=${usuario.idUsuario}">Excluir</a>
                                                             </td>
                                                         </tr>
                                                     </c:forEach>

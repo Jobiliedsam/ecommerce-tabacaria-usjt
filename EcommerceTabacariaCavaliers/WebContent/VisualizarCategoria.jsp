@@ -56,22 +56,24 @@
                             <!-- Container Principal -->
                             <div id="main" class="container">
                                 <h3 class="page-header">Visualizar Categoria - ${categoria.idCategoria }</h3>
+                                <hr />
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><strong>Nome</strong>
-                                        </p>
+                                        <h5>Nome</h5>
+                                        
                                         <p> ${categoria.categoria} </p>
                                     </div>
                                 </div>
+                                <hr />
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <p><strong>Status</strong>
-                                        </p>
+                                    <div class="col-md-6">
+                                        <h5>Status</h5>
+                                        
                                         <p> ${categoria.status} </p>
                                     </div>
-                                    <div class="col-md-12">
-                                        <p><strong>Descricao</strong>
-                                        </p>
+                                    <div class="col-md-6">
+                                        <h5>Descrição</h5>
+                                        
                                         <p> ${categoria.descricao} </p>
                                     </div>
                                 </div>

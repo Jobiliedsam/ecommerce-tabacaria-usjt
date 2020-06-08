@@ -28,6 +28,14 @@ public class AlterarCliente implements Command {
 		} catch (NumberFormatException e) {
 
 		}
+		String pId2 = request.getParameter("idEndereco");
+		int idEndereco = -1;
+
+		try {
+			idEndereco = Integer.parseInt(pId2);
+		} catch (NumberFormatException e) {
+
+		}
 		
 		
 		Cliente cliente = new Cliente();
@@ -42,12 +50,13 @@ public class AlterarCliente implements Command {
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
 		cliente.setEmail(request.getParameter("emailCliente"));
 		cliente.setGenero(request.getParameter("generoCliente"));
-		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
+		//cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
-		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setRg(request.getParameter("rg"));
+		//cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		//cliente.setRg(request.getParameter("rg"));
 		
 		endereco.setIdCliente(cliente.getIdCliente());
+		//endereco.setIdEndereco(idEndereco);
 		endereco.setEnderecoP(request.getParameter("enderecoPrincipal"));
 		endereco.setCep(request.getParameter("cep"));
 		endereco.setEnderecoS(request.getParameter("bairro"));
@@ -70,6 +79,7 @@ public class AlterarCliente implements Command {
 		lista.add(pos, cliente);
 		session.setAttribute("listaCliente", lista);
 		request.setAttribute("cliente", cliente);
+		request.setAttribute("endereco", endereco);
 		view = request.getRequestDispatcher("VisualizarCliente.jsp");
 		view.forward(request, response);
 

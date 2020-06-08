@@ -29,6 +29,7 @@
 								<form action="controller.do" method="post">
 									<!-- area de campos do form -->
 									<input type="hidden" name="idProduto" value="${produto.idProduto }" />
+									<hr />
 									<div class="row">
 										<div class="col-md-12">
 											<label for="nomeP">Nome do Produto</label> <input type="text" name="nomeP"
@@ -36,41 +37,40 @@
 												placeholder="Nome do Produto" value="${produto.nomeP }">
 										</div>
 									</div>
+									<hr />
 									<div class="row">
-										<div class="col-md-12">
+										<div class="col-md-4">
 											<label for="precoF">Preço Produto</label>
 											<input type="text" name="precoF" class="form-control" id="precoF" required
 												maxlength="10" placeholder="Preço do Produto" value="${produto.precoF}">
 										</div>
-										<div class="col-md-12">
+										<div class="col-md-4">
 											<label for="categoria">Categoria</label> <input type="text" name="categoria"
 												class="form-control" id="categoria" required maxlength="20"
 												placeholder="Categoria do Produto" value="${produto.categoria }">
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12">
+									
+										<div class="col-md-4">
 											<label for="fornecedor">Fornecedor</label> <input type="text"
 												name="fornecedor" class="form-control" id="fornecedor" required
 												maxlength="100" placeholder="Fornecedor" value="${produto.fornecedor }">
 										</div>
 									</div>
+									<hr />
 									<div class="row">
-										<div class="col-md-12">
+										<div class="col-md-4">
 											<label for="nomeP">Status</label> <input type="text" name="nomeP"
 												class="form-control" id="nomeP" required maxlength="100"
 												placeholder="Status" value="${produto.status }">
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12">
+									
+										<div class="col-md-4">
 											<label for="descricao">Descrição</label> <input type="text" name="descricao"
 												class="form-control" id="descricao" required maxlength="100"
 												placeholder="Descriçao" value="${produto.descricao }">
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12">
+									
+										<div class="col-md-4">
 											<label for="quantidade">Quantidade</label> <input type="number"
 												name="quantidade" class="form-control" id="quantidade" required
 												maxlength="100" placeholder="Quantidade" value="${produto.quantidade }">

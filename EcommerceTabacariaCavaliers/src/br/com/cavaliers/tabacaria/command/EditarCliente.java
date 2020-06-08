@@ -29,6 +29,7 @@ public class EditarCliente implements Command {
 		}
 		
 		
+		
 		Cliente cliente = new Cliente();
 		Endereco endereco = new Endereco();
 		ClienteService clienteService = new ClienteService();
@@ -42,10 +43,10 @@ public class EditarCliente implements Command {
 		cliente.setTelefone(request.getParameter("telefoneCliente"));
 		cliente.setEmail(request.getParameter("emailCliente"));
 		cliente.setGenero(request.getParameter("generoCliente"));
-		cliente.setCpfCnpj(request.getParameter("cpfCliente"));
+		//cliente.setCpfCnpj(request.getParameter("cpfCliente"));
 		cliente.setTipo("Física");
-		cliente.setDataDeNascimento(new Date(1995, 19, 10));
-		cliente.setRg(request.getParameter("rg"));
+		//cliente.setDataDeNascimento(new Date(1995, 19, 10));
+		//cliente.setRg(request.getParameter("rg"));
 		
 		endereco.setIdCliente(cliente.getIdCliente());
 		endereco.setEnderecoP(request.getParameter("enderecoPrincipal"));
@@ -59,6 +60,7 @@ public class EditarCliente implements Command {
 		endereco = enderecoService.carregar(cliente.getIdCliente());
 		
 		request.setAttribute("cliente", cliente);
+		request.setAttribute("endereco", endereco);
 		view = request.getRequestDispatcher("AlterarCliente.jsp");
 		view.forward(request, response);
 

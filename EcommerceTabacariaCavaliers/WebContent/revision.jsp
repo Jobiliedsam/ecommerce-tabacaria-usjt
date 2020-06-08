@@ -14,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 		<meta charset="ISO-8859-1">
-		<title>RevisÃ£o do Pedido</title>
+		<title>Revisão do Pedido</title>
 	</head>
 	<body>
 		<jsp:include page="./componentes/header.jsp"></jsp:include>

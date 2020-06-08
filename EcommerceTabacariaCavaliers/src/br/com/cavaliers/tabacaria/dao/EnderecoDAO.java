@@ -110,7 +110,7 @@ public class EnderecoDAO {
 				if (resultSet.next())
 				{
                     endereco.setIdEndereco(resultSet.getInt("Id_Endereco"));
-                    endereco.setIdCliente(resultSet.getInt("Id_Endereco"));
+                    endereco.setIdCliente(resultSet.getInt("Id_Cliente"));
 					endereco.setEnderecoP(resultSet.getString("Endereco_Principal"));
 					endereco.setEnderecoS(resultSet.getString("Endereco_Secundario"));
 					endereco.setCep(resultSet.getString("CEP"));

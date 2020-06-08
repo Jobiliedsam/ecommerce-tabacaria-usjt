@@ -4,12 +4,10 @@ package br.com.cavaliers.tabacaria.dao;
 import br.com.cavaliers.tabacaria.model.Cliente;
 
 
-import java.sql.Date;
 import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;  
 import java.sql.SQLException; 
-//import java.util.ArrayList;
 import java.util.ArrayList;
 
 public class ClienteDAO {
@@ -30,7 +28,7 @@ public class ClienteDAO {
 			stm.setString(5, cliente.getGenero());
 			stm.setString(6, cliente.getTipo());
 			stm.setString(7, cliente.getEmail());
-			stm.setDate(8, new Date(cliente.getDataDeNascimento().getTime()));
+			stm.setString(8, cliente.getDataDeNascimento());
 			stm.setString(9, cliente.getRg());
 			stm.execute();
 
@@ -125,7 +123,8 @@ public class ClienteDAO {
 					cliente.setGenero(resultSet.getString("Genero"));
 					cliente.setTipo(resultSet.getString("Tipo"));
 					cliente.setEmail(resultSet.getString("Email"));
-					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
+					cliente.setDataDeNascimento(resultSet.getString("Data_Nascimento"));
+					cliente.setRg(resultSet.getString("RG"));
 				}
 				else 
 				{
@@ -167,7 +166,7 @@ public class ClienteDAO {
 					cliente.setGenero(resultSet.getString("Genero"));
 					cliente.setTipo(resultSet.getString("Tipo"));
 					cliente.setEmail(resultSet.getString("Email"));
-					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
+					cliente.setDataDeNascimento(resultSet.getString("Data_Nascimento"));
 					lista.add(cliente);
 				}
 				//else 
@@ -211,7 +210,7 @@ public class ClienteDAO {
 					cliente.setGenero(resultSet.getString("Genero"));
 					cliente.setTipo(resultSet.getString("Tipo"));
 					cliente.setEmail(resultSet.getString("Email"));
-					cliente.setDataDeNascimento(resultSet.getDate("Data_Nascimento"));
+					cliente.setDataDeNascimento(resultSet.getString("Data_Nascimento"));
 					lista.add(cliente);				}
 			}
 			catch (SQLException sqlException)

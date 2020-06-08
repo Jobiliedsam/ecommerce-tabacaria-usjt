@@ -6,7 +6,7 @@
 			class="fas fa-home"></i> Visualizar Loja</a>
 	</div>
 	<div class="col-3">
-		<span>Ol�, ADM</span>
+		<span>Olá, ADM</span>
 	</div>
 	<div class="col-3">
 		<ul>

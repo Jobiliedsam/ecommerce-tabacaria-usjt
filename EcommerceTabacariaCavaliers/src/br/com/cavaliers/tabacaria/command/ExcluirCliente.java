@@ -52,7 +52,7 @@ public class ExcluirCliente implements Command {
 		
 		cliente.setIdCliente(id);
 		usuario.setId(idUsuario);
-		endereco.setIdEndereco(idEndereco);
+		endereco.setIdCliente(id);
 		
 		ClienteService clienteService = new ClienteService();
 		UsuarioService us = new UsuarioService();
@@ -63,7 +63,7 @@ public class ExcluirCliente implements Command {
 
 		clienteService.excluir(id);
 		us.excluir(idUsuario);
-		enderecoService.excluir(idEndereco);
+		enderecoService.excluir(cliente.getIdCliente());
 		
 		ArrayList<Cliente> lista = (ArrayList<Cliente>) session.getAttribute("listaCliente");
 		lista.remove(busca(cliente, lista));

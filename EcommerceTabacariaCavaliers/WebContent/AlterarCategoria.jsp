@@ -38,13 +38,13 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-12">
+									<div class="form-group col-md-6">
 										<label for="status">Status</label> <input type="text" class="form-control"
 											name="status" id="status" maxlength="15" placeholder="status"
 											value="${categoria.status }">
 									</div>
-									<div class="form-group col-md-12">
-										<label for="descricao">Descricao</label> <input type="text"
+									<div class="form-group col-md-6">
+										<label for="descricao">Descrição</label> <input type="text"
 											class="form-control" name="descricao" id="descricao" required
 											maxlength="60" placeholder="descricao" value="${categoria.descricao }">
 									</div>

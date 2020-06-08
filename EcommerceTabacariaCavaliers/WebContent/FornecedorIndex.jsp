@@ -35,28 +35,24 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-6">
 											<label for="cnpj"> Cnpj: </label> <input type="number" class="form-control"
 												name="cnpj" id="cnpj" required maxlength="100" placeholder="cnpj" />
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-6">
 											<label for="contatoTelefone"> Telefone: </label> <input type="number"
 												class="form-control" name="contatoTelefone" id="contatoTelefone"
 												required maxlength="100" placeholder="contatoTelefone" />
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-12">
+										<div class="form-group col-md-6">
 											<label for="contatoEmail"> Email: </label> <input type="email"
 												class="form-control" name="contatoEmail" id="contatoEmail" required
 												maxlength="100" placeholder="contatoEmail" />
 										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-12">
-											<label for="descricao"> Descricao: </label> <input type="text"
+										<div class="form-group col-md-6">
+											<label for="descricao"> Descrição: </label> <input type="text"
 												class="form-control" name="descricao" id="descricao" required
 												maxlength="100" placeholder="descricao" />
 										</div>

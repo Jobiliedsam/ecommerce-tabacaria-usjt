@@ -1,11 +1,10 @@
 package br.com.cavaliers.tabacaria.model;
 
-import java.util.Date;
 
 public class Cliente {
 	
 	private int idCliente;
-	private Date dataDeNascimento;
+	private String dataDeNascimento;
 	private String nomeCompleto;
 	private String telefone;
 	private String celular;
@@ -19,7 +18,7 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(int idCliente, String nomeCompleto, Date dataDeNascimento, String telefone, String celular, String cpfCnpj, 
+	public Cliente(int idCliente, String nomeCompleto, String dataDeNascimento, String telefone, String celular, String cpfCnpj, 
 			String genero, String tipo,String email, String rg) 
 	{
 		this.celular = celular;
@@ -54,9 +53,10 @@ public class Cliente {
 		return cpfCnpj;
 	}
 	
-	public Date getDataDeNascimento() {
-		return dataDeNascimento;
-	}
+	
+	public String getDataDeNascimento() {
+			return dataDeNascimento;
+		}
 	
 	public String getGenero() {
 		return genero;
@@ -90,9 +90,9 @@ public class Cliente {
 		this.cpfCnpj = cpfCnpj;
 	}
 	
-	public void setDataDeNascimento(Date dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
+	public void setDataDeNascimento(String dataDeNascimento) {
+			this.dataDeNascimento = dataDeNascimento;
+		}
 	
 	public void setGenero(String genero) {
 		this.genero = genero;
