@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS Produto (
     INDEX (Preco),
     
     # Chave Estrangeira
-    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(clienteNome_Categoria),
+    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(Nome_Categoria),
     
     # Validadores
     CONSTRAINT chk_preco CHECK (Preco >= 0)
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS Fornecedor (
 
 CREATE TABLE IF NOT EXISTS Usuario (
 
-    Id_Uuario INT PRIMARY KEY AUTO_INCREMENT,
+    Id_Uuario INT,
     Nome_Usuario VARCHAR (15) NOT NULL,
     Senha VARCHAR(20) NOT NULL,
     Tipo_Usuario CHAR(1) NOT NULL
@@ -154,3 +154,7 @@ CHANGE Email Email VARCHAR(50);
 USE Tabacaria;
 ALTER TABLE produto
 ADD COLUMN Quantidade INT NOT NULL;
+
+USE Tabacaria;
+ALTER TABLE usuario
+CHANGE Id_Uuario Id_Uuario INT;

@@ -15,8 +15,8 @@ public class ClienteDAO {
 	public int inserir(Cliente cliente)
 	{		
 		String sqlInsert = "INSERT INTO cliente " +
-			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento, RG)" +
-			"VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+			"(Nome_Completo, Telefone, Celular, CPF, Genero, Tipo, Email, Data_Nascimento)" +
+			"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try (Connection connection = ConnectionFactory.obterConexao();
 			PreparedStatement stm = connection.prepareStatement(sqlInsert);)
@@ -29,7 +29,7 @@ public class ClienteDAO {
 			stm.setString(6, cliente.getTipo());
 			stm.setString(7, cliente.getEmail());
 			stm.setString(8, cliente.getDataDeNascimento());
-			stm.setString(9, cliente.getRg());
+			//stm.setString(9, cliente.getRg());
 			stm.execute();
 
 			String sqlQuery = "SELECT LAST_INSERT_ID()";

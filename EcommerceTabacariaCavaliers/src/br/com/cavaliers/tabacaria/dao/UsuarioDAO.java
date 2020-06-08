@@ -11,14 +11,15 @@ public class UsuarioDAO {
 	
 	public int inserir(Usuario usuario)
     {
-        String sqlInsert = "INSERT INTO `usuario` (`Email`, `Password`,`Tipo`)" +
-        "VALUES (?, ?,'Cliente')";
+        String sqlInsert = "INSERT INTO `usuario` (`Email`, `Password`,`Tipo`, `Id_Uuario`)" +
+        "VALUES (?, ?,'Cliente', ?)";
 
 		try (Connection connection = ConnectionFactory.obterConexao();
             PreparedStatement stm = connection.prepareStatement(sqlInsert);)
         {
             stm.setString(1, usuario.getEmail());
             stm.setString(2, usuario.getPassword());
+            stm.setInt(3, usuario.getId());
             stm.execute();
         
 			String sqlQuery = "SELECT LAST_INSERT_ID()";
