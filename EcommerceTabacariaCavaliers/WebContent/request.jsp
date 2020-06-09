@@ -218,7 +218,7 @@
                                                     <h4>Frete</h4>
                                                 </td>
                                                 <td>
-                                                    <span>R$ <strong>19,90</strong></span>
+                                                    <span>R$ <strong>00,00</strong></span>
                                                 </td>
                                             </tr>
                                             <tr>

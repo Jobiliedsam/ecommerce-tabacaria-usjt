@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 import br.com.cavaliers.tabacaria.model.Cliente;
 import br.com.cavaliers.tabacaria.model.PedidoHeader;
 import br.com.cavaliers.tabacaria.model.PedidoLine;
+import br.com.cavaliers.tabacaria.model.Produto;
+import br.com.cavaliers.tabacaria.service.ProdutoService;
 import br.com.cavaliers.tabacaria.service.PedidoHeaderService;
 import br.com.cavaliers.tabacaria.service.PedidoLineService;
 
@@ -33,6 +35,7 @@ public class CriarPedidoHeader implements Command
 		
 		PedidoHeaderService phs = new PedidoHeaderService();
 		PedidoLineService pls = new PedidoLineService();
+		ProdutoService ps = new ProdutoService();
 		
 		if (pedidoHeader.getNomeCliente() == null || pedidoHeader.getIdCliente() == 0)
 		{
@@ -42,11 +45,30 @@ public class CriarPedidoHeader implements Command
 		
 		pedidoHeader.setIdPedido(phs.criar(pedidoHeader));
 		
-		for (PedidoLine linha : pedidoLines)
+		//for (PedidoLine linha : pedidoLines)
+		//{
+			//linha.setIdPedidoHeader(pedidoHeader.getIdPedido());
+			//pls.criar(linha);
+			
+		//	Produto produtoCart = produtosCart.get(linha.)
+			
+			//int newQtd = linha.getQuantidadeProduto();.
+			
+		//}
+		
+		for (int i = 0; i < pedidoLines.size(); i++)
 		{
+			PedidoLine linha = pedidoLines.get(i);
 			linha.setIdPedidoHeader(pedidoHeader.getIdPedido());
 			pls.criar(linha);
 			
+			Produto produtoCart = ps.carregar(linha.getIdProduto());
+			
+			int newQtd = linha.getQuantidadeProduto() - produtoCart.getQuantidade();
+			
+			System.out.println(newQtd);
+			
+			ps.UpdateQtd(linha.getIdProduto(), newQtd);
 		}
 		
 		

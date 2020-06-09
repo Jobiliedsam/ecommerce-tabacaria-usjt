@@ -56,10 +56,7 @@
                     <!-- Se possivel isso pode ser dinÃ¢mico com banco de dados 
                     RestricÃ£o para quantidade que ira aparecer-->
                     <ul>
-                        <li><a href="#">Arguiles</a></li>
-                        <li><a href="#">Tabaco</a></li>
-                        <li><a href="#">Pipes</a></li>
-                        <li><a href="#">Isqueiros</a></li>
+
                         <li><a href="controller.do?command=SairLogin">Sair</a></li>
                     </ul>
                 </div>

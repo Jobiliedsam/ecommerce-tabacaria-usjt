@@ -30,6 +30,7 @@
                     <div class="row">
                         <!--  Inicio do forEach -->
                         <c:forEach var="produtos" items="${produtosService.carregarAll()}">
+                        <c:if test="${produtos.quantidade != 0 }">
                             <div class="col-lg-6 shadow mb-5">
                                 <div class="media align-items-lg-center flex-lg-row m-3">
                                     <img src="./imagens/produtos/${produtos.nomeP}_0.jpg" alt="" width="500"
@@ -53,6 +54,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </c:if>
                         </c:forEach>
                         <!-- Fim do forEach -->
                     </div>

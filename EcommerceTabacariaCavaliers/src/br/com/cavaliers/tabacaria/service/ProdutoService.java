@@ -31,4 +31,9 @@ public class ProdutoService
 	public ArrayList<Produto> carregarAll(String chave){
 		return dao.buscarProdutor(chave);
 	}
+	
+	public void UpdateQtd (int id, int qtd)
+	{
+		dao.updateQtd(id, qtd);
+	}
 }

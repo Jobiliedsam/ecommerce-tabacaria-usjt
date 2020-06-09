@@ -126,7 +126,7 @@ public class PedidoHeaderDAO
     public ArrayList<PedidoHeader> listarPedidoHeader() {
 		PedidoHeader pedidoHeader;
 		ArrayList<PedidoHeader> lista = new ArrayList<>();
-		String sqlSelect = "SELECT Id_Pedido, , Id_Cliente, Data_Hora, Nome_Cliente, Quantidade_Total, Valor_Total FROM pedido_header";
+		String sqlSelect = "SELECT Id_Pedido, Id_Cliente, Data_Hora, Nome_Cliente, Quantidade_Total, Valor_Total FROM pedido_header";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obterConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

@@ -124,7 +124,6 @@ public class ClienteDAO {
 					cliente.setTipo(resultSet.getString("Tipo"));
 					cliente.setEmail(resultSet.getString("Email"));
 					cliente.setDataDeNascimento(resultSet.getString("Data_Nascimento"));
-					cliente.setRg(resultSet.getString("RG"));
 				}
 				else 
 				{

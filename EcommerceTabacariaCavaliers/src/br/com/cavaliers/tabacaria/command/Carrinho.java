@@ -29,6 +29,7 @@ public class Carrinho implements Command
 		PedidoLine pedidoLine = new PedidoLine();
 		PedidoHeader pedidoHeader = new PedidoHeader();
 		ProdutoService produtoService = new ProdutoService();
+		
 		//Produto produtoCarrinho = new Produto();
 		int intQtd = 0; 
 		
@@ -48,7 +49,8 @@ public class Carrinho implements Command
 		{
 			intQtd = Integer.parseInt(quantidade);
 			
-			if (intQtd > 10) intQtd = 10;
+			if (intQtd >= produtoCarrinho.getQuantidade()) intQtd = produtoCarrinho.getQuantidade();
+			else if (intQtd > 10) intQtd = 10;
 			else if (intQtd < 1) intQtd = 1;
 		}
 		else 

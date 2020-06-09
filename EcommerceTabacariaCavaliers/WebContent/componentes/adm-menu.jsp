@@ -19,6 +19,5 @@
         <li><a href="ListarPedidoHeaderTeste.jsp"><i class="fas fa-check"></i>Pedidos</a>
         </li>
         <li><a href="ClienteLista.jsp"><i class="fas fa-user"></i>Usuários</a></li>
-        <li><a href="#"><i class="fas fa-cog"></i>Configurações</a></li>
     </ul>                
 </div>

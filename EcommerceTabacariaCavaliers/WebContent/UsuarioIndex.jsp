@@ -20,6 +20,9 @@
 	<c:import url="./componentes/header.jsp"></c:import>
 		<div id="main" class="container">
 			<h3 class="page header">Logar</h3>
+			<c:if test="${sessionScope.invalidLogin == 1}">
+				Email ou Senha Inválido
+			</c:if>
 			<form action="controller.do" method="post">
 				<div class="row">
 					<div class="form-group col-md-8">

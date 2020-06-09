@@ -60,6 +60,22 @@ public class ProdutoDAO {
 			exception.printStackTrace();
 		}
 	}
+	
+	public void updateQtd(int id,  int qtd)
+	{
+		String sqlUpdate = "UPDATE produto SET Quantidade = ? WHERE Id_Produto = ?";
+		
+		try (Connection connection = ConnectionFactory.obterConexao();
+				PreparedStatement stm = connection.prepareStatement(sqlUpdate);) {
+
+			stm.setInt(1, qtd);
+			stm.setInt(2, id);
+			stm.execute();
+			
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+	}
 
 	public void excluir(int idProduto) {
 		String sqlDelete = "DELETE FROM `produto` WHERE`Id_Produto` = ?;";

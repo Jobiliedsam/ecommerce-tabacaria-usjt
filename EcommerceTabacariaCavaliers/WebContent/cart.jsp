@@ -71,29 +71,22 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3>Consultar Frete</h3>
+							<h3>Frete Grátis - Para todo o Brasil</h3>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col ship">
-							<form>
-								<label>Digite o CEP</label> <input type="text" name="" id="">
-								<button type="submit">
-									<i class="fas fa-search"></i>
-								</button>
-							</form>
-						</div>
+
 					</div>
 					<div class="row">
 						<div class="col offset-9 total-infos">
 							<p>
-								<strong>Sub-Total: ${orderHeader.valorTotal}</strong> <span></span>
+								<strong>Sub-Total: R$ ${orderHeader.valorTotal}</strong> <span></span>
 							</p>
 							<p>
-								<strong>Valor do Frete:</strong> <span>R$ 19,90</span>
+								<strong>Valor do Frete:</strong> <span>R$ 00,00</span>
 							</p>
 							<p>
-								<strong>Total:</strong> <span>R$ 79,90</span>
+								<strong>Total:</strong> <span>R$ ${orderHeader.valorTotal}</span>
 							</p>
 						</div>
 					</div>

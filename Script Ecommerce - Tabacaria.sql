@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
     Data_Nascimento  DATE NOT NULL,
     
     INDEX (Nome_Completo)
+     
     
 ) DEFAULT CHARSET = UTF8;
 
@@ -43,6 +44,9 @@ CREATE TABLE IF NOT EXISTS Endereco (
     Complemento         LONGTEXT,
     
     CONSTRAINT fk_id_cliente FOREIGN KEY(Id_Cliente) REFERENCES Cliente(Id_Cliente)
+    
+	ON UPDATE CASCADE
+    ON DELETE CASCADE
     
 ) DEFAULT CHARSET = UTF8;
 
@@ -74,7 +78,10 @@ CREATE TABLE IF NOT EXISTS Produto (
     INDEX (Preco),
     
     # Chave Estrangeira
-    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(Nome_Categoria),
+    CONSTRAINT fk_nome_categoria FOREIGN KEY (Nome_Categoria) REFERENCES Categoria(Nome_Categoria)
+    
+	ON UPDATE CASCADE
+    ON DELETE CASCADE,
     
     # Validadores
     CONSTRAINT chk_preco CHECK (Preco >= 0)
@@ -92,8 +99,14 @@ CREATE TABLE IF NOT EXISTS Pedido_Header (
     Valor_Total 		NUMERIC NOT NULL,
     
     # Chaves estrangeiras
-    CONSTRAINT fk_id_cliente_header 	FOREIGN KEY(Id_Cliente) 	REFERENCES Cliente(Id_Cliente),
-    CONSTRAINT fk_nome_cliente 			FOREIGN KEY(Nome_Cliente) 	REFERENCEs Cliente(Nome_Completo),
+    CONSTRAINT fk_id_cliente_header 	FOREIGN KEY(Id_Cliente) 	REFERENCES Cliente(Id_Cliente)
+	ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    
+    CONSTRAINT fk_nome_cliente 			FOREIGN KEY(Nome_Cliente) 	REFERENCEs Cliente(Nome_Completo)
+    
+	ON UPDATE CASCADE
+    ON DELETE CASCADE,
     
     # Validadores
     CONSTRAINT chk_quantidade_total CHECK (Quantidade_Total > 0),
@@ -112,10 +125,12 @@ CREATE TABLE Pedido_Line (
     
     # Chaves Estrangeiras
     CONSTRAINT fk_id_pedido_header 	FOREIGN KEY (Id_Pedido_Header) 	REFERENCES Pedido_Header(Id_Pedido),
-    CONSTRAINT fk_id_produto 		FOREIGN KEY (Id_Produto) 		REFERENCES Produto(Id_Produto), 
-    CONSTRAINT fk_id_nome_produto	FOREIGN KEY (Nome_Produto) 		REFERENCES Produto(Nome_Produto),
-    CONSTRAINT fk_id_preco_unitario FOREIGN KEY (Preco_Unitario)	REFERENCES Produto(Preco),
+    CONSTRAINT fk_id_produto 		FOREIGN KEY (Id_Produto) 		REFERENCES Produto(Id_Produto)
+    -- CONSTRAINT fk_id_nome_produto	FOREIGN KEY (Nome_Produto) 		REFERENCES Produto(Nome_Produto),
+    -- CONSTRAINT fk_id_preco_unitario FOREIGN KEY (Preco_Unitario)	REFERENCES Produto(Preco)
     
+	ON UPDATE CASCADE
+    ON DELETE CASCADE,
     # Validadores
     CONSTRAINT chk_quantidade_produto CHECK (Quantidade_Produto >= 1),
     CONSTRAINT chk_valor_produto CHECK (Valor_Produto = (Quantidade_Produto * Preco_Unitario))
@@ -158,3 +173,12 @@ ADD COLUMN Quantidade INT NOT NULL;
 USE Tabacaria;
 ALTER TABLE usuario
 CHANGE Id_Uuario Id_Uuario INT;
+
+
+INSERT INTO `tabacaria`.`usuario`
+(`Id_Uuario`,
+`Email`,
+`Password`,
+`Tipo`)
+VALUES
+(0, 'admjs@adm.com', '12345', 'Administrativo');

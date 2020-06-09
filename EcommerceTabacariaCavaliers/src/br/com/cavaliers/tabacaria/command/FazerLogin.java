@@ -40,6 +40,7 @@ public class FazerLogin implements Command
 		if(isUser && usuario.getTipo().equals("Administrativo")) 
 		{
 			HttpSession session = request.getSession();
+			session.setAttribute("invalidLogin", 0);
 			session.setAttribute("logadoAdministrador", usuario);
 			response.sendRedirect("administration.jsp");
 		}
@@ -49,6 +50,7 @@ public class FazerLogin implements Command
 			Endereco endereco = es.carregar(cliente.getIdCliente());
 			
 			HttpSession session = request.getSession();
+			session.setAttribute("invalidLogin", 0);
 			session.setAttribute("logado", usuario);
 			session.setAttribute("currentUser", cliente);
 			session.setAttribute("currentUserEndereco", endereco);
@@ -56,8 +58,11 @@ public class FazerLogin implements Command
 		}
 		else 
 		{
+			HttpSession session = request.getSession();
+			session.setAttribute("invalidLogin", 1);
+			response.sendRedirect("UsuarioIndex.jsp");
 			System.out.println(usuario + "incorreto");
-			throw new ServletException("Email / senha negados");
+			
 		}
 		
 	}

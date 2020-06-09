@@ -160,7 +160,6 @@
 			</div>
 		</div>
 	</div>
-	</div>
 	<div id="back-to-top">
 		<i class="fas fa-chevron-up"></i>
 	</div>
